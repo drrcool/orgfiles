@@ -1,0 +1,65 @@
+* Inbox
+** Doom Emacs
+***   Faster startups with the daemon
+    You can start the emacs daemon with `emacs --daemon` on the command line.  Then if you do `emacsclient -c` you would get a new frame very quickly.  This ends to be faster than starting new frames each time.
+   + `emacsclient -e "(kill-emacs)"
+     +  this kills the main emacs server. Any  other deamons than the primary will stay running
+
+
+
+* Org Mode: :org-mode:
+** Submodes:
+***  Capture mode: :org-mode:
+- you can create a new todo with SPC X t
+***  tagging: :org-mode:
+- you can tag healinds so they are easy to find alter. While on the header, SPC m q
+*** Agenda view:
+- Open agenda mode with SPC oA
+***  Stay focused:
+     - `org-narrow-to-subtree` (or block or element)
+    - widen
+**  MarkUp:
+*** *bold*
+*** /italic/
+*** _underlined_
+*** =verbatim=:w
+*** '+strike-through+'
+*** #+begin_quote
+Block quotes (do <q TAB)
+#+end_quote
+*** Example Blocks:
+#+begin_example
+Are useful for rendering multilines blocks verbatim.
+You can create with <e TAB
+#+end_example
+
+*** Tables
+
+| Tables | Are |
+|--------+-----|
+
+
+*   Magit: git for emacs
+**  Status buffer
+    You can open the status buffer with =C-x g= and is magit's equivalent of =git status= in a shell.
+    It addition to status of files, we also get a diff of files, current stash information, commits that are unpulled from remote and unmerged local changes.
+*** Hiding details
+You can collapse diff sections and any other section (larger than a single line) by moving the cursor into it and pressing TAB
+*** Nearly everything can be acted on
+    In addition to TAB, you can often hit Return to open a more detaielked view of the thing at point.
+*** Invoking actions
+    If you hit =C-c C-c= after enter a value in a popup, that will store it as the default for the current popup and persist it between sessions.
+*** The popup of popups
+    Not sure what popup you want? Hit ?
+** Staging changes
+*** Partial staging
+    If you want to stage only one hunk, go there, and type s. Unstage with u. Stage everything with S and U.
+
+    You can also go to one end of a selection, hit C-SPC then to the other end then hit s.
+    - TODO does this work on evil mode selection too?
+**  Committing
+    Hit c to show the commiting popup and c again to create a new regular commit.  When done, hit =C-c C-c=
+
+    To ammend, use c then a.
+
+    There are also commits that aren't standard such as /reword/

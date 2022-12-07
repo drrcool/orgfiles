@@ -1,0 +1,27 @@
+
+ QoEDash
+**   V2
+*** Deploy and Build
+- seems like a lot of the issues that I'm having are due to the typescript conversion.   Ensure that all scripts are calling the correct files (ts not js)
+- To try: drop the bionic image and see if the libgc version of node 18+ will compile there
+***   New Tests:
++ [ ] Date Checker unit test
++ [ ] Unit tests for as many atomic units in the UI as possible
++ [ ] Add both to cypress e2e tests as well
++ [ ] Unit tests and e2e tests for color selection
+***   [ ]  TODO text on the treemap is very hard to read
+***   [ ] TODO Add item selection to the ranking filter sentence
+**  Requests
+*** Request: Look at how Dex handles multiple breakdowns
+- TODO: DEX has a new feature that allows a multi breakdown approach on a curated list of dimension. This lets the user look at how say hailstorm compares to a subset of devices.  If this is logic that we can reuse,  we should add it to QoEDash
+*** Request: Custom chart constructor
+- From oli
+- PEMs are largely wanting to be able to see how two cohorts compoare to each other or how two metric co-evolve over time.  One way to let them explore this would be to offer a configuration for two separate charts (with potentially separate
+  filter values, plotparams, etc) then we overlap these two charts on top of each other
+- coming up with a way to deal with the two separate states will be hardest, we almost need to create a local-only version of the state for this.*
+**  Hawkins migration
++ [ ] Filter Sentences
++ [ ] summary cards
++ [ ] filter selectors/drawer
++ [ ] integrate alerts with a badge system
++ [ ] convert all tooltips to hawksins
