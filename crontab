@@ -1,0 +1,2 @@
+*/30 * * * * /Users/rcool/.local/bin/obsidian_sync >/dev/null 2>&
+*/10 * * * * /Users/rcool/.local/bin/settings_sync > /dev/null 2>&
