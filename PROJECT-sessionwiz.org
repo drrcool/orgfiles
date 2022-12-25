@@ -1,0 +1,24 @@
+* Outstanding Items
+** Viz System:
+*** Need to choose between Vega, VizKit, or ChartJS
+*** ChartJS pros:
+**** it's popular
+**** a lot of community support
+**** do we need that though?
+*** Vega
+**** Is it worth it to port the streaming views?  If not, then having two styles isn't ideal.
+**** But vega is just about as far from paved-path as we can get
+**** Con: Don't need copies of the data for each layer. This won't scale for gaming
+*** VizKit:
+**** great opportunity to provide chartTypes
+**** in house, how long until we stop updating it again?
+
+
+
+
+* Connecting to the new database:
+** From tcat source:
+*** serviceHost := flag.String("ts-host", "ocgatelemetry.dta.netflix.net:7004", "Telemetry Service Host (& port)")
+*** endpointURL = fmt.Sprintf("https://%s/db/event/stream", *serviceHost)*
+*** endpointURL = fmt.Sprintf("https://%s/db/event/faststream", *serviceHost)
+*** endpointURL = fmt.Sprintf("https://%s/db/event/aggregate", *serviceHost)

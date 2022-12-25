@@ -1,0 +1,32 @@
+#+title: Org Mode Basics
+
+* Org Mode: :org-mode:
+** Submodes:
+***  Capture mode: :org-mode:
+- you can create a new todo with SPC X t
+***  tagging: :org-mode:
+- you can tag healinds so they are easy to find alter. While on the header, SPC m q
+*** Agenda view:
+- Open agenda mode with SPC oA
+***  Stay focused:
+     - `org-narrow-to-subtree` (or block or element)
+    - widen
+**  MarkUp:
+*** *bold*
+*** /italic/
+*** _underlined_
+*** =verbatim=:w
+*** '+strike-through+'
+*** #+begin_quote
+Block quotes (do <q TAB)
+#+end_quote
+*** Example Blocks:
+#+begin_example
+Are useful for rendering multilines blocks verbatim.
+You can create with <e TAB
+#+end_example
+
+*** Tables
+
+| Tables | Are |
+|--------+-----|

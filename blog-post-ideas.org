@@ -1,0 +1,9 @@
+#+title:  Blog Post Ideas
+
+_-Use this doc as a running list of ideas  for future blog posts when I ever get around to using Ai to write them for me.
+
+
+* Ideas:
+** Blog idea.  Switzerland of editor wars 
+[2022-12-14 Wed 20:44]
+[2022-12-17 Sat 05:08]

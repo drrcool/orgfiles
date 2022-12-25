@@ -1,0 +1,10 @@
+#+title: Creating My First Emacs Config
+
+This document is a set of notes and musings based on my first ground-up emacs config.
+
+* Note Prior to start
+** Ideas for initial launch
+* Notes During development
+* Notes after use
+* Ideas for initial launch
+* Ideas for Future Improvement

@@ -1,0 +1,26 @@
+#+title: Magit Basics
+
+*   Magit: git for emacs
+**  Status buffer
+    You can open the status buffer with =C-x g= and is magit's equivalent of =git status= in a shell.
+    It addition to status of files, we also get a diff of files, current stash information, commits that are unpulled from remote and unmerged local changes.
+*** Hiding details
+You can collapse diff sections and any other section (larger than a single line) by moving the cursor into it and pressing TAB
+*** Nearly everything can be acted on
+    In addition to TAB, you can often hit Return to open a more detaielked view of the thing at point.
+*** Invoking actions
+    If you hit =C-c C-c= after enter a value in a popup, that will store it as the default for the current popup and persist it between sessions.
+*** The popup of popups
+    Not sure what popup you want? Hit ?
+** Staging changes
+*** Partial staging
+    If you want to stage only one hunk, go there, and type s. Unstage with u. Stage everything with S and U.
+
+    You can also go to one end of a selection, hit C-SPC then to the other end then hit s.
+    - TODO does this work on evil mode selection too?
+**  Committing
+    Hit c to show the commiting popup and c again to create a new regular commit.  When done, hit =C-c C-c=
+
+    To ammend, use c then a.
+
+    There are also commits that aren't standard such as /reword/

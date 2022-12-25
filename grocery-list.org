@@ -1,0 +1,6 @@
+#+title: Grocery list
+
+* Ketchup
+* Kitty Litter
+* Dog food
+    2

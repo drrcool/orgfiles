@@ -1,0 +1,19 @@
+#+title: Archive
+
+
+* Archived items
+** DONE Watch Harry Schwart'z talk on org mode
+CLOSED: [2022-12-21 Wed 09:30]
+:PROPERTIES:
+:CREATED: [2022-12-12 Mon]
+:ID:       2548c517-72e3-4268-a3b9-2bd8bdcbafca
+:END:
+
+- State "DONE"       from "TODO"       [2022-12-21 Wed 09:30]
+** DONE watch aaron bieber's talk on evil-mode
+CLOSED: [2022-12-21 Wed 09:30]
+:PROPERTIES:
+:CREATED: [2022-12-12 Mon]
+:ID:       f1dbb97d-ae55-463a-9085-6e6fbe130225
+:END:
+- State "DONE"       from "TODO"       [2022-12-21 Wed 09:30]

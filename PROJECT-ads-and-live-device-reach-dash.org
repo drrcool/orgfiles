@@ -1,0 +1,164 @@
+* Device reach for ads and (eventually) live
+** Prelaunch, we can use device capability information and hendricks rules to estimate hte expected reach of a given experience including ads and live. There is some nuance we can likely make go a little better , but the larger data compoenent is what happens after launch.
+**  Goal : great some views that showcase the reach of ads (and live).))
+*** use cases: are there devices that should have ads that have a higher failure rate than others?
+*** how often are ads subscribers unable to watch as they signed up on an ads device but are trying to watch on an upsupported device?
+****    List of devices which cannot support ads:
+*****   devices we cannot update
+    - mediaroom, iOS legacy, NRDP 3.x, Uncertified AOSP devices running Android Mobile, PS3
+*****   Devices we don't want to update
+     - Windows App (1481), Apple TV (tvOS), Chromecast, Silverlight
+*****   Devices we cannot reach for MVP but may update later
+     - NRDP 4.0, 4.1
+
+**  Action Items:
+*** DONE Build Fact table
+*** Build Aggregate Table or engine
+    - [ ] Since we want to use HLL, build druid ingestion script
+    - [ ] Denomrlaize any dimensions we care about (device metadata primarily)
+*** Backfill
+    - [ ] Go at least 2 weeks (or the max lookback if smaller than 2 weeks)
+*** Create the views
+****    Relatively simple views
+    -- TODO time series of % reach
+    -- TODO time series of % of requests successful
+    -- TODO overall agg bar chart of reach
+    -- TODO stacked bar char of failure reason (with option to include success)
+#+title: Notes
+
+* Server:
+
+Filter Data Caching:
+I wanted to create a poor mans caching scheme for filter data. It doesn't change often, so for this data set, we
+should be able to cache the full combinatorical data and use that to extract updated filters when one is applied.
+
+Idea:  Fetch the full aggregate for the past 7 days (totalled without date in the grain).  Now for any set of filters, we can figure out the other filters that apply relatively quickly without hitting presto and send back and updated fitlerData.
+
+The client can hold the original so we don't have to refresh when invalidated.
+
+There's likely no reason to update this cache more often than daily.
+
+**  Actions:+
+*** Filter Data
+**** DONE High priority: Get base data
+***** [X] create query that gets the full data set
+***** [X] dump the above query to disk when a request comes in, read it and return the data
+**** IDEA Low priority: Optimize
+:PROPERTIES:
+:ID:       049d2409-99a1-43d4-88dd-73407d59d0d2
+:END:
+***** Base Case:
+****** [ ] [#C] fetch the full agg relationship matrix and store to disk
+:PROPERTIES:
+:ID:       2a908e31-a969-4b7f-850d-5464729b1fea
+:END:
+***** Filtered Case:
+****** [ ] [#C] Compare the timings of
+:PROPERTIES:
+:ID:       c4e94c0f-1fd0-4c33-a0b5-936579a92ed1
+:END:
+******* [ ] create a query that fetches from Presto based on the given filters
+:PROPERTIES:
+:ID:       3e24513e-a0d0-4b98-85f9-e47d9bfa0fc7
+:END:
+******* [ ] create a function that parses the full agg relationship and figures out the new filters
+:PROPERTIES:
+:ID:       94ca1587-a375-496b-a06b-af174fdccf5c
+:END:
+*** Charts
+**** A. Breakdown
+This chart should show the % reach by whatever split is chosen
+- Metric Choices:
+  - % of ESN in a day
+  - % of requests in a day
+  - N of ESNs in a day
+  - N of requests in a day
+- Break by any of the dimensions in the table as well as "total"
+***** Action items for breakdown
+****** DONE - create server query
+****** TODO - create component
+:PROPERTIES:
+:ID:       a05ad01e-daef-4b36-ad09-969c003ce3e5
+:END:
+**** B. Breakdown by reason
+- Same as above, but the bar is color coded by failure reason with reason being a filter
+  - making reason a filter lets us exclude success easily
+***** Action items for breakdown by reason
+****** DONE - create server query
+****** TODO - create component
+:PROPERTIES:
+:ID:       2e457ffe-45b8-4cf8-bd94-41a7c61f6355
+:END:
+**** C. Time series
+Same as Chart A above but with day by day breakdown
+***** Action items for time series:
+****** DONE - create server query
+****** TODO - create component
+:PROPERTIES:
+:ID:       2c22cb71-d9ca-4aa9-84fa-c0e9f2db762d
+:END:
+**** D. Time series by reason
+Same as Chart b but with day by day breakdown
+***** Action items for time series by reaon:
+****** DONE - create server query
+****** TODO - create component
+:PROPERTIES:
+:ID:       3dd62ee9-7b1a-4ccc-ad5f-f65752bda30e
+:END:
+**** E. Top Level summary
+- High level summary metrics of interest
+****** # of ESNs succefully interacted
+****** % of ESNs which failure
+****** # of Requests
+****** Largest Failure mode
+****** of ESNs who couldn't watch on disabled device
+***** Action item  for top level summary
+****** DONE - create sql agg to power this view
+****** DONE - create server queries for each metric
+****** DONE - create component for each item
+:PROPERTIES:
+:ID:       30a01e2f-d3e6-46c6-a486-8d0e40ab3bf8
+:END:
+* DONE DRUID ingestion: need to try in a non vault tabl
+:PROPERTIES:
+:CREATED: [2022-12-12 Mon]
+:ID:       86036774-4d3f-4baf-9fc1-a8906cbf6557
+:END:
+*** OPted to use presto for now
+* Filter control:
+** TODO: Mkae query builder
+ -- The hawkins query builder is clunky and ugly and bloated. Trying spin my own
+*** DONE Make container
+**** DONE Paper that scales as needed
+***** DONE Paper
+***** DONE Ensure it scales
+*** DONE Make and pipe buttonGroup on bottom
+**** DONE Apply Button
+***** DONE component
+***** DONE Popover or tooltip explainin
+- Apply all selected changes and fetch refreshed data
+**** DONE Abandon Change
+***** DONE Popover or Tooltip
+- Drop all changes since the last time you applied.  Currently applied filters remain active.
+***** DONE Component
+**** DONE Remove all filters
+***** DONE Popover or Tooltip
+- Remove all filters and refetch data
+***** DONE Component
+
+
+*** DONE Make required splitby field
+*** DONE Make generic fieldKey selector
+    - onChange should track the the rder that fieldKeys are selected to ensure
+      the filter ordering remains consistent between renders
+**** DONE Make sure we have a way to cancel and drop this filter
+*** DONE Make generic filterValue selector
+*** DONE Add logic that adds additional selectors as others are filled
+**** DONE check for existing active fieldKeys and only allow unselected fieldKeys to be in the new select
+***** DONE ensure that this list is repsonsive if a filter is removed
+
+* Active Todo:
+** BarChart breakdown
+** failure reason breakdown
+** timeseries
+** failure reason time series

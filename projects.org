@@ -1,0 +1,53 @@
+* org
+** Tasks
+* .dotfiles
+** Tasks
+* TODO [#B] QoeDash reported issues
+:PROPERTIES:
+:ID:       b9590706-f5d6-4f73-aa9e-87d0f31a7864
+:END:
+****  [ ] from CJ: when updating the time window the first chart stops updating. the URL will show a new =intervalFrom= from the data will not respect
+:PROPERTIES:
+:ID:       c89dafa2-0754-4453-959a-913592393f96
+:END:
+***** [ ] (followup & related): if intervalTo and intervalFrom are provided in the URL does the dash treat them  correctly?
+:PROPERTIES:
+:ID:       f6086e9e-a8b0-4b75-a849-9c753bfb8367
+:END:
+**** [ ] [#B] from CJ: Preset filters don't impact the summary view.
+:PROPERTIES:
+:ID:       69271881-fe81-48ab-9298-75766e5f3a1e
+:END:
+**** [ ] Dateselector: clicking outside should close the modal
+:PROPERTIES:
+:ID:       e63e1875-0e38-44aa-9a16-16ae093cf433
+:END:
+**** [ ] Dateselector: doesn't pick up opacity changes from affixed hover
+:PROPERTIES:
+:ID:       1b4b6632-523e-4083-a266-b6ace129b087
+:END:
+**** [ ] From Giselle: CHanging a preset then opening the filter drawer doens't show filters as expected
+:PROPERTIES:
+:ID:       22e65443-cda2-4e2c-82f1-4bb50425b76a
+:END:
+**** [ ] Lets space between legend labels to fit more
+:PROPERTIES:
+:ID:       d48df84e-8081-4008-b6fe-f114bbfee24a
+:END:
+**** [ ] need a comparison chart legend
+:PROPERTIES:
+:ID:       4d00eac0-8859-4eec-b1b9-9b1dcd56436f
+:END:
+**** [ ] pqs smoothing still isn't being applied
+:PROPERTIES:
+:ID:       1a25ef7b-0036-4b66-8f90-68cb91045a22
+:END:
+
+
+*   Hawkins viz:
+** TODO: migrate color themes. Before push to v2.1
+SCHEDULED: <2022-12-12 Mon>
+:PROPERTIES:
+:ID:       720dde2f-3096-4bf6-adfa-8ab877dfb45f
+:END:
+** TODO: migrate to vizKit

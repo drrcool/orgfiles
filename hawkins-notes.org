@@ -1,0 +1,39 @@
+#+title: Hawkins Notes
+
+Hawkins is a netflix internal ui library for creating uniform styled apps across the company. Here we outline the use of some of the features.
+
+* Querybuilder
+** Ideal for quick generation of filter list or other options in a dashboard.
+***** In essence, the second box (first in the first row) of a row lets you choose the dimension you are filtering
+***** The first box (omitted in the first row) lets you choose if this new addition is an AND or an OR filte
+***** each row has an Opertor that allows you to specify what  to with the values (inclusive or exclude filters)
+***** Finally, the last box lets you choose values (or enter values or select a single value, depending on the config)
+** Required Props:
+*** Conjunctions:
+- Amazingly documented as "conjunctions"
+
+*** fieldConfig:
+- the Hawkins documentation continues to impress "fieldConfig"
+****  Format:
+#+BEGIN_SRC typescript
+// Here genre, buildingTeams, and query are the three parameters users can
+// customize
+fieldConfig = {
+  genre: {
+    uiType: 'Dropdown',
+    options: [ {value: 'test', label: 'test label'}], //[ standard optionsList {value:, label:} ]
+  },
+  buyingTeam: {
+    uiType: "MultiSelect",
+    options: [] // standard optionsList
+  },
+  query: {
+    uiType: 'Input'
+  }
+}
+#+END_SRC
+
+*** uiTypeConfig:
+- who the fuck knows
+- from the example, this configures component renderers for each of the ui components
+**

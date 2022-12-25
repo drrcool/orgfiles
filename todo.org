@@ -1,5 +1,1 @@
 * Inbox
-SCHEDULED: <2023-03-01 Wed>
-** [ ] File a new personal todo with SPC X t
-
-[[file:~/org/notes.org::*Capture mode:][Capture mode:]]

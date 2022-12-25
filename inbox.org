@@ -1,0 +1,109 @@
+
+* TODO Fonts in presentation mode are often too small
+:PROPERTIES:
+:CREATED: [2022-12-10 Sat]
+:ID:       6850118b-9017-4272-bef8-8c088910a03a
+:END:
+
+* Line charts look great in presentation mode = Olid
+:PROPERTIES:
+:CREATED: [2022-12-10 Sat]
+:END:
+
+* TODO Make the legend scale with presentation mode
+:PROPERTIES:
+:CREATED: [2022-12-10 Sat]
+:ID:       30fbf47c-8be4-4aaa-88fe-9417c669918a
+:END:
+
+* TODO QoEDash validation on the PQS Smoothing does funky thigns when tyring to enter 1 
+:PROPERTIES:
+:CREATED: [2022-12-11 Sun]
+:ID:       a87f72a4-bdae-4fe9-8248-a71f2a9a8e12
+:END:
+
+* Qoedash startup issues
+**  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
+** Running npm run build seems to generate the files we need.
+** For now, I'm going to add =npm run build= to the start.sh script
+
+* TODO Remmeber to complete NEtflix trianings
+:PROPERTIES:
+:CREATED: [2022-12-11 Sun]
+:ID:       0d93b374-dc69-4e09-9079-26a008e308dc
+:END:
+* Inbox
+
+* TODO DRUID ingestion: need to try in a non vault table
+:PROPERTIES:
+:CREATED: [2022-12-12 Mon]
+:ID:       c256dc92-74f6-43f7-a07d-592df059b764
+:END:
+
+* TODO look at failing jobs and retired as needed
+:PROPERTIES:
+:CREATED: [2022-12-12 Mon]
+:ID:       506ea7cc-044c-44de-a90c-cb57c120e17f
+:END:
+
+* TODO Watch Harry Schwart'z talk on org mode
+:PROPERTIES:
+:CREATED: [2022-12-12 Mon]
+:ID:       2548c517-72e3-4268-a3b9-2bd8bdcbafca
+:END:
+
+* TODO watch aaron bieber's talk on evil-mode
+:PROPERTIES:
+:CREATED: [2022-12-12 Mon]
+:ID:       f1dbb97d-ae55-463a-9085-6e6fbe130225
+:END:
+
+* TODO Add a metricType selector to the FilterPanel
+:PROPERTIES:
+:CREATED: [2022-12-21 Wed]
+:END:
+
+* TODO Consider Changing the summary when metricType is toggled
+:PROPERTIES:
+:CREATED: [2022-12-21 Wed]
+:END:
+
+* TODO Persist changes to URL and read URL when page loads
+:PROPERTIES:
+:CREATED: [2022-12-21 Wed]
+:END:
+
+* TODO File issue with react vizkit to make the charts hawkins-theme aware
+:PROPERTIES:
+:CREATED: [2022-12-22 Thu]
+:END:
+
+* TODO why is neovims completion window transparent
+:PROPERTIES:
+:CREATED: [2022-12-23 Fri]
+:END:
+
+* TODO link fialure breakdown via context
+:PROPERTIES:
+:CREATED: [2022-12-24 Sat]
+:END:
+
+* TODO look at avy
+:PROPERTIES:
+:CREATED: [2022-12-24 Sat]
+:END:
+
+* TODO grocery List: kitty litter
+:PROPERTIES:
+:CREATED: [2022-12-24 Sat]
+:END:
+
+* TODO drop tooltipcolumn
+:PROPERTIES:
+:CREATED: [2022-12-24 Sat]
+:END:
+
+* TODO setup windows key as meta key and bind to eitheer delete delete or dlete hold
+:PROPERTIES:
+:CREATED: [2022-12-25 Sun]
+:END:

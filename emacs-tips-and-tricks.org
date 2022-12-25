@@ -1,0 +1,8 @@
+#+title: Emacs Tips and Tricks
+
+
+** Doom Emacs
+***   Faster startups with the daemon
+    You can start the emacs daemon with `emacs --daemon` on the command line.  Then if you do `emacsclient -c` you would get a new frame very quickly.  This ends to be faster than starting new frames each time.
+   + `emacsclient -e "(kill-emacs)"
+     +  this kills the main emacs server. Any  other deamons than the primary will stay running
