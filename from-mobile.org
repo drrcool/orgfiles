@@ -55,3 +55,61 @@ Because that means I have a new field key selector shown but we don’t know if 
 Face case one select key filter with a filter value filter next to it hidden and have it visible when the filter filter chooses something so I can change
 
 Nuisanc
+* Add dash 
+[2022-12-25 Sun 14:42]
+-fix subtitle  
+Make. Unique for share and count subtitle -/ title 
+Trend metric selector
+- impacted esn as second trend plot?
+Maybe as secondary to failure  trend 
+- app icon and app title 
+
+After 
+- migrate to separate projects. (Mono repo?
+- tag code with excessive Amy’s- 
+- move to data context 
+- shared trend. Chart shared extent
+-highlight mode through shared context. Hover sets a state variable. All charts use that to highlight the associated object and grey out the others
+- make sure to clear out hover when nothing hovered 
+- click preserves it.  And sets drill down state 
+
+- cab file 
+- save to image 
+- chart styling to comply with dark mode 
+- dark mode toggle
+* 
+[2022-12-22 Thu 14:41]
+Who says it has to be in node
+- spin up a local react app
+- plot with vizkit 
+- don’t even need a real rest client can use curl probably
+* What plotting packages are available in node 
+[2022-12-22 Thu 14:39]
+* Query tool 
+[2022-12-22 Thu 14:37]
+It should: translate a query to arguments 
+
+Send arguments to rest endpoint 
+
+Display results 
+
+
+Template: 
+
+Select
+${queryRows.join(“,”)
+From
+${tablename} 
+Where 
+${whereRows.join(“And”)}
+
+
+Repeat for having, orderby, groupby limit 
+
+Bonus points for Piping to plotting library
+* More things for config 
+[2022-12-22 Thu 14:31]
+Magit 
+Snippets
+Translate viscose snippets
+Tramp
