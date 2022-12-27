@@ -1,0 +1,11 @@
++# Title: XClip Notes
+
+Xclip is the linux version of pbcopy/pbpaste.
+
+To copy to clipboard:
+
++#BEGIN_SRC
+xclip -sel clip file_name
++#END_SRC
+
+

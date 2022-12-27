@@ -1,0 +1,76 @@
+#+PROPERTY: header-args sh :tangle ~/.config/i3/config
+
+* Ideas:
+
+** Workspaces:
+*** Workspaces are essentially virtual desktops and make up the top of the heirarchy of i3.  To make a workspace, just switch to a new one and add a container to make it persistant.
+
+** Container:
+*** A container constains one or more windows.
+*** Container will position windows according to the container's layout
+**** Split: 
+  Each window share the container space and are split horizontally (/splith/) or vertically (/splitv/).  This is the default
+**** Stacked:
+  The focused window is visible and the others are stacked behind.  You can change focus via keystrokes. 
+**** Tabbed:
+  SImilar to stacked but the windows' list is vertically split istead of horizontally
+
+** Window:
+*** Windows are where an application is running and are created in a container.*** Two kinds of windows:
+**** fixed windows (default)
+These are files that are managed by the tiling system and placed accordingly
+**** floating windows
+These window act like any other desktop environment and can be focused and moved with the mouse.
+
+* Shortcuts:
+** i3, like =tmux= and =vim= uses a special key that prefixes most keystrokes.  This is called the =modifier= in i3.  This is the windows or cmd or linux key. You can change the modifier in the config.  
+
+** Key shortcuts:
+**** =open a new terminal  =$mod + enter=
+
+
+*** Focus Another Window: =$mod + ARROW KEY=
+**** You can also use vim-like navigation. BUT *the defaults are shifted by 1 key*.  Instead of /hjkl/ they default to /jkl;/. We will chane that in a config.
+*** Moving a window: =$mod + SHIFT + movement key=
+*** Changing the layout:
+**** =$mod + e= for =split=
+**** =$mod + s= for stacked
+**** =$mod + w= for tabbed
+
+*** Reload i3's config: =$mod + SHIFT + c=
+*** Restart i3: =$mod + SHIFT + r=
+*** Logout and quit i3: =$mod + SHIFT e=
+* Documentation:
+** Handbook:
+    -https://i3wm.org/docs/userguide.html
+
+
+* Layout of config:
+- This org file is tangled into the i3 configuration.  The code blocks serve to provide the config
+
+* The config
+** Set the mod key
+I chose to keep the standard mod key of linux/windows for now
+#+begin_src sh
+set $mod Mod4
+#+end_src
+
+** Focus Windows
+
+*** Setup VIM bindings instead of the offsets
+#+begin_src sh
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+#+end_src
+
+
+*** Move Windows
+
+#+begin_src sh
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+#+end_src

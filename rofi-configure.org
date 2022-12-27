@@ -1,0 +1,25 @@
++#Title Setting up Rofi
+
+* create the config
++#BEGIN_SRC
+mkdir -p ~/.config/rofi
+roki -dump-config > ~/.config/rofi/config.rasi
++#END_SRC
+
+Rofi is a window switcher, run dialog ssh-launcher and dmenu replacement that startd as a cloen of simpleswitcher. 
+
+** Local configuration lives at ~/.config/rofi/config.rofi
+a simple comfiguration would look like
++#BEGIN_SRC
+configuration {
+    modi: "window,drun,ssh,combi";
+    font: "hack 10";
+    comi-modi: "window,drun,ssh";
+  }
+@theme "solarized"
++#END_SRC
+
+** To get icons, you should install the `papirus-icon-theme`
+*** Then add the following to your command: `<command> -icon-theme "Papirus" -show-icons`
+** You can prview and apply themes for rofi using `rofi-theme-selector`
+** Rokie can be used as a clipboard manager using greenclip.  install the `rofi-greenclip` package

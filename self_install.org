@@ -1,0 +1,479 @@
+#+Title: Emacs Configuration
+#+PROPERTY: header-args :tangle ~/.dotfiles/emacs/init.el
+#+PROPERTY: header-args :results none
+#+auto_tangle: t
+
+* About this config
+This is my first attempt at a fully-feature emacs configuration. In many ways, I have little idea of what I'm doing. I've used emacs for years without these features, but with the advent of LSP would like to learn more about to make emacs work the best for my workflow as possible. I've learned a lot via DOOM emacs, but now I want to ensure I have a system that caters to my personal need.
+
+* Initial Quick setup
+**** Remove some of the features of the UI that we don't need (toolbars, menubars, scroll bars, and splash screen)
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+;; Don't show the splash screen
+(setq inhibit-startup-message t)
+;; Turn off some unneeded UI Elements
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+#+END_SRC
+
+**** Turn on line numbers
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+;; Turn on line numbers in every buffer
+(global-display-line-numbers-mode 1)
+#+END_SRC
+
+**** Disable lockfiles
+#+begin_src emacs-lisp :tangle yes
+(setq create-lockfiles nil)
+  #+end_src
+
+**** Separate third-party customization
+#+begin_src emacs-lisp :tangle yes
+  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+  (load custom-file t)
+  #+end_src
+
+* Setup our package manager
+** Define where we go for packages
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+;; Configure pacakge manager
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("org" . "https://orgmode.org/elpa/")))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+#+END_SRC
+
+*** Setup use-package
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+  ;;Initalize use-package
+  (unless (package-installed-p 'use-package)
+    (package-install 'use-package))
+
+  (require 'use-package)
+  (require 'quelpa-use-package)
+
+#+END_SRC
+
+**** Setup a theme
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+    (use-package modus-themes
+  :init
+  (setq modus-themes-hl-line '(accented intense)
+        modus-themes-subtle-line-numbers nil
+        modus-themes-region '(accented bg-only)
+        modus-themes-variable-pitch-ui nil
+        modus-themes-fringest 'intense
+        modus-themes-diffs nil
+        modus-themes-italic-constructs t
+        modus-themes-bold-construct t
+        modus-themes-prompts '( bold intense italic)
+        modus-themes-intense-mouseovers t
+        modus-themes-paren-match '(bold intense)
+        modus-themes-syntax '(alt-syntax yellow-comments green-strings)
+        modus-themes-links '(neutral-underline background)
+        modus-themes-mode-line '(moody borderless accented 4 1)
+        modus-themes-tabs-accented nil
+        modus-themes-completions '((matches . (extrabold intense accented))
+                                   (selection . (semibold accented intense))
+                                   (popup . (accented)))
+        modus-themes-heading '((1 . (rainbow 1.4))
+                               (2 . (rainbow 1.3))
+                               (3 . (rainbow 1.2))
+                               (4 . (rainbow bold 1.1))
+                               (t . (rainbow old)))
+        modus-themes-org-blocks 'tinted-background
+        modus-themes-org-agenta '((header-block . (semibold 1.4))
+                                  (header-date . (workaholic bold-today 1.2))
+                                  (event . (accented italic varied))
+                                  (scheduled . rainbow)
+                                  (habit . traffic-light))
+        modus-themes-markup '(intense background)
+        modus-themes-mail-citations 'intensep
+        modus-themes-lang-checkers '(background))
+    :config
+
+
+    (load-theme 'modus-vivendi t)
+    )
+
+
+
+
+#+END_SRC
+
+#+RESULTS:
+: t
+
+**** Small UI Tweaks
+
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+;; Turn on line highlithting for current line
+(hl-line-mode 1)
+;; Add some margins
+(set-fringe-mode 10)
+#+END_SRC
+
+**** Setup our fonts
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+  ;; Set a font
+  (set-face-attribute 'default nil :family "PragmataProMonoLiga Nerd Font" :height 150)
+
+  ;; Proportionally spaced typeface
+  (set-face-attribute 'variable-pitch nil :family "Fantasque Sans Mono" :height 1.0)
+
+  ;; Monospaced typeface
+  (set-face-attribute 'fixed-pitch nil :family "DankMono Nerd Font" :height 1.5)
+
+#+END_SRC
+
+#+RESULTS:
+
+**** Add escape to kill prompts
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+;; Make escape kill prompts
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+#+END_SRC
+
+
+* Install a better mode line
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 20)))
+
+(use-package all-the-icons
+  :if (display-graphic-p))
+
+
+#+END_SRC
+
+#+RESULTS:
+
+* Update the help docs
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+(use-package helpful
+  :ensure t)
+(global-set-key (kbd "C-c C-d") #'helpful-at-point)
+(global-set-key (kbd "C-h F") #'helpful-function)
+(global-set-key (kbd "C-h C") #'helpful-command)
+(setq counsel-describe-function-function #'helpful-callable)
+(setq counsel-describe-variable-function #'helpful-variable)
+
+#+END_SRC
+
+* COMMENT Install evil so we can function
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+  (defun rc/evil-hook ()
+    (dolist (mode '(custom-mode
+                    eshell-mode
+                    git-rebase-mode
+                    erc-mode
+                    circe-server-mode
+                    circe-chat-mode
+                    circe-query-mode
+                    sauron-mode
+                    term-mode))
+      (add-to-list 'evil-emacs-state-modes mode)))
+		  
+
+  (use-package evil
+    :demand t
+    :bind (("<escape>" . keyboard-escape-quit))
+    :init
+    (setq evil-want-integration t)
+    (setq evil-want-keybinding nil)
+    (setq evil-search-module 'evil-search)
+    (setq evil-ex-complete-emacs-commands nil)
+    (setq evil-vsplit-window-right t)
+    (setq evil-split-window-below t)
+    (setq evil-shift-round nil)
+    (setq evil-want-C-u-scroll t)
+    (setq evil-want-C-i-jump nil)
+    :hook (evil-mode . rc/evil-hook)
+    :config
+    (evil-mode 1)
+    (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+    (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+
+    ;; Use visual line motions outside of visual line mode buffers
+    (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+    (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+
+    (evil-set-initial-state 'messages-buffer-mode 'normal)
+    (evil-set-initial-state 'dashboard-mode 'normal))
+  (use-package evil-collection
+    :after evil
+    :config
+    (evil-collection-init))
+
+#+END_SRC
+
+#+RESULTS:
+: keyboard-escape-quit
+
+** COMMENT Change the mode line color by state
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+  ;; change mode-line color by evil state
+    (add-hook 'post-command-hook
+              (lambda ()
+                (let ((color (cond
+                            ((minibufferp) '("dark gray" . "#000000"))
+                            ((evil-insert-state-p) '("#e80000" . "#ffffff"))
+                           ((evil-emacs-state-p)  '("#444488" . "#ffffff"))
+                           ((buffer-modified-p)   '("#006fa0" . "#ffffff"))
+                           (t '("dark grey" . "#000000")))))
+          (set-face-background 'mode-line (car color))
+          (set-face-foreground 'mode-line (cdr color)))))
+#+END_SRC
+
+#+RESULTS:
+| (lambda nil (let ((color (cond ((minibufferp) '(dark gray . #000000)) ((evil-insert-state-p) '(#e80000 . #ffffff)) ((evil-emacs-state-p) '(#444488 . #ffffff)) ((buffer-modified-p) '(#006fa0 . #ffffff)) (t '(dark grey . #000000))))) (set-face-background 'mode-line (car color)) (set-face-foreground 'mode-line (cdr color)))) | blink-cursor-check | evil-repeat-post-hook |
+** Some VIM plugins
+*** Vim surround
+
+* Install org-mode
+
+test
+
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+  (defun rc/org-mode-setup ()
+    (org-indent-mode)
+    (variable-pitch-mode 1)
+    (auto-fill-mode 0)
+    (visual-line-mode 1)
+    (setq org-confirm-babel-evaluate nil)
+    (setq evil-auto-indent nil))
+#+END_SRC
+
+#+RESULTS:
+: rc/org-mode-setup
+
+
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+(use-package org
+  :hook (org-mode . rc/org-mode-setup)
+   :config
+  (setq org-ellipsis " ▾"
+	org-hide-emphasis-markers t))
+
+#+END_SRC
+
+#+RESULTS:
+| rc/org-mode-setup | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-fold-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] |
+
+*** Auto tangle org files
+#+begin_src emacs-lisp :tangle yes
+  (use-package org-auto-tangle
+    :defer t
+    :hook (org-mode . org-auto-tangle-mode)
+    :config
+    (setq org-auto-tangle-default t))
+  #+end_src
+
+  #+RESULTS:
+  | org-auto-tangle-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-fold-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | rc/org-mode-setup |
+		       
+* Install rainbow mode
+This lets us see hex colors
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+  (use-package rainbow-mode)
+  (define-globalized-minor-mode global-rainbow-mode rainbow-mode
+    (lambda ()
+      (when (not (memq major-mode
+		       (list 'org-agenda-mode)))
+	(rainbow-mode 1))))
+  (global-rainbow-mode 1)
+#+END_SRC
+
+#+RESULTS:
+: t
+
+* Yas Snippets
+#+BEGIN_SRC emacs-lisp :tangle ~/.dotfiles/emacs/init.el
+  (use-package yasnippet
+   :config
+   (setq yas-snippet-dirs '("~/.doom.d/snippets"))
+   (yas-global-mode 1))
+#+END_SRC
+
+* Tree sitter
+#+begin_src emacs-lisp :tangle yes
+  (use-package tree-sitter
+    :ensure t
+    :config
+    (global-tree-sitter-mode)
+    (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+  (use-package tree-sitter-langs
+    :ensure t
+    :after tree-sitter)
+  #+end_src
+
+  #+RESULTS:
+* Eglot
+#+begin_src emacs-lisp :tangle yes
+(use-package eglot :ensure t)
+  #+end_src
+* Lua Mode
+#+begin_src emacs-lisp :tangle yes
+  (use-package lua-mode
+    :after tree-sitter
+    :config
+    (add-to-list 'auto-mode-alist '("\\.lua\\'" . lua-mode))
+    (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+  )
+
+  #+end_src
+
+  #+RESULTS:
+  : t
+* Install Company Mode
+#+begin_src emacs-lisp :tangle yes
+  (use-package company
+
+    :config
+    (add-hook 'after-init-hook 'global-company-mode)
+
+   )
+  #+end_src
+
+* Ivy
+#+begin_src emacs-lisp :tangle yes
+  (use-package ivy
+    :config
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-count-format "(%d/%d) ")
+    (ivy-mode 1)
+  )
+  #+end_src
+* Ivy Rich
+#+begin_src emacs-lisp :tangle yes
+  (use-package ivy-rich
+    :init
+    (ivy-rich-mode 1)
+   :config
+   (setq ivy-format-function #'ivy-format-function-line)
+   (setq ivy-rich-display-transformers-list
+         (plist-put ivy-rich-display-transformers-list
+                    'ivy-switch-buffer
+                    '(:columns
+                      ((ivy-rich-candidate (:width 40))
+                       (ivy-rich-switch-buffer-indicators (:width 4 :face error :align right))
+                       (ivy-rich-switch-buffer-major-mode (:width 12 :face warning))
+                       (ivy-rich-switch-buffer-project (:width 15 :face success))
+                       (ivy-rich-switch-buffer-path (:width (lambda(x) (ivy-rich-switch-buffer-shorten-path x (ivy-rich-minibuffer-width 0.3))))))
+                      :predicate
+                      (lambda (cand)
+                        (if-let ((buffer (get-buffer cand)))
+                            (with-current-buffer buffer
+                              (not (derived-mode-p 'exwm-mode)))))))))
+  #+end_src
+
+* Which key
+ #+begin_src emacs-lisp :tangle yes
+   (use-package which-key
+     :init (which-key-mode)
+     :diminish which-key-mode
+     :config
+   (setq which-key-idle-delay 0.01))
+   #+end_src  
+
+* Rainbow delim
+#+begin_src emacs-lisp :tangle yes
+  (use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+  #+end_src
+
+* Key bindings with general
+#+begin_src emacs-lisp :tangle yes
+  (use-package general
+    :config
+    (general-evil-setup t)
+
+    (general-create-definer rc/leader-keys
+                            :keymaps '(normal insert visual emacs)
+                            :prefix "SPC"
+                            :global-prefix "C-SPC"))
+
+  (rc/leader-keys
+   "t" '(:ignore t :which-key "toggles")
+   "tt" '(counsel-load-theme :which-key "choose theme"))
+  #+end_src
+
+* hydra
+#+begin_src emacs-lisp :tangle yes
+  (use-package hydra)
+  (defhydra hydra-text-scale (:timeout 4)
+            "scale text"
+            ("j" text-scale-increase "in")
+            ("k" text-scale-decrease "out")
+            ("f" nil "finished" :exit t))
+  (rc/leader-keys
+    "ts" '(hydra-text-scale/body :which-key "scale text"))
+  #+end_src
+* doom-themes
+#+begin_src emacs-lisp :tangle yes
+  (use-package doom-themes
+    :ensure t
+    :config
+    (setq doom-themes-enable-bold t
+          doom-themes-enable-italic t)
+    (load-theme 'doom-Iosvkem t)
+
+    (doom-themes-visual-bell-config)
+    (doom-themes-neotree-config)
+    (setq doom-themes-treemacs-theme "doom-atom")
+    (doom-themes-treemacs-config)
+    (doom-themes-org-config)) 
+  #+end_src
+* Typescript
+#+begin_src emacs-lisp :tangle yes
+  (use-package typescript-mode
+    :after tree-sitter
+    :config
+    ;; We choose this instead of tsx-mode so that eglot can automatically figure out lanaguage
+    (define-derived-mode typescriptreact-mode typescript-mode "Typescript TSX")
+
+    ;; use our derived mode for tsx files
+    (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptreact-mode))
+    ;; by default, typescript-mode is mapped to the treesitter typescript parser
+    ;; use our derived mode to map both ts and tsx -> typescriptreact-mode -> treesitter tsx
+    (add-to-list 'tree-sitter-major-mode-language-alist '(typescriptrect-mode . tsx)))
+ #+end_src
+** =tsi.el= gives us tree-sitter based indentation for TS, JSON, and CSS
+  #+begin_src emacs-lisp :tangle yes
+    (use-package tsi
+      :after tree-sitter
+      :quelpa (tsi :fetcher github :repo "orzechowskid/tsi.el")
+      ;; define autoload definitions which when actually invoked will cause package to be loaded
+      :commands (tsi-typescript-mode tsi-json-mode tsi-css-mode)
+      :init
+      (add-hook 'typescript-mode-hook (lambda () (tsi-typescript-mode 1)))
+      (add-hook 'json-mode-hook (lambda () (tsi-json-mode 1)))
+      (add-hook 'css-mode-hook (lambda () (tsi-css-mode 1)))
+      (add-hook 'scss-mode-hook (lambda () (tsi-scss-mode 1))))
+    #+end_src
+** COMMENT Auto-format on save
+#+begin_src emacs-lisp :tangle yes
+  (use-package apheleia
+    :ensure t
+    :config
+    (apheleia-global-mode +1))
+  #+end_src
+    

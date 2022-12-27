@@ -1,0 +1,254 @@
+* * Setup the OS and go through settigs to pick any obvious 
+** Display Settings
+** BlueTooth
+** Network
+** Wallpaper
+
+* Update Recovery partition
+ ** this is a cipy of hte installation medial that you can use to repair or reistall pop
+ ** goto settings => OS update & Recovery => Update Recovery Partition
+ *** I don't have this options
+ **** TASK: Do I need to do something to add this feature?
+
+* Install gnome tweaks (if you plan to coninue to use gnome)
+** This gets you extra options to configure your desktop
++# BEGIN_SRC sh
+sudo apt install gnome-tweaks
++# END_SRC
+** Check out the tweaks application use left Super to bring up app chooser
+
+* Enable GNOME extensions:
+** 1. go to extensions.gnome.org
+** 2. install the browser extension from the blue box at hte top of the page.
+** 3. I also needed to install `chrome-gnome-shell`
+*** `sudo apt-get install chrome-gnome-shell`
+
+* Install software from the popshop for easy updates
+** Google Chrome
+** Slack 
+** Telegram
+** Zoom
+** gitkraken
+** Gnu emacs (note that this one doesn't let you call it from the command line?
+** Insomnia
+** kitty
+** Virutal Studio Code
+** Webstorem
+** Wezterm
+** Screensaver
+** Alacritty
+
+* Install 1 Password before you hate yourself for not having it
+
+* Install guvcview to be able to see your webcam
+** `sudo apt intall guvcview`
+
+* Install bazecor
+
+* Install zsh and fish
++# BEGIN_SRC 
+sudo apt install zsh
+sudo apt install fish
++# END_SRC
+ 
+* configure flat packs to run from commandline
+** `flatpack update'`
+
+
+
+* Install i3 
+** `sudo apt install i3`
+** rofi is a window switcher application:
+*** `sudo apt install rofi`
+
+
+* Enable flatpaks from command line
+** `sudo ln -s /var/lib/flatpak/exports/bin/<application ID from flatpak list> /usr/bin/<name you want to use>
+
+* Install pulse vpn
+** `sudo apt install libnss3-tools`
+** `sudo dpkg -i ps-pulse-linux*deb`
+** launch with `/opt/pulsesecure/bin/pulse
+** install chromium : 
++#BEGIN_SRC
+cd /opt/pulsesecure/bin
+sudo ./setup_cef.sh install
+
++#END_SRC
+
+
+* Clone dotfiles:
+** git clone git@github.com:drrcool/.dotfiles.git
+** Get some configs running
++# BEGIN_SRC
+ln -s ~/.dotfiles/.config/zsh/zshrc ~/.zshrc
+ln -s ~/.dotfiles/.config/zsh ~/.config
+# Install oh-my-zsh
+
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
++# END_SRC
+dd
+
+* Other things to install:
+** thefuck
+*** `sudo apt insatll thefuck`
+*** eval $(thefuck --alias ffs)
+** exa
+** zoxide
+** bat
+** ripgrep
+
+* Install neovim (apt gives 0.5.1 so need to get from source)
+** Get the nightly version:
+*** https://github.com/neovim/neovim/releases/nightly
+*** Clone my config 
+**** git@github.com:drrcool/nvimloaded.git
+
+* Install nvm
+** `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash`
+
+* Install Fonts
++#BEGIN_SRC
+sudo mkdir /usr/local/share/fonts/downloaded
+sudo cp FONTS /usr/local/share/fonts/sample 
++#END_SRC
+
+* install my repos
+** qoedash
+** deviceReachDash
+** sessionWiz
+** sessionWizMigration
+
+* Install newt
+
+* Install github Cli:
++#BEGIN_SRC
+type -p curl >/dev/null || sudo apt install curl -y
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
++#END_SRC
+
+Then use apt:
++#BEGIN_SRC
+sudo apt update
+sudo apt install gh
++#END_SRC
+
+* Intall github credential manager
+** Download deb from https://github.com/GitCredentialManager/git-credential-manager/releases/tag/v2.0.886
+
+
+* Install doom for a quick IDE evironment
++#BEGIN_SRC
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+~/.emacs.d/bin/doom install
++#END_SRC
+
+
+
+* setup git sync 
+** Put =obsidian_sync= and =settings_sync= in the path.
+** Update the crontab
++#BEGIN_SRC
+
+*/30 * * * * /Users/rcool/.local/bin/obsidian_sync >/dev/null 2>&
+*/10 * * * * /Users/rcool/.local/bin/settings_sync > /dev/null 2>&
+
++# END_SRC
+
+* Install TLDR
+
+* Install tldr;
+
+* Compile emacs with =native-comp= mode
+```
+git clone https://git.savannah.gnu.org/git/emacs.git
+sudo apt-get updates
+```
+Check to be sure you have the needed packages
+```
+apt-get install apt-transport-https ca-certificates curl
+gnupg-agent software-properties-common
+```
+
+** Edit /etc/apt/sources.list and uncomment all the deb-src direcotries (I had no uncommented entries already)
+
+** Install dependencies
+```
+sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa
+apt-get update
+apt-get install gcc-10 libgccjit0 libgccjit-10-dev
+apt-get build-deps emacs 
+```
+
+Add this for fast json
+```
+apt-get install libjansson4 libjansson-dev
+```
+
+Now start the compile 
++#BEGIN_SRC
+cd emacs
+./autogen.sh
+./configure --without-compress-install --with-native-compilation --with-json --with-mailutils
++#END_SRC
+
+export CC="gcc-10"
+
+The number after the j is the number of cores you want the system to use.
+choice 1
+
++#BEGIN_SRC
+make -j16
+sudo make install
++#END_SRC
+
+
+** Setup the daemon to start on startup
+*** Create the file `~/.config/systemd/user/emacs.service` . Note, you may need to change `/usr/local/bin` to the path to emacs.
+
++#BEGIN_SRC
+[Unit] 
+Description=Emacs text editor 
+Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/ 
+ 
+[Service] 
+Type=forking 
+ExecStart=/usr/local/bin/emacs --daemon 
+ExecStop=/usr/local/bin/emacsclient --eval "(kill-emacs)" 
+Environment=SSH_AUTH_SOCK=%t/keyring/ssh 
+Restart=on-failure 
+ 
+[Install] 
+WantedBy=default.target
++#END_SRC
+
+You can now use systemd to regiser and start the service
+
++#BEGIN_SRC
+systemctl enable --user emacs
+systemctl start --user emacs 
++#END_SRC
+
+Verify it is running with 
++#BEGIN_SRC
+systemctl status --user emacs
++#END_SRC
+
+* Install helix
+** From Source:
++#BEGIN_SRC
+git clone https://github.com/helix-editor/helix
+cd helix
+cargo install --path helix-term
++#END_SRC
+
+Copy the needed runtime files
++#BEGIN_SRC
+cp -r $PWD/runtime ~/.config/helix/runtime
++#END_SRC
