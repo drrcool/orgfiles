@@ -57,6 +57,26 @@ Face case one select key filter with a filter value filter next to it hidden and
 Nuisanc
 * Add dash 
 [2022-12-25 Sun 14:42]
+-fix subtitle
+Make. Unique for share and count subtitle -/ title
+Trend metric selector
+- impacted esn as second trend plot?
+Maybe as secondary to failure  trend
+- app icon and app title
+
+After
+- migrate to separate projects. (Mono repo?
+- tag code with excessive Amy’s-
+- move to data context
+- shared trend. Chart shared extent
+-highlight mode through shared context. Hover sets a state variable. All charts use that to highlight the associated object and grey out the others
+- make sure to clear out hover when nothing hovered
+- click preserves it.  And sets drill down state
+
+- cab file
+- save to image
+- chart styling to comply with dark mode
+- dark mode toggle
 -fix subtitle  
 Make. Unique for share and count subtitle -/ title 
 Trend metric selector

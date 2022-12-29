@@ -107,3 +107,8 @@
 :PROPERTIES:
 :CREATED: [2022-12-25 Sun]
 :END:
+
+* Note for evil-exchange leys: gx use it, use a motion to exchange us it again, and use a motion for the second
+:PROPERTIES:
+:CREATED: [2022-12-28 Wed]
+:END:
