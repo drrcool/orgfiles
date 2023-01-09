@@ -2,48 +2,92 @@
 ** Tasks
 * .dotfiles
 ** Tasks
-* TODO [#B] QoeDash reported issues
+* TODO [#B] QoeDash reported issues:
 :PROPERTIES:
 :ID:       b9590706-f5d6-4f73-aa9e-87d0f31a7864
 :END:
-****  [ ] from CJ: when updating the time window the first chart stops updating. the URL will show a new =intervalFrom= from the data will not respect
+****  [ ] [#D] from CJ: when updating the time window the first chart stops updating. the URL will show a new =intervalFrom= from the data will not respect
+While this has happened to be before, I am currently unable to reproduce
 :PROPERTIES:
 :ID:       c89dafa2-0754-4453-959a-913592393f96
 :END:
-***** [ ] (followup & related): if intervalTo and intervalFrom are provided in the URL does the dash treat them  correctly?
+***** [ ] [#D] (followup & related): if intervalTo and intervalFrom are provided in the URL does the dash treat them  correctly?
 :PROPERTIES:
 :ID:       f6086e9e-a8b0-4b75-a849-9c753bfb8367
 :END:
-**** [ ] [#B] from CJ: Preset filters don't impact the summary view.
+**** [X] [#A] from CJ: Preset filters don't impact the summary view.
+CLOSED: [2023-01-08 Sun 17:19] SCHEDULED: <2023-01-08 Sun>
+Initial Notes:  the data are fetched in useData using dataConfig. dataConfig is source in SummarySection by calling =getSummaryDataConfig=.  Reads from hardwired entries that include metricsList, name, dataSource, section.  FilterValues passed as props.  Action items
+*Cause*: neither filterValues nor excludeFilterValues were being passed to useData.
 :PROPERTIES:
 :ID:       69271881-fe81-48ab-9298-75766e5f3a1e
 :END:
-**** [ ] Dateselector: clicking outside should close the modal
+***** DONE 1. Are filtervalues getting passed to useData
+No.
+CLOSED: [2023-01-08 Sun 17:19]
+***** DONE 2. If yes, why not used?
+CLOSED: [2023-01-08 Sun 17:19]
+***** DONE 3. If no, why not?
+CLOSED: [2023-01-08 Sun 17:19]
+***** DONE 4.SHoudl we reorg
+CLOSED: [2023-01-08 Sun 09:53]
+**** TODO [#B] Dateselector: clicking outside should close the modal
 :PROPERTIES:
 :ID:       e63e1875-0e38-44aa-9a16-16ae093cf433
 :END:
-**** [ ] Dateselector: doesn't pick up opacity changes from affixed hover
+**** TODO [#D] Dateselector: doesn't pick up opacity changes from affixed hover
 :PROPERTIES:
 :ID:       1b4b6632-523e-4083-a266-b6ace129b087
 :END:
-**** [ ] From Giselle: CHanging a preset then opening the filter drawer doens't show filters as expected
+**** [X] [#A] From Giselle: CHanging a preset then opening the filter drawer doens't show filters as expected
+CLOSED: [2023-01-08 Sun 18:23]
+As usual, this is a not complete report.  The filters *are* populated, they are just not visible.  We Should make it so any category with used filters should be expanded.
+A bigger issue:  The non-filled filters are AWOL.  You can't add a filter once you use a preset.
 :PROPERTIES:
 :ID:       22e65443-cda2-4e2c-82f1-4bb50425b76a
 :END:
-**** [ ] Lets space between legend labels to fit more
+**** TODO [#E] Lets space between legend labels to fit more
 :PROPERTIES:
 :ID:       d48df84e-8081-4008-b6fe-f114bbfee24a
 :END:
-**** [ ] need a comparison chart legend
+**** TODO [#C] need a comparison chart legend
 :PROPERTIES:
 :ID:       4d00eac0-8859-4eec-b1b9-9b1dcd56436f
 :END:
-**** [ ] pqs smoothing still isn't being applied
+**** NEXT [#A] pqs smoothing still isn't being applied :qoedash:
 :PROPERTIES:
 :ID:       1a25ef7b-0036-4b66-8f90-68cb91045a22
 :END:
+**** NEXT Do a pass to clear out console.logs :qoedash:
 
+** TODO [#B] Fonts in presentation mode are often too small
+:PROPERTIES:
+:CREATED: [2022-12-10 Sat]
+:ID:       6850118b-9017-4272-bef8-8c088910a03a
+:END:
 
+** Line charts look great in presentation mode = Olid :work:tool:medium:
+:PROPERTIES:
+:CREATED: [2022-12-10 Sat]
+:END:
+
+** TODO [#C] Make the legend scale with presentation mode :home:qoedash:tool:
+:PROPERTIES:
+:CREATED: [2022-12-10 Sat]
+:ID:       30fbf47c-8be4-4aaa-88fe-9417c669918a
+:END:
+
+** TODO [#B] QoEDash validation on the PQS Smoothing Input box doesn't properly function :home:qoedash:tool:urgent:
+:PROPERTIES:
+:CREATED: [2022-12-11 Sun]
+:ID:       a87f72a4-bdae-4fe9-8248-a71f2a9a8e12
+:END:
+
+** DONE Qoedash startup issues
+CLOSED: [2023-01-08 Sun 10:28]
+***  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
+*** Running npm run build seems to generate the files we need.
+*** For now, I'm going to add =npm run build= to the start.sh script
 *   Hawkins viz:
 ** TODO: migrate color themes. Before push to v2.1
 SCHEDULED: <2022-12-12 Mon>
@@ -79,6 +123,48 @@ SCHEDULED: <2022-12-12 Mon>
     -- TODO stacked bar char of failure reason (with option to include success)
 #+title: Notes
 
+** DONE DRUID ingestion: need to try in a non vault table
+CLOSED: [2023-01-08 Sun 10:30]
+:PROPERTIES:
+:CREATED: [2022-12-12 Mon]
+:ID:       c256dc92-74f6-43f7-a07d-592df059b764
+:END:
+
+** TODO [#A] Add a metricType selector to the FilterPanel. Or simply a metric selector :work:deviceReach:tool:
+:PROPERTIES:
+:CREATED: [2022-12-21 Wed]
+:END:
+
+** KILL Consider Changing the summary when metricType is toggled
+CLOSED: [2023-01-08 Sun 10:31]
+:PROPERTIES:
+:CREATED: [2022-12-21 Wed]
+:END:
+
+** TODO [#A] Persist changes to URL and read URL when page loads :work:deviceReach:tool:urgent:
+:PROPERTIES:
+:CREATED: [2022-12-21 Wed]
+:END:
+
+** TODO [#D] File issue with react vizkit to make the charts hawkins-theme aware :work:tool:
+SCHEDULED: <2023-01-09 Mon>
+:PROPERTIES:
+:CREATED: [2022-12-22 Thu]
+:END:
+** TODO [#C] link failure by reason charts via context
+SCHEDULED: <2023-12-10 Sun>
+Currently these  are both making similar API calls for the data.
+:PROPERTIES:
+:CREATED: [2022-12-24 Sat]
+:END:
+
+** TODO [#E] drop tooltipcolumn :home:deviceReach:tool:
+We use tooltipColumn throughout the charts, but never rely on it. we should nuke all reference to it as its confusing now.
+
+:PROPERTIES:
+:CREATED: [2022-12-24 Sat]
+:END:
+
 * Server:
 
 Filter Data Caching:
@@ -110,11 +196,11 @@ There's likely no reason to update this cache more often than daily.
 :PROPERTIES:
 :ID:       c4e94c0f-1fd0-4c33-a0b5-936579a92ed1
 :END:
-******* [ ] create a query that fetches from Presto based on the given filters
+******* WAIT create a query that fetches from Presto based on the given filters
 :PROPERTIES:
 :ID:       3e24513e-a0d0-4b98-85f9-e47d9bfa0fc7
 :END:
-******* [ ] create a function that parses the full agg relationship and figures out the new filters
+******* WAIT create a function that parses the full agg relationship and figures out the new filters
 :PROPERTIES:
 :ID:       94ca1587-a375-496b-a06b-af174fdccf5c
 :END:
@@ -129,7 +215,8 @@ This chart should show the % reach by whatever split is chosen
 - Break by any of the dimensions in the table as well as "total"
 ***** Action items for breakdown
 ****** DONE - create server query
-****** TODO - create component
+****** DONE - create component
+CLOSED: [2023-01-08 Sun 10:45]
 :PROPERTIES:
 :ID:       a05ad01e-daef-4b36-ad09-969c003ce3e5
 :END:
@@ -138,7 +225,8 @@ This chart should show the % reach by whatever split is chosen
   - making reason a filter lets us exclude success easily
 ***** Action items for breakdown by reason
 ****** DONE - create server query
-****** TODO - create component
+****** DONE - create component
+CLOSED: [2023-01-08 Sun 10:45]
 :PROPERTIES:
 :ID:       2e457ffe-45b8-4cf8-bd94-41a7c61f6355
 :END:
@@ -146,7 +234,8 @@ This chart should show the % reach by whatever split is chosen
 Same as Chart A above but with day by day breakdown
 ***** Action items for time series:
 ****** DONE - create server query
-****** TODO - create component
+****** DONE - create component
+CLOSED: [2023-01-08 Sun 10:46]
 :PROPERTIES:
 :ID:       2c22cb71-d9ca-4aa9-84fa-c0e9f2db762d
 :END:
@@ -154,7 +243,8 @@ Same as Chart A above but with day by day breakdown
 Same as Chart b but with day by day breakdown
 ***** Action items for time series by reaon:
 ****** DONE - create server query
-****** TODO - create component
+****** DONE - create component
+CLOSED: [2023-01-08 Sun 10:46]
 :PROPERTIES:
 :ID:       3dd62ee9-7b1a-4ccc-ad5f-f65752bda30e
 :END:
@@ -213,9 +303,9 @@ Same as Chart b but with day by day breakdown
 * Active Todo:
 ** BarChart breakdown
 ** failure reason breakdown
-*** TODO fix subtitle
+*** TODO [#C] fix subtitle
 ** timeseries
-*** TODO metric selectpr
+*** TODO [#B] metric selectpr
 ** failure reason time series
 
 - cab file
@@ -223,7 +313,8 @@ Same as Chart b but with day by day breakdown
 - chart styling to comply with dark mode
 - dark mode toggle
 ** App Overall
-*** TODO APp title and flavicon
+*** DONE APp title and flavicon
+CLOSED: [2023-01-08 Sun 10:47]
 *** TODO expose and customize topN
 
 * After first delivery
@@ -255,7 +346,7 @@ SCHEDULED: <2022-12-07 Wed>
 ***** DONE Create a backfill job that runs until the beginning of ASN addition to the data to correct the report table in Hive and Druid.
 ***** [ ] Run the backfill and ensure it finishes.<2022-12-08 Tue 10:10>
 :PROPERTIES:
-:ID:       7a17e2ed-608e-4c6d-bfcd-0e908da7bb6a
+:ID:       7a17e2ed-608e-4c6d-bfcd-0e908da7bb6aj
 :END:
 
  QoEDash

@@ -1,0 +1,70 @@
+                          ___________________
+
+                           DEVICE REACH DASH
+
+                              Richard Cool
+                          ___________________
+
+
+Table of Contents
+_________________
+
+
+
+
+Hi Caranina, I (finally) have a version of the dashboard for ads up
+where it can be accessed. This project has hit every possible obstacle
+on the way (the worst of which was my own over-engineering of the
+problem). I had a prototype ready before Chrismas but ran into issues
+using the new "paved path" for web apps (it sure felt like a backwoods
+trail that only the locals recognized to me). Then when I got those
+fixed, I ran into issues with DNS servers. All compounded with a rapidly
+deteriorating dog at home who we just had to let go. I hate excuses,
+this is more of I know this took too long, I'm very sorry, but know it
+was pure incompetance.
+
+To get around the deployment issues, today I (quickly, so please do pass
+along any bugs that crop up while I catch up on tests) integrated the
+device reach views into QoEDash. It doesn't feel like this is the
+permanent home but it works for now. I will ensure any go/links point to
+the proper location should the time come to find it's forever home.
+Right now, I can only publish to test as qoeDash itself has some changes
+in flight, but the test version is the same data, so should get you
+visibility.
+
+[go/deviceReachDash]
+
+I would love feedback on any aspects of metrics or presentations that
+would help you. Currently, I show any error that inhibited playback on
+an ads-plan account including many that aren't related to ads (such as
+using a vpn). You can always filter out the non-ads reasons if wanted.
+There are some changes that still need finished (in rough priority
+order)
+
+1. Right now filters are not propogated to the link, so you will have to
+   re-enter them each visit, I will get reloadable URLs added asap
+2. If you split by a high-cardinality dimension (like device-type-name)
+   the dashboard will show the top 10 in volume. I need to let users
+   customize both the number and the sorting metric. For example, you
+   may want to see 10 device_type_ids with the worst successrate that
+   had at least 10,000 attempts in the last week.
+3. The ability to choose which metric is charted in some plots.
+   Basically, you would be able to select any of the metrics available
+   in the tooltips.
+4. A quick and dirty data build (give me these metrics split in these
+   dimensions) that will then provide a table, optional CSV download and
+   a BDP SQl link to help with data access.
+
+Extending the logics and even data tables to live when its launched
+should be straight forward *knock on wood*. So I don't expect the lag
+time in that case. I apologize again for the extreme wait on this.
+
+Hi Caranina, I sent you an email (the text ended up being a bit long and
+didn't want a flood to hit your slack on friday afternoon). TL;DR you
+can see the current version the dashboard you requested years and years
+ago at go/deviceReachDash. More details in the email, but happy to get
+any feedback or to sitdown and iterate on any aspects to be sure your
+needs are met.
+
+
+[go/deviceReachDash] <https://go.netflix.com/deviceReachDash>

@@ -1,37 +1,29 @@
 
-* TODO Fonts in presentation mode are often too small
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:ID:       6850118b-9017-4272-bef8-8c088910a03a
-:END:
-
-* Line charts look great in presentation mode = Olid
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:END:
-
-* TODO Make the legend scale with presentation mode
+* TODO Make the legend scale with presentation mode :home:qoedash:tool:
 :PROPERTIES:
 :CREATED: [2022-12-10 Sat]
 :ID:       30fbf47c-8be4-4aaa-88fe-9417c669918a
 :END:
 
-* TODO QoEDash validation on the PQS Smoothing does funky thigns when tyring to enter 1 
+* TODO QoEDash validation on the PQS Smoothing Input box doesn't properly function :home:qoedash:tool:urgent:
 :PROPERTIES:
 :CREATED: [2022-12-11 Sun]
 :ID:       a87f72a4-bdae-4fe9-8248-a71f2a9a8e12
 :END:
 
-* Qoedash startup issues
+* DONE Qoedash startup issues
+CLOSED: [2023-01-08 Sun 10:28]
 **  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
 ** Running npm run build seems to generate the files we need.
 ** For now, I'm going to add =npm run build= to the start.sh script
 
-* TODO Remmeber to complete NEtflix trianings
+* TODO Remember to complete Netflix trainings
+SCHEDULED: <2023-01-09 Mon>
 :PROPERTIES:
 :CREATED: [2022-12-11 Sun]
 :ID:       0d93b374-dc69-4e09-9079-26a008e308dc
 :END:
+* TODO Send second payment to JR
 * Inbox
 
 * TODO DRUID ingestion: need to try in a non vault table
@@ -111,4 +103,115 @@
 * Note for evil-exchange leys: gx use it, use a motion to exchange us it again, and use a motion for the second
 :PROPERTIES:
 :CREATED: [2022-12-28 Wed]
+:END:
+
+* TODO Add a new about non-greedy searches in VIM.  For standard regexp adding a ? to a +or * makes it non-greedy. for vim, the operator is \{-}. So to find the group before the first colon do %s/^\(.\{-}\):.*$/\1
+:PROPERTIES:
+:CREATED: [2022-12-30 Fri]
+:END:
+
+* 
+:PROPERTIES:
+:CREATED: [2023-01-05 Thu]
+:END:
+
+* 
+:PROPERTIES:
+:CREATED: [2023-01-05 Thu]
+:END:
+
+* 
+:PROPERTIES:
+:CREATED: [2023-01-05 Thu]
+:END:
+
+* 
+:PROPERTIES:
+:CREATED: [2023-01-05 Thu]
+:END:
+
+* TODO 
+:PROPERTIES:
+:CREATED: [2023-01-05 Thu]
+:END:
+
+* 
+:PROPERTIES:
+:CREATED: [2023-01-05 Thu]
+:END:
+
+* 
+:PROPERTIES:
+:CREATED: [2023-01-05 Thu]
+:END:
+
+* TODO Need to figure out a system for my notes.  I need to capture better
+:PROPERTIES:
+:CREATED: [2023-01-05 Thu]
+:END:
+
+* TODO 
+:PROPERTIES:
+:CREATED: [2023-01-06 Fri]
+:END:
+
+* org-bookmark-heading
+:PROPERTIES:
+:CREATED: [2023-01-06 Fri]
+:END:
+
+* org-protocol-capture-html
+:PROPERTIES:
+:CREATED: [2023-01-06 Fri]
+:END:
+
+* org-reveal
+:PROPERTIES:
+:CREATED: [2023-01-06 Fri]
+:END:
+
+* org-web-tools
+:PROPERTIES:
+:CREATED: [2023-01-06 Fri]
+:END:
+
+* org-sticky-headers
+:PROPERTIES:
+:CREATED: [2023-01-06 Fri]
+:END:
+
+* org-recent-heading
+:PROPERTIES:
+:CREATED: [2023-01-06 Fri]
+:END:
+
+* org-super-agenda
+:PROPERTIES:
+:CREATED: [2023-01-06 Fri]
+:END:
+
+* TODO Make permalinks in drd
+:PROPERTIES:
+:CREATED: [2023-01-06 Fri]
+:END:
+
+* 
+:PROPERTIES:
+:CREATED: [2023-01-07 Sat]
+:END:
+
+* TODO install. and configure chezmoi for dotfiles
+:PROPERTIES:
+:CREATED: [2023-01-07 Sat]
+:END:
+
+* for chezmoi in emacs: 
+> Synchronizing "default" profile...
+:PROPERTIES:
+:CREATED: [2023-01-07 Sat]
+:END:
+
+* chezmoi emacs: https://abdelhakbougouffa.pro/posts/config/#mode-line
+:PROPERTIES:
+:CREATED: [2023-01-07 Sat]
 :END:

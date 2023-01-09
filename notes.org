@@ -63,3 +63,15 @@ You can collapse diff sections and any other section (larger than a single line)
     To ammend, use c then a.
 
     There are also commits that aren't standard such as /reword/
+* TSX Mode
+** Key
+
+| my keybind | function                       | notes |
+|------------+--------------------------------+-------|
+| z          | tsx-mode-fold-toggle-all-nodes |       |
+| c          | tsx-mode-coverge-toggle        |       |
+| tab        | tsx-mode-fold-toggle-fold      |       |
+-------------------------------------------------------
+
+
+
