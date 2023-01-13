@@ -1,0 +1,335 @@
+#+title: Daily Notes
+
+* 2023-01-09
+** Meetings:
+*** Node retiring
+    Timeline will be approx a year from the annouce date
+    All my use cases should be covered
+
+** Projects:
+*** qoedash
+**** debugging tests:
+***** migrating to vitest
+After initial pass to migrate, still getting many errors saying =Reference Error: describe not defined=.  :
+*Solution*: These were actual errors but because the files were in the =/app= directory from the ts build step. We need to ensure that vitest is only looking in relavent folders for the tests.
+****** TODO add config to vitest to only look at current folder and finish updating test:w
+
+*** adhoc
+**** Potential of spatial audio:
+***** Roger asked for clarification from work in Nov.  Delivered tables were for all devices, but he really just wanted to know about TVs and Smart TVs
+***** Refined ask:
+****** TODO Get requested query to roger by EOW :adhoc:
+SCHEDULED: <2023-01-10 Tue> DEADLINE: <2023-01-13 Fri>
+******* Request:
+******** DONE DDP :adhoc:
+CLOSED: [2023-01-12 Thu 13:28] SCHEDULED: <2023-01-10 Tue>
+********* [X] How many STBs/Smart Tvs support DDP :adhoc:
+CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
+********* DONE out of that number how many are configured for it? :adhoc:
+CLOSED: [2023-01-12 Thu 04:26] SCHEDULED: <2023-01-10 Tue>
+********* DONE out of that number how many are on 4S? :adhoc:
+CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
+******** Atmos
+********* DONE How many STBs/Smart Tvs support DDP :adhoc:
+CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
+********* DONE out of that number how many are configured for it? :adhoc:
+CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
+********* DONE out of that number how many are on 4S? :adhoc:
+CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
+***** Status:
+- Currently have a prototype query running for a couple days of data. Will verify the data looks good and run for a 28 day window.
+- Data flowing into my database =rcool.value_of_premium_audio_f=
+***** Work:
+****** Query:
+#+begin_src sql :tangle ~/allProjects/adhoc/value_of_premium_audio/value_of_premium_audio.sql :results none
+
+WITH denormalized AS (
+SELECT
+t1.device_type_id,
+device_model,
+t2.max_concurrent_streams,
+t3.hw_category,esn,
+case when lower(audio_profiles_value) like '%ddp%' then 1 else 0 end as supports_ddp,
+case when lower(audio_profiles_value) like '%atmos%' then 1 else 0 end as supports_atmos,
+case when lower(audio_profiles_value) like '%ddp%' and lower(audio_profiles_value) not like '%atmos%'  then 1 else 0 end as supports_ddp_but_not_atmos
+
+FROM
+  vault.device_esn_capability_f t1 JOIN
+  dse.plan_d t2 ON (t1.plan_id = t2.plan_id) JOIN
+  dse.device_type_rollup_d t3 ON (t1.device_type_id = t3.device_type_id)
+WHERE
+  region_date >= 20230108
+  and audio_profiles_value <> ' '
+  and audio_profiles_value <> ''
+  and audio_profiles_value <> '--'
+),
+
+capable AS (
+  SELECT denormalized.device_type_id,
+    SUM(supports_ddp) as ddp_count,
+    SUM(supports_atmos) as atmos_count,
+    SUM(1) as device_row_count
+  FROM
+    denormalized
+  GROUP BY 1),
+
+joined as (
+SELECT denormalized.*,
+capable.ddp_count as ddp_cnt,
+capable.atmos_count as atmos_cnt,
+capable.device_row_count as device_row_cnt
+  from denormalized join capable on (denormalized.device_type_id = capable.device_type_id)
+)
+
+INSERT OVERWRITE TABLE rcool.value_of_premium_audio_f
+SELECT
+  device_type_id,
+  hw_category,
+  max_concurrent_streams,
+  ddp_cnt,
+  atmos_cnt,
+  device_row_cnt,
+  CASE WHEN ddp_cnt > 1000 then 1 else 0 end as supports_ddp,
+  CASE WHEN atmos_cnt > 1000 then 1 else 0 end as supports_atmos,
+  count(distinct case when supports_ddp=1 then esn else null end) as configured_ddp_cnt,
+  count(distinct case when supports_atmos=1 then esn else null end) as configured_atmos_cnt,
+  count(distinct esn)  as esn_cnt
+FROM joined
+GROUP BY 1, 2,3,4,5, 6
+
+#+end_src
+****** Table Creation:
+#+begin_src sql :tangle nil
+DROP TABLE IF EXISTS rcool.value_of_premium_audio_f;
+CREATE EXTERNAL TABLE rcool.value_of_premium_audio_f  (
+  device_type_id int,
+  hw_category string,
+  max_concurrent_streams int,
+  ddp_count bigint,
+  atmos_count bigint,
+  row_count bigint,
+  supports_ddp int,
+  supports_atmos int,
+  configured_ddp_cnt bigint,
+  configured_atmos_cnt bigint,
+  esn_cnt bigint
+ )
+
+#+end_src
+*** Device reach dash
+**** Carenina really wants to understand the reach of ads compared to all devices that support ads
+***** As far as I know we don't have a flag that says if a device supports ads playback, but we can derive this from playback data
+***** For a given date range, look at =dse.device_activity_sum= and identify devices with non-zero ads playback. These are capable.
+***** DONE Create this workflow
+CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
+Ensure that it is viable for live playback as well.
+
+* 2023-01-10:
+** Meeting with Manish:
+***  Asking about the status of operator updates from by netflix versus by partners.
+**** I swear I did this, but its no where to be found
+*** Doc:
+**** [[https://docs.google.com/document/d/17VPPEiP8QWrMI46KXf2_h2IzmUkHt1jDGeSXPXvX4P0/edit#heading=h.4lzm9udah8gp][Doc link]]
+*** Figure 4 of the hypothesis section is what we want to get data for and argue.
+*** DONE [#A] What % of the TV ecosystem is targetable by Netflix controlled OTA update infrastructure :adhoc:NRDP:
+CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
+***** Updatable: Samsung, LG, roku
+
+**** We have a large population of updateable devices we need to remove to get % of non-updatable:
+**** Updatable:
+***** Most game consoles
+***** Android TV, fire TV, Tizen, and WebOS
+***** Remove MVPDs
+**** Assume 6.0 will be similar to 5.3
+**** Also try with global assumption
+*** DONE [#A] If current trends continue, what will this look like in 3-4 years? :adhoc:NRDP:
+CLOSED: [2023-01-12 Thu 13:26] SCHEDULED: <2023-01-10 Tue>
+Given the trends are flat, and the device first views are flat, the overall population comp doesn't show signs of significant shift.  We see even growth among all the cohorts.
+** Device Reach Dash
+*** Add an addressable reach as denominator
+**** device_client_rollup_d includes the =is_device_ad_eligible= flag we can use for this
+**** TODO [#B] Add =is_device_ad_eligible= to the agg.  We will want to join against =device_client_activity_sum= in order to get aggregate device counts :deviceReachDash:ads:tool:
+SCHEDULED: <2023-01-11 Wed>
+**** TODO [#B] Add =is_device_ad_eligible= to the druid ingestion and backfill :deviceReachDash:ads:tool:
+SCHEDULED: <2023-01-11 Wed>
+**** TODO [#B] Add =is_device_ad_eligible= to the queries and add as a metric :deviceReachDash:ads:tool:
+SCHEDULED: <2023-01-11 Wed>
+** QoEdash
+*** Test Migration completed. Found source of annoying issue and fixed and pushed. All tests passing
+** Adhoc: Roger Value of Premium Audio
+*** Query to build the NRDP data finished loading.
+*** Agg query
+#+begin_src  sql :tangle nil :results None
+WITH agg as (
+  SELECT
+  device_type_id,
+  hw_category,
+  max_concurrent_streams,
+  case when ddp_count > 0.1*esn_cnt then 1 else 0 end as supports_ddp,
+  case when atmos_count > 0.1*esn_cnt then 1 else 0 end as supports_atmos,
+  configured_ddp_cnt,
+  configured_atmos_cnt,
+  esn_cnt
+ FROM rcool.value_of_premium_audio_f
+)
+
+SELECT
+    SUM(case when supports_ddp = 1 then esn_cnt else 0 end) ddp_capable_cnt,
+    SUM(configured_ddp_cnt) as ddp_configured_cnt,
+    SUM(case when supports_ddp = 1 and max_concurrent_streams = 4 then esn_cnt else 0 end) as ddp_capable_on_4s,
+    SUM(case when max_concurrent_streams = 4 then configured_ddp_cnt else 0 end ) as ddp_configured_devices_on_4s
+FROM
+  agg
+WHERE
+  hw_category in ('Smart TV', 'MVPD Set Top Box', 'Set Top Box/Streaming Stick')
+
+#+end_src
+
+Results:
+| ddp_capable_cnt | ddp_configured_cnt | ddp_capable_on_4s | ddp_configured_devices_on_4s |
+| 557_488_830     | 406_675_186        | 317_811_364       | 233_158_982                  |
+
+Atmos:
+#+begin_src sql :tangle nil
+WITH agg as (
+  SELECT
+  device_type_id,
+  hw_category,
+  max_concurrent_streams,
+  case when ddp_count > 0.1*esn_cnt then 1 else 0 end as supports_ddp,
+  case when atmos_count > 0.1*esn_cnt then 1 else 0 end as supports_atmos,
+  configured_ddp_cnt,
+  configured_atmos_cnt,
+  esn_cnt
+ FROM rcool.value_of_premium_audio_f
+)
+
+SELECT
+    SUM(case when supports_atmos = 1 then esn_cnt else 0 end) atmos_capable_cnt,
+    SUM(configured_atmos_cnt) as atmos_configured_cnt,
+    SUM(case when max_concurrent_streams = 4 then configured_atmos_cnt else 0 end ) as atmos_configured_devices_on_4s
+FROM
+  agg
+WHERE
+  hw_category in ('Smart TV', 'MVPD Set Top Box', 'Set Top Box/Streaming Stick')
+
+
+#+end_src
+
+Results:
+| atmos_capable | atmos_configured | atmos_capable_on_4s | atmos_configured_on_4s |
+| 169_972_896   | 31_639_943       | 85_695_141          | 18_991_917             |
+
+*** Write Up
+Hi Roger,
+
+I'm slammed and haven't been able to pull the tablet or phone data yet.  Here are the data for Smart TVs and STBs/MVPDs.
+
+| Feature | # capable (28d) | # configured (28d) | # capable on 4s | # configured on 4s |
+| ---     | ---             | ---                | ---             | ---                |
+| DDP     | 557.6M          | 406.7M             | 317.8M          | 233.1M             |
+| Atmos   | 170M            | 31.6M              | 85.7M           | 19M                |
+|         |                 |                    |                 |                    |
+
+These data were pulled for the last 28 days (versus the same time window as the set of results) which explains the small differences between the two. In general (if not always) the DDP constraint is strongest.  Devices with Atmos have DDP and approximately half of DDP devices could still see value in an upgrade to 4S for a feature like spatial audio.
+
+Let me kngw if you have any questions, comments, or feedback
+* 2023-01-11
+** Late Day start
+*** overslept after working all night
+** Meetings:
+*** Team meeting:
+**** Q4 Retro
+***** TODO Fill in the team doc. :work:low:effort:<2023-01-11 Wed 20:00>
+****** Overall, made progress on many fronts
+****** must deliver on qoedash this week
+****** contributed to many adhoc requests
+****** shit show overall
+
+*** Device Data Sync
+***** Live Updates:
+***** What will we need to do for qoedash for live?
+****** time series may not make the most sense there as they are event driven and more point in time
+****** TODO Sync with chris about live to figure out what the data views should look like here?  We probably want to bring in title or event metric :live:work:qoedash:
+SCHEDULED: <2023-01-12 Thu>
+****** TODO Add =is_live= as a dimension to qoedash
+DEADLINE: <2023-02-28 Tue>
+
+** Workflow Notes:
+*** Handwritten notes:
+**** I like these, so if we continue to have them, we need to track them somehow
+**** TODO Add a recurrent reminder to process inbox and include the handwritten notes as part of this.
+SCHEDULED: <2023-01-14 Sat>
+
+** Project Updates:
+*** Update strategy data:
+****  Finished first data pull, largely confirming results from the original memo
+**** Working more to pull device first views and trends to argue that the impact radius is small and shrinking
+*** Sessionwiz:
+**** They want to do show and tell next week for Data & Insights Day
+***** would be nice to have something to show, but I'm also hammered. See what we can do.
+****** TODO check on status of ctgl data in the gameplayStatus logs
+****** TODO Make some sample charts from gameplay status logs
+****** TODO Add gameplay_session_f parser
+***** TCAT
+****** files are non-404ed again
+******* Linux:
+#+begin_src sh
+
+sudo sh -c 'curl -sSLf https://file.dta.netflix.com/ocga/builds/tcat/tcat-linux-amd64 -o /usr/local/bin/tcat && chmod +x /usr/local/bin/tcat'
+
+#+end_src
+******* Mac Silicon:
+#+begin_src sh
+sudo sh -c 'curl -sSLf https://file.dta.netflix.com/ocga/builds/tcat/tcat-darwin-arm64 -o /usr/local/bin/tcat && chmod +x /usr/local/bin/tcat'
+
+#+end_src
+****** Spec:
+******* link:[[https://stash.corp.netflix.com/projects/CLOUDGAMING/repos/ocga/browse/gocga/proto/com/netflix/games/cloud/ocga/telemetry/spec/spec.pb.go#118,329,7331,7333,7343][Here]]
+* 2023-01-12:
+** Start of day: Pulled an all nighter
+*** Then overslept
+** Projects:
+*** Strategy Update:
+**** First Views:
+- Device first views have been roughly flat throughout the year when comparing 5.3+ devices that could potentially be updated. With roughly 30% of the device first views being on devices that are updated through partner firmware updates.
+- Looking at overall device shifts, streaming sticks, game consoles, and smart tvs have remained flat in terms of their relative mix, there's no sign of streaming sticks taking over the world.
+- So our real question becomes is 18% of the updatable population,
+**** Overall Results:
+- Ignoring devices on 5.2- and MVPD devices, currently 18% of devices that need NRDP updates cannot get runtime updates through either Netflix-controlled updates or updates their a partner store.
+
+| cohort_type     | active_devices_28d | view_seconds_28d | frac_actives | frac_view_secs |
+|-----------------+--------------------+------------------+--------------+----------------|
+| Netflix Updated |              137.2 |          2882.71 |        68.63 |          63.59 |
+| Non-Updating    |              35.94 |           958.13 |        17.98 |          21.14 |
+| Partner Store   |              26.77 |           692.43 |        13.39 |          15.27 |
+
+- Using the current evolution and mix of 5.3 & 6.0+ devices, the mix appears largely flat over time
+  + looking at active devices, the mix fraction of TVs, STBs, and game consoles is largely flat
+
+#+CAPTION: Active devices for NRDP devices of all versions show that the relative mix of TVs, STBs and Game Consoles has remained roughly flat in the last few years.  There's no sign of one type of device becoming a new "preferred" streaming method so we expect the relative mix of these devices to remain roughly flat without an external shock.
+#+ATTR_HTML: :width 600px
+[[~/allprojects/adhoc/update_strategy/actives.png]]
+
+
+  + device first views are also flat with approx 30% of daily first views being on non-updatable systems
+
+#+CAPTION: The daily device first views share between cohorts determined by the update method. Over time, the relative fraction of first views between those that can be updated by Netflix and those that require partner firmware udpdates has remained roughly constant.
+#+ATTR_HTML: :width 600px
+[[~/allprojects/adhoc/update_strategy/device_first_views.png]]
+
+**** Doc with results  [[https://docs.google.com/document/d/1BZdxMa0ClROaRGKaYDNcZ1uZP53yZMnxm6EEvs5Gp4k/edit][here]]
+**** Added some follow up.  Previous discussion assumed growth of AndroidTV => growth of netflix updating component. But that was simply not true
+
+[[~/allprojects/adhoc/update_strategy/actives_by_cohort.png]]
+
+[[~/allprojects/adhoc/update_strategy/active_share_by_cohort.png]]
+*** Roger Adhoc Value of Premium Audio
+Test queries are running very slow. Likely to do my qoedash backfill. Going to cancel it and continue.
+
+
+** Meetings:
+* 2023-01-13:
+** Projects:
+*** QoeDash:
+    - getting as many todos done today as possible

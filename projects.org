@@ -31,7 +31,8 @@ CLOSED: [2023-01-08 Sun 17:19]
 CLOSED: [2023-01-08 Sun 17:19]
 ***** DONE 4.SHoudl we reorg
 CLOSED: [2023-01-08 Sun 09:53]
-**** TODO [#B] Dateselector: clicking outside should close the modal
+**** DONE [#B] Dateselector: clicking outside should close the modal
+CLOSED: [2023-01-12 Thu 13:30]
 :PROPERTIES:
 :ID:       e63e1875-0e38-44aa-9a16-16ae093cf433
 :END:
@@ -89,7 +90,7 @@ CLOSED: [2023-01-08 Sun 10:28]
 *** Running npm run build seems to generate the files we need.
 *** For now, I'm going to add =npm run build= to the start.sh script
 *   Hawkins viz:
-** TODO: migrate color themes. Before push to v2.1
+** TODO TODO: migrate color themes. Before push to v2.1
 SCHEDULED: <2022-12-12 Mon>
 :PROPERTIES:
 :ID:       720dde2f-3096-4bf6-adfa-8ab877dfb45f
@@ -147,7 +148,7 @@ CLOSED: [2023-01-08 Sun 10:31]
 :END:
 
 ** TODO [#D] File issue with react vizkit to make the charts hawkins-theme aware :work:tool:
-SCHEDULED: <2023-01-09 Mon>
+SCHEDULED: <2023-01-23 Mon>
 :PROPERTIES:
 :CREATED: [2022-12-22 Thu]
 :END:
@@ -334,7 +335,7 @@ CLOSED: [2023-01-08 Sun 10:47]
 
 
 **  Activity:
-***   [#B] PQS Data Quality Issue :PQS:URGENT:DataQuality:
+*** IDEA [#B] PQS Data Quality Issue :PQS:URGENT:DataQuality:
 SCHEDULED: <2022-12-07 Wed>
 :PROPERTIES:
 :ID:       2af8f38b-ca16-46d1-8d11-474710c106d2
@@ -344,7 +345,8 @@ SCHEDULED: <2022-12-07 Wed>
 ***** DONE Verify that the ASN join is the cause of the discrepancy.
 ***** DONE After changing, push the new workflow to prod to catch new data as quickly as possible.
 ***** DONE Create a backfill job that runs until the beginning of ASN addition to the data to correct the report table in Hive and Druid.
-***** [ ] Run the backfill and ensure it finishes.<2022-12-08 Tue 10:10>
+***** DONE Run the backfill and ensure it finishes.<2022-12-08 Tue 10:10>
+CLOSED: [2023-01-12 Thu 04:27]
 :PROPERTIES:
 :ID:       7a17e2ed-608e-4c6d-bfcd-0e908da7bb6aj
 :END:

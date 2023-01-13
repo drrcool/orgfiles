@@ -1,0 +1,23 @@
+#+title: Evil Mode
+
+A list of notes for the different modes:
+
+** Evil Lion
+*** Align columns
+This package lets you align text.  The syntax uses =gl= to left align and =gL= to right align. Then you enter the text definition motion.  Finally enter the separator symbol.
+
+test = 2
+union = 02
+super_big_word = 54
+
+becomes (with =glip== using the =ip= inner paragraph text object)
+
+test           = 2
+union          = 02
+super_big_word = 54
+
+* Additional Text Objects
+** =B= -- any block object delimited by braces, parens,or brackely
+** =f= -- function
+** =g= -- the entire buffer
+** =q= -- quotes of amy kind

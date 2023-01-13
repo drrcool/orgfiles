@@ -1,0 +1,8 @@
+* Missing CPU Tier for ChromeCast
+The following Chromecast devices are missing cpu data. Is this expected?
+**   1191
+CadmiumCore device not NRDP: go/dex/1191
+**  2402
+**  1605
+**  1416
+**  770:q
