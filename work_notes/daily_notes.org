@@ -18,8 +18,8 @@ After initial pass to migrate, still getting many errors saying =Reference Error
 **** Potential of spatial audio:
 ***** Roger asked for clarification from work in Nov.  Delivered tables were for all devices, but he really just wanted to know about TVs and Smart TVs
 ***** Refined ask:
-****** TODO Get requested query to roger by EOW :adhoc:
-SCHEDULED: <2023-01-10 Tue> DEADLINE: <2023-01-13 Fri>
+****** DONE Get requested query to roger by EOW :adhoc:
+CLOSED: [2023-01-14 Sat 15:54] SCHEDULED: <2023-01-10 Tue> DEADLINE: <2023-01-13 Fri>
 ******* Request:
 ******** DONE DDP :adhoc:
 CLOSED: [2023-01-12 Thu 13:28] SCHEDULED: <2023-01-10 Tue>
@@ -148,10 +148,10 @@ Given the trends are flat, and the device first views are flat, the overall popu
 ** Device Reach Dash
 *** Add an addressable reach as denominator
 **** device_client_rollup_d includes the =is_device_ad_eligible= flag we can use for this
-**** TODO [#B] Add =is_device_ad_eligible= to the agg.  We will want to join against =device_client_activity_sum= in order to get aggregate device counts :deviceReachDash:ads:tool:
-SCHEDULED: <2023-01-11 Wed>
-**** TODO [#B] Add =is_device_ad_eligible= to the druid ingestion and backfill :deviceReachDash:ads:tool:
-SCHEDULED: <2023-01-11 Wed>
+**** DONE [#B] Add =is_device_ad_eligible= to the agg.  We will want to join against =device_client_activity_sum= in order to get aggregate device counts :deviceReachDash:ads:tool:
+CLOSED: [2023-01-14 Sat 15:53] SCHEDULED: <2023-01-11 Wed>
+**** DONE [#B] Add =is_device_ad_eligible= to the druid ingestion and backfill :deviceReachDash:ads:tool:
+CLOSED: [2023-01-14 Sat 15:53] SCHEDULED: <2023-01-11 Wed>
 **** TODO [#B] Add =is_device_ad_eligible= to the queries and add as a metric :deviceReachDash:ads:tool:
 SCHEDULED: <2023-01-11 Wed>
 ** QoEdash
@@ -332,4 +332,16 @@ Test queries are running very slow. Likely to do my qoedash backfill. Going to c
 * 2023-01-13:
 ** Projects:
 *** QoeDash:
-    - getting as many todos done today as possible
+    - Fixed build deploy issue.  Start.sh was rebuilding when there is no need, it would fail, node wouldn't start, so checkhealth API never ran
+    - Fixed pqs smoothing
+*** Adhoc:
+    - Finalized mobile/tablet premium audio query data pull for Roger
+*** Device Reach Dash:
+    - created =rpt.devicereachdash_population= and added it to workflow alon with ingestion script.
+    - since original data has failire reason in the grain, we can't sum over an pre-aggregated metric like this, so
+      keeping it a second table.  And we will need to run two queries from the server to formulate response.
+**** TODO [#B] create secondary API calls to get =ads_eligible_devices_28= and =active_devices_28d= :deviceReachDash:
+DEADLINE: <2023-01-16 Mon> SCHEDULED: <2023-01-15 Sun>
+* 2023-01-14:
+**   TODO: Journal this week has been sparse. Add to it.
+    - should we look at journal for orgmode that we feed bia RTC text?
