@@ -1,4 +1,4 @@
-#+title: Daily Notes
+#+title Daily Notes
 
 * 2023-01-09
 ** Meetings:
@@ -12,30 +12,10 @@
 ***** migrating to vitest
 After initial pass to migrate, still getting many errors saying =Reference Error: describe not defined=.  :
 *Solution*: These were actual errors but because the files were in the =/app= directory from the ts build step. We need to ensure that vitest is only looking in relavent folders for the tests.
-****** TODO add config to vitest to only look at current folder and finish updating test:w
-
 *** adhoc
 **** Potential of spatial audio:
 ***** Roger asked for clarification from work in Nov.  Delivered tables were for all devices, but he really just wanted to know about TVs and Smart TVs
 ***** Refined ask:
-****** DONE Get requested query to roger by EOW :adhoc:
-CLOSED: [2023-01-14 Sat 15:54] SCHEDULED: <2023-01-10 Tue> DEADLINE: <2023-01-13 Fri>
-******* Request:
-******** DONE DDP :adhoc:
-CLOSED: [2023-01-12 Thu 13:28] SCHEDULED: <2023-01-10 Tue>
-********* [X] How many STBs/Smart Tvs support DDP :adhoc:
-CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
-********* DONE out of that number how many are configured for it? :adhoc:
-CLOSED: [2023-01-12 Thu 04:26] SCHEDULED: <2023-01-10 Tue>
-********* DONE out of that number how many are on 4S? :adhoc:
-CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
-******** Atmos
-********* DONE How many STBs/Smart Tvs support DDP :adhoc:
-CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
-********* DONE out of that number how many are configured for it? :adhoc:
-CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
-********* DONE out of that number how many are on 4S? :adhoc:
-CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
 ***** Status:
 - Currently have a prototype query running for a couple days of data. Will verify the data looks good and run for a 28 day window.
 - Data flowing into my database =rcool.value_of_premium_audio_f=
@@ -120,10 +100,6 @@ CREATE EXTERNAL TABLE rcool.value_of_premium_audio_f  (
 **** Carenina really wants to understand the reach of ads compared to all devices that support ads
 ***** As far as I know we don't have a flag that says if a device supports ads playback, but we can derive this from playback data
 ***** For a given date range, look at =dse.device_activity_sum= and identify devices with non-zero ads playback. These are capable.
-***** DONE Create this workflow
-CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
-Ensure that it is viable for live playback as well.
-
 * 2023-01-10:
 ** Meeting with Manish:
 ***  Asking about the status of operator updates from by netflix versus by partners.
@@ -131,29 +107,9 @@ Ensure that it is viable for live playback as well.
 *** Doc:
 **** [[https://docs.google.com/document/d/17VPPEiP8QWrMI46KXf2_h2IzmUkHt1jDGeSXPXvX4P0/edit#heading=h.4lzm9udah8gp][Doc link]]
 *** Figure 4 of the hypothesis section is what we want to get data for and argue.
-*** DONE [#A] What % of the TV ecosystem is targetable by Netflix controlled OTA update infrastructure :adhoc:NRDP:
-CLOSED: [2023-01-12 Thu 04:25] SCHEDULED: <2023-01-10 Tue>
-***** Updatable: Samsung, LG, roku
-
-**** We have a large population of updateable devices we need to remove to get % of non-updatable:
-**** Updatable:
-***** Most game consoles
-***** Android TV, fire TV, Tizen, and WebOS
-***** Remove MVPDs
-**** Assume 6.0 will be similar to 5.3
-**** Also try with global assumption
-*** DONE [#A] If current trends continue, what will this look like in 3-4 years? :adhoc:NRDP:
-CLOSED: [2023-01-12 Thu 13:26] SCHEDULED: <2023-01-10 Tue>
-Given the trends are flat, and the device first views are flat, the overall population comp doesn't show signs of significant shift.  We see even growth among all the cohorts.
 ** Device Reach Dash
 *** Add an addressable reach as denominator
 **** device_client_rollup_d includes the =is_device_ad_eligible= flag we can use for this
-**** DONE [#B] Add =is_device_ad_eligible= to the agg.  We will want to join against =device_client_activity_sum= in order to get aggregate device counts :deviceReachDash:ads:tool:
-CLOSED: [2023-01-14 Sat 15:53] SCHEDULED: <2023-01-11 Wed>
-**** DONE [#B] Add =is_device_ad_eligible= to the druid ingestion and backfill :deviceReachDash:ads:tool:
-CLOSED: [2023-01-14 Sat 15:53] SCHEDULED: <2023-01-11 Wed>
-**** TODO [#B] Add =is_device_ad_eligible= to the queries and add as a metric :deviceReachDash:ads:tool:
-SCHEDULED: <2023-01-11 Wed>
 ** QoEdash
 *** Test Migration completed. Found source of annoying issue and fixed and pushed. All tests passing
 ** Adhoc: Roger Value of Premium Audio
@@ -240,27 +196,13 @@ Let me kngw if you have any questions, comments, or feedback
 ** Meetings:
 *** Team meeting:
 **** Q4 Retro
-***** TODO Fill in the team doc. :work:low:effort:<2023-01-11 Wed 20:00>
-****** Overall, made progress on many fronts
-****** must deliver on qoedash this week
-****** contributed to many adhoc requests
-****** shit show overall
-
 *** Device Data Sync
 ***** Live Updates:
 ***** What will we need to do for qoedash for live?
 ****** time series may not make the most sense there as they are event driven and more point in time
-****** TODO Sync with chris about live to figure out what the data views should look like here?  We probably want to bring in title or event metric :live:work:qoedash:
-SCHEDULED: <2023-01-12 Thu>
-****** TODO Add =is_live= as a dimension to qoedash
-DEADLINE: <2023-02-28 Tue>
-
 ** Workflow Notes:
 *** Handwritten notes:
 **** I like these, so if we continue to have them, we need to track them somehow
-**** TODO Add a recurrent reminder to process inbox and include the handwritten notes as part of this.
-SCHEDULED: <2023-01-14 Sat>
-
 ** Project Updates:
 *** Update strategy data:
 ****  Finished first data pull, largely confirming results from the original memo
@@ -268,9 +210,6 @@ SCHEDULED: <2023-01-14 Sat>
 *** Sessionwiz:
 **** They want to do show and tell next week for Data & Insights Day
 ***** would be nice to have something to show, but I'm also hammered. See what we can do.
-****** TODO check on status of ctgl data in the gameplayStatus logs
-****** TODO Make some sample charts from gameplay status logs
-****** TODO Add gameplay_session_f parser
 ***** TCAT
 ****** files are non-404ed again
 ******* Linux:
@@ -304,7 +243,7 @@ sudo sh -c 'curl -sSLf https://file.dta.netflix.com/ocga/builds/tcat/tcat-darwin
 | Non-Updating    |              35.94 |           958.13 |        17.98 |          21.14 |
 | Partner Store   |              26.77 |           692.43 |        13.39 |          15.27 |
 
-- Using the current evolution and mix of 5.3 & 6.0+ devices, the mix appears largely flat over time
+- Using the current  evolution and mix of 5.3 & 6.0+ devices, the mix appears largely flat over time
   + looking at active devices, the mix fraction of TVs, STBs, and game consoles is largely flat
 
 #+CAPTION: Active devices for NRDP devices of all versions show that the relative mix of TVs, STBs and Game Consoles has remained roughly flat in the last few years.  There's no sign of one type of device becoming a new "preferred" streaming method so we expect the relative mix of these devices to remain roughly flat without an external shock.
@@ -340,8 +279,112 @@ Test queries are running very slow. Likely to do my qoedash backfill. Going to c
     - created =rpt.devicereachdash_population= and added it to workflow alon with ingestion script.
     - since original data has failire reason in the grain, we can't sum over an pre-aggregated metric like this, so
       keeping it a second table.  And we will need to run two queries from the server to formulate response.
-**** TODO [#B] create secondary API calls to get =ads_eligible_devices_28= and =active_devices_28d= :deviceReachDash:
-DEADLINE: <2023-01-16 Mon> SCHEDULED: <2023-01-15 Sun>
 * 2023-01-14:
-**   TODO: Journal this week has been sparse. Add to it.
-    - should we look at journal for orgmode that we feed bia RTC text?
+* 2023-01-15:
+** Need to write my journal tonight.
+*** Figure out a format
+*** topic -- why do i run after unavailable and how sure am I that I'm ready to quit
+j
+** Ads Reach:
+[[file:~/Library/CloudStorage/Dropbox/orgmode/projects.org::*NEXT got ingestion scripts running and updated the workflow][* NEXT got ingestion scripts running and updated the workflow]]
+
+** Config:
+*** Tweaked tag settings.
+*** Made some org changes. Made custom agenda
+* 2023-01-17:
+** Projects:
+** Notes:
+*** DONE Fill out quarterly doc :chores:work:
+CLOSED: [2023-01-17 Tue 11:00] DEADLINE: <2023-01-17 Tue 17:00>
+** QoEDash:
+ * Modals: Updating the modal to hawkins
+   - updated validation logic
+ * Build:
+    - build failures coming from "root-access" to some npm files.  According to stack overflow this is due to caching issues. SO now I'm clearing the cache.
+
+** Meetings:
+*** Cloud gaming data & metrics:
+- March 15 for session level argus 2
+- Chris Wein making a second group for alerts and viz
+*** Lauren
+**** dashboards / metrics that need vis
+***** art updates
+****** which partners have them which need them. whos adopted it, who is waiting for adoptions
+****** pdm has notifications for when partner pulls it
+****** key question: does the devices that have them have them?
+****** hwo long until the release rolls out
+****** stats on user adoption -- where its been release but users have opted not to take it or update
+***** Cloud Games okr
+****** some fraction of devices that take NRP 7.0 but have an excemption to not run gaming
+***** w/Jorem: how long does it take certain, named, parterns get through certifaction process. Te idea being we optimize that process
+***** Infield device health / performance:
+****** PQS includes aspects that are not actionable
+****** how do updates affect performance
+****** remove unactionale pieces so we can make decisions about about future updates.   Where a device may not ne abell to handle the new update based on previous
+****** can we find network-free metrics?
+****** partner facing aspect so it is shown externally
+****** internal layer be
+
+
+****** Idea: can we use something to break out TTR components.
+****** What small fraction of metrics can we use to track device health.
+****** Devices will be recertification to get 6.0+ we thats a good to measure of device health independent of network
+****** What level to track this at?
+******* top N things to track extermnallgiy
+******* top N things to show internally
+
+****** Partners may ebentuially need to see the results of CI tests in an extenrally facing dashboards
+****** Shifting from focus on maily certtification to also include device in the field health
+****** CPU and memory performance to know they can't get update to next version
+****** what level to rollup tonight
+****** what 1,2,3 data points to show to partners
+****** what decisins can we make using the data as a whol
+
+
+***** Sync with Chris
+****** all tables will have live and svod ssession
+******* live = session thtat uses the live player
+******* watching in teh hours after the event -- called dvr model
+******* do we need to separaate live from dvr mode
+******** probably at some point but not for mvp
+******* viewing durations will be update
+******* start slate isn't content time, but you can rebuffer, so keep qoe metrics sepaarate
+******** rebuffer during slate and rebuffer during content should be tracked different
+
+******** lvie will have encoder to client latency
+
+******** for launch add a live flag, debfault to not including ads, but allow users to op
+** Adhoc or Action Items:
+*** TODO Process and file notes for today into appropirate sections
+
+*** DONE Quieries for Daniel -- streaming sdk weekly metrics and partner device sdk
+CLOSED: [2023-01-17 Tue 23:13]
+* 2023-01-18:
+** Little progress, first day sober, dylan struggling.
+
+
+* 2023-01-19:
+** Random
+*** trying to get keyboard layout setup for work
+** Meetings
+*** PQS:
+**** Get 2.0 out as soon as possible
+**** document the process as well as possible someone like Robert or Luciana or anyone in DSE could possibly help with updates/bug fixes
+***** how to make changes
+***** code standards
+***** how to deploy
+***** how to deploy to prod
+***** roadmap
+*** Cindy:
+** Projects:
+*** QoeDash:
+**** Addressable Population Queries:
+***** Addressable population isn't running
+**** True Crash:
+***** new user visible crash thats not user visible: timeout release
+****** Do we need to backfill or just implement:
+******* TODO DO a small backfill. Probably mostly hits 6.x devices, so a three month backfill will get most of the traffic.
+
+****** TODO sync with Ayesha. I will put in a PR for =streaming_alerts= that mirrors the change to PQS logic.
+****** Whats the right away to do this in the future? Two pieces of code use the same logic. We have to update two places. Should use a shared library?
+***

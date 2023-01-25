@@ -93,4 +93,3 @@ Again this is mostly stolen from doom
 
 #+RESULTS:
 : init-core
-g

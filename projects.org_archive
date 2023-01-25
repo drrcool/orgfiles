@@ -1,0 +1,306 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/rcool2/Library/CloudStorage/Dropbox/orgmode/projects.org
+
+
+* DONE 1. Are filtervalues getting passed to useData
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:44
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]/from CJ: Preset filters don't impact the summary view.
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+No.
+CLOSED: [2023-01-08 Sun 17:19]
+
+* DONE 2. If yes, why not used?
+CLOSED: [2023-01-08 Sun 17:19]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:44
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]/from CJ: Preset filters don't impact the summary view.
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE 3. If no, why not?
+CLOSED: [2023-01-08 Sun 17:19]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:44
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]/from CJ: Preset filters don't impact the summary view.
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE 4.SHoudl we reorg
+CLOSED: [2023-01-08 Sun 09:53]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:44
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]/from CJ: Preset filters don't impact the summary view.
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE [#B] Dateselector: clicking outside should close the modal
+CLOSED: [2023-01-12 Thu 13:30]
+:PROPERTIES:
+:ID:       e63e1875-0e38-44aa-9a16-16ae093cf433
+:ARCHIVE_TIME: 2023-01-16 Mon 17:44
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE [#D] Dateselector: doesn't pick up opacity changes from affixed hover
+CLOSED: [2023-01-15 Sun 23:00]
+:PROPERTIES:
+:ID:       1b4b6632-523e-4083-a266-b6ace129b087
+:ARCHIVE_TIME: 2023-01-16 Mon 17:44
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+* [X] [#A] From Giselle: CHanging a preset then opening the filter drawer doens't show filters as expected
+CLOSED: [2023-01-08 Sun 18:23]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:44
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: [X]
+:END:
+As usual, this is a not complete report.  The filters *are* populated, they are just not visible.  We Should make it so any category with used filters should be expanded.
+A bigger issue:  The non-filled filters are AWOL.  You can't add a filter once you use a preset.
+:PROPERTIES:
+:ID:       22e65443-cda2-4e2c-82f1-4bb50425b76a
+:END:
+
+* TODO [#A] Lets space between legend labels to fit more :qoedash:
+:PROPERTIES:
+:ID:       d48df84e-8081-4008-b6fe-f114bbfee24a
+:ARCHIVE_TIME: 2023-01-16 Mon 17:44
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: TODO
+:END:
+
+* [X] [#A] from CJ: Preset filters don't impact the summary view.
+CLOSED: [2023-01-08 Sun 17:19] SCHEDULED: <2023-01-08 Sun>
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:44
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: [X]
+:END:
+Initial Notes:  the data are fetched in useData using dataConfig. dataConfig is source in SummarySection by calling =getSummaryDataConfig=.  Reads from hardwired entries that include metricsList, name, dataSource, section.  FilterValues passed as props.  Action items
+*Cause*: neither filterValues nor excludeFilterValues were being passed to useData.
+:PROPERTIES:
+:ID:       69271881-fe81-48ab-9298-75766e5f3a1e
+:END:
+
+* DONE [#A] pqs smoothing still isn't being applied :qoedash:
+CLOSED: [2023-01-15 Sun 20:06]
+:PROPERTIES:
+:ID:       1a25ef7b-0036-4b66-8f90-68cb91045a22
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE [#A] Make the legend scale with presentation mode :home:qoedash:tool:
+CLOSED: [2023-01-16 Mon 17:44]
+:PROPERTIES:
+:CREATED: [2022-12-10 Sat]
+:ID:       30fbf47c-8be4-4aaa-88fe-9417c669918a
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+
+* DONE [#B] QoEDash validation on the PQS Smoothing Input box doesn't properly function :home:qoedash:tool:urgent:
+CLOSED: [2023-01-16 Mon 17:40]
+:PROPERTIES:
+:CREATED: [2022-12-11 Sun]
+:ID:       a87f72a4-bdae-4fe9-8248-a71f2a9a8e12
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+
+* DONE Qoedash startup issues
+CLOSED: [2023-01-08 Sun 10:28]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+**  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
+** Running npm run build seems to generate the files we need.
+** For now, I'm going to add =npm run build= to the start.sh script
+
+* DONE [#A] QoEDash validation on the PQS Smoothing Input box doesn't properly function :qoedash:tool:
+CLOSED: [2023-01-16 Mon 17:40] SCHEDULED: <2023-01-16 Mon>
+:PROPERTIES:
+:CREATED: [2022-12-11 Sun]
+:ID:       a87f72a4-bdae-4fe9-8248-a71f2a9a8e12
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+
+* DONE Qoedash startup issues
+CLOSED: [2023-01-08 Sun 10:28]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+**  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
+** Running npm run build seems to generate the files we need.
+** For now, I'm going to add =npm run build= to the start.sh script
+
+
+* DONE affixed opacity doesn't apply to datepicker :qoedash:
+CLOSED: [2023-01-16 Mon 10:49]
+:PROPERTIES:
+:CREATED: [2023-01-12 Thu]
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: QoeDash]
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+
+* DONE DRUID ingestion: need to try in a non vault tabl
+:PROPERTIES:
+:CREATED: [2022-12-12 Mon]
+:ID:       86036774-4d3f-4baf-9fc1-a8906cbf6557
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: deviceReachDash
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+*** OPted to use presto for now
+
+* DONE Make container
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: deviceReachDash/Filter control:/TODO: Mkae query builder
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+** DONE Paper that scales as needed
+*** DONE Paper
+*** DONE Ensure it scales
+
+* DONE Make and pipe buttonGroup on bottom
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: deviceReachDash/Filter control:/TODO: Mkae query builder
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+** DONE Apply Button
+*** DONE component
+*** DONE Popover or tooltip explainin
+- Apply all selected changes and fetch refreshed data
+** DONE Abandon Change
+*** DONE Popover or Tooltip
+- Drop all changes since the last time you applied.  Currently applied filters remain active.
+*** DONE Component
+** DONE Remove all filters
+*** DONE Popover or Tooltip
+- Remove all filters and refetch data
+*** DONE Component
+
+
+
+* DONE Make required splitby field
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: deviceReachDash/Filter control:/TODO: Mkae query builder
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE Make generic fieldKey selector
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: deviceReachDash/Filter control:/TODO: Mkae query builder
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+    - onChange should track the the rder that fieldKeys are selected to ensure
+      the filter ordering remains consistent between renders
+** DONE Make sure we have a way to cancel and drop this filter
+
+* DONE Make generic filterValue selector
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: deviceReachDash/Filter control:/TODO: Mkae query builder
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE Add logic that adds additional selectors as others are filled
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: deviceReachDash/Filter control:/TODO: Mkae query builder
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+** DONE check for existing active fieldKeys and only allow unselected fieldKeys to be in the new select
+*** DONE ensure that this list is repsonsive if a filter is removed
+
+
+* DONE [#C] fix subtitle
+CLOSED: [2023-01-15 Sun 22:59]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: deviceReachDash/Active Todo:/failure reason breakdown
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE APp title and flavicon
+CLOSED: [2023-01-08 Sun 10:47]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-01-16 Mon 17:45
+:ARCHIVE_FILE: ~/Library/CloudStorage/Dropbox/orgmode/projects.org
+:ARCHIVE_OLPATH: deviceReachDash/Active Todo:/App Overall
+:ARCHIVE_CATEGORY: projects
+:ARCHIVE_TODO: DONE
+:END:

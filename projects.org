@@ -2,471 +2,106 @@
 ** Tasks
 * .dotfiles
 ** Tasks
-* TODO [#B] QoeDash reported issues:
+* TODO [#B] QoeDash]
+*
 :PROPERTIES:
 :ID:       b9590706-f5d6-4f73-aa9e-87d0f31a7864
 :END:
-****  [ ] [#D] from CJ: when updating the time window the first chart stops updating. the URL will show a new =intervalFrom= from the data will not respect
+**** WAIT [#D] from CJ: when updating the time window the first chart stops updating. the URL will show a new =intervalFrom= from the data will not respect :qoedash:
 While this has happened to be before, I am currently unable to reproduce
 :PROPERTIES:
 :ID:       c89dafa2-0754-4453-959a-913592393f96
 :END:
-***** [ ] [#D] (followup & related): if intervalTo and intervalFrom are provided in the URL does the dash treat them  correctly?
+***** WAIT [#D] (followup & related): if intervalTo and intervalFrom are provided in the URL does the dash treat them  correctly? :qoedash:
 :PROPERTIES:
 :ID:       f6086e9e-a8b0-4b75-a849-9c753bfb8367
 :END:
-**** [X] [#A] from CJ: Preset filters don't impact the summary view.
-CLOSED: [2023-01-08 Sun 17:19] SCHEDULED: <2023-01-08 Sun>
-Initial Notes:  the data are fetched in useData using dataConfig. dataConfig is source in SummarySection by calling =getSummaryDataConfig=.  Reads from hardwired entries that include metricsList, name, dataSource, section.  FilterValues passed as props.  Action items
-*Cause*: neither filterValues nor excludeFilterValues were being passed to useData.
-:PROPERTIES:
-:ID:       69271881-fe81-48ab-9298-75766e5f3a1e
-:END:
-***** DONE 1. Are filtervalues getting passed to useData
-No.
-CLOSED: [2023-01-08 Sun 17:19]
-***** DONE 2. If yes, why not used?
-CLOSED: [2023-01-08 Sun 17:19]
-***** DONE 3. If no, why not?
-CLOSED: [2023-01-08 Sun 17:19]
-***** DONE 4.SHoudl we reorg
-CLOSED: [2023-01-08 Sun 09:53]
-**** DONE [#B] Dateselector: clicking outside should close the modal
-CLOSED: [2023-01-12 Thu 13:30]
-:PROPERTIES:
-:ID:       e63e1875-0e38-44aa-9a16-16ae093cf433
-:END:
-**** TODO [#D] Dateselector: doesn't pick up opacity changes from affixed hover
-:PROPERTIES:
-:ID:       1b4b6632-523e-4083-a266-b6ace129b087
-:END:
-**** [X] [#A] From Giselle: CHanging a preset then opening the filter drawer doens't show filters as expected
-CLOSED: [2023-01-08 Sun 18:23]
-As usual, this is a not complete report.  The filters *are* populated, they are just not visible.  We Should make it so any category with used filters should be expanded.
-A bigger issue:  The non-filled filters are AWOL.  You can't add a filter once you use a preset.
-:PROPERTIES:
-:ID:       22e65443-cda2-4e2c-82f1-4bb50425b76a
-:END:
-**** TODO [#E] Lets space between legend labels to fit more
-:PROPERTIES:
-:ID:       d48df84e-8081-4008-b6fe-f114bbfee24a
-:END:
-**** TODO [#C] need a comparison chart legend
+**** TODO [#A] need a comparison chart legend :qoedash:
 :PROPERTIES:
 :ID:       4d00eac0-8859-4eec-b1b9-9b1dcd56436f
 :END:
-**** NEXT [#A] pqs smoothing still isn't being applied :qoedash:
-:PROPERTIES:
-:ID:       1a25ef7b-0036-4b66-8f90-68cb91045a22
-:END:
-**** NEXT Do a pass to clear out console.logs :qoedash:
+**** TODO: Do a pass to clear out console.logs :qoedash:
 
-** TODO [#B] Fonts in presentation mode are often too small
+** DONE [#B] Fonts in presentation mode are often too small :qoedash:
+CLOSED: [2023-01-16 Mon 20:38] SCHEDULED: <2023-01-16 Mon>
 :PROPERTIES:
 :CREATED: [2022-12-10 Sat]
 :ID:       6850118b-9017-4272-bef8-8c088910a03a
 :END:
+** DONE :qoedash: Breakdown chart is not sorted by worst to best
+CLOSED: [2023-01-16 Mon 23:54]
+** TODO :qoedash: investigate window resizing issues :qoedash:
+** TODO :qoedash: can't type in filters :qoedash:
+** TODO :qoedash: check context help on filters :qoedash:
+** TODO :qoedash: metric breakdown tooltips are broken :qoedash:
+** TODO :qoedash: pqs trend chart gets stuck :qoedash:
+** TODO :qoedash: unclear is thershold is applied for pqs :qoedash:
 
-** Line charts look great in presentation mode = Olid :work:tool:medium:
+** TODO :qoedash: plotthresh needs reset on context change :qoedash:
+** TODO :qoedash: comparison has no tooltip :qoedash:
+
+
+** line charts look great in presentation mode = Olid :work:tool:medium:
 :PROPERTIES:
 :CREATED: [2022-12-10 Sat]
 :END:
 
-** TODO [#C] Make the legend scale with presentation mode :home:qoedash:tool:
+** DONE [#A] Make the legend scale with presentation mode. Specifically, it seems the labels themselves don't scale at all. :home:qoedash:tool:
+CLOSED: [2023-01-16 Mon 20:38]
 :PROPERTIES:
 :CREATED: [2022-12-10 Sat]
 :ID:       30fbf47c-8be4-4aaa-88fe-9417c669918a
 :END:
 
-** TODO [#B] QoEDash validation on the PQS Smoothing Input box doesn't properly function :home:qoedash:tool:urgent:
+** TODO [#C] :qoedash: seems to have problems with loading initial page load :qoedash:
+ [[file:~/Library/CloudStorage/Dropbox/orgmode/should_netflix_coordinate_updates.org::*Queries][Queries]]
+*** TODO [#C] see if we can mitigate some of this by combining topN and bulk fetch
+** TODO Check that the fonts work if smaller display before pushing
 :PROPERTIES:
-:CREATED: [2022-12-11 Sun]
-:ID:       a87f72a4-bdae-4fe9-8248-a71f2a9a8e12
+:CREATED: [2023-01-08 Sun]
 :END:
 
-** DONE Qoedash startup issues
-CLOSED: [2023-01-08 Sun 10:28]
-***  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
-*** Running npm run build seems to generate the files we need.
-*** For now, I'm going to add =npm run build= to the start.sh script
-*   Hawkins viz:
-** TODO TODO: migrate color themes. Before push to v2.1
-SCHEDULED: <2022-12-12 Mon>
+** TODO [#E] add config to vitest to only look at current folder and finish updating test:w :qoedash:medium:effort:
+
+**   Hawkins viz:
+** DONE [#B] TODO: migrate color themes. Before push to v2.1 :qoedash:
+CLOSED: [2023-01-17 Tue 00:17] SCHEDULED: <2022-12-12 Mon>
 :PROPERTIES:
 :ID:       720dde2f-3096-4bf6-adfa-8ab877dfb45f
 :END:
 ** TODO: migrate to vizKit
-* Device reach for ads and (eventually) live
-** Prelaunch, we can use device capability information and hendricks rules to estimate hte expected reach of a given experience including ads and live. There is some nuance we can likely make go a little better , but the larger data compoenent is what happens after launch.
-**  Goal : great some views that showcase the reach of ads (and live).))
-*** use cases: are there devices that should have ads that have a higher failure rate than others?
-*** how often are ads subscribers unable to watch as they signed up on an ads device but are trying to watch on an upsupported device?
-****    List of devices which cannot support ads:
-*****   devices we cannot update
-    - mediaroom, iOS legacy, NRDP 3.x, Uncertified AOSP devices running Android Mobile, PS3
-*****   Devices we don't want to update
-     - Windows App (1481), Apple TV (tvOS), Chromecast, Silverlight
-*****   Devices we cannot reach for MVP but may update later
-     - NRDP 4.0, 4.1
-
-**  Action Items:
-*** DONE Build Fact table
-*** Build Aggregate Table or engine
-    - [ ] Since we want to use HLL, build druid ingestion script
-    - [ ] Denomrlaize any dimensions we care about (device metadata primarily)
-*** Backfill
-    - [ ] Go at least 2 weeks (or the max lookback if smaller than 2 weeks)
-*** Create the views
-****    Relatively simple views
-    -- TODO time series of % reach
-    -- TODO time series of % of requests successful
-    -- TODO overall agg bar chart of reach
-    -- TODO stacked bar char of failure reason (with option to include success)
-#+title: Notes
-
-** DONE DRUID ingestion: need to try in a non vault table
-CLOSED: [2023-01-08 Sun 10:30]
-:PROPERTIES:
-:CREATED: [2022-12-12 Mon]
-:ID:       c256dc92-74f6-43f7-a07d-592df059b764
-:END:
-
-** TODO [#A] Add a metricType selector to the FilterPanel. Or simply a metric selector :work:deviceReach:tool:
-:PROPERTIES:
-:CREATED: [2022-12-21 Wed]
-:END:
-
-** KILL Consider Changing the summary when metricType is toggled
-CLOSED: [2023-01-08 Sun 10:31]
-:PROPERTIES:
-:CREATED: [2022-12-21 Wed]
-:END:
-
-** TODO [#A] Persist changes to URL and read URL when page loads :work:deviceReach:tool:urgent:
-:PROPERTIES:
-:CREATED: [2022-12-21 Wed]
-:END:
-
-** TODO [#D] File issue with react vizkit to make the charts hawkins-theme aware :work:tool:
-SCHEDULED: <2023-01-23 Mon>
-:PROPERTIES:
-:CREATED: [2022-12-22 Thu]
-:END:
-** TODO [#C] link failure by reason charts via context
-SCHEDULED: <2023-12-10 Sun>
-Currently these  are both making similar API calls for the data.
-:PROPERTIES:
-:CREATED: [2022-12-24 Sat]
-:END:
-
-** TODO [#E] drop tooltipcolumn :home:deviceReach:tool:
-We use tooltipColumn throughout the charts, but never rely on it. we should nuke all reference to it as its confusing now.
-
-:PROPERTIES:
-:CREATED: [2022-12-24 Sat]
-:END:
-
-* Server:
-
-Filter Data Caching:
-I wanted to create a poor mans caching scheme for filter data. It doesn't change often, so for this data set, we
-should be able to cache the full combinatorical data and use that to extract updated filters when one is applied.
-
-Idea:  Fetch the full aggregate for the past 7 days (totalled without date in the grain).  Now for any set of filters, we can figure out the other filters that apply relatively quickly without hitting presto and send back and updated fitlerData.
-
-The client can hold the original so we don't have to refresh when invalidated.
-
-There's likely no reason to update this cache more often than daily.
-
-**  Actions:+
-*** Filter Data
-**** DONE High priority: Get base data
-***** [X] create query that gets the full data set
-***** [X] dump the above query to disk when a request comes in, read it and return the data
-**** IDEA Low priority: Optimize
-:PROPERTIES:
-:ID:       049d2409-99a1-43d4-88dd-73407d59d0d2
-:END:
-***** Base Case:
-****** [ ] [#C] fetch the full agg relationship matrix and store to disk
-:PROPERTIES:
-:ID:       2a908e31-a969-4b7f-850d-5464729b1fea
-:END:
-***** Filtered Case:
-****** [ ] [#C] Compare the timings of
-:PROPERTIES:
-:ID:       c4e94c0f-1fd0-4c33-a0b5-936579a92ed1
-:END:
-******* WAIT create a query that fetches from Presto based on the given filters
-:PROPERTIES:
-:ID:       3e24513e-a0d0-4b98-85f9-e47d9bfa0fc7
-:END:
-******* WAIT create a function that parses the full agg relationship and figures out the new filters
-:PROPERTIES:
-:ID:       94ca1587-a375-496b-a06b-af174fdccf5c
-:END:
-*** Charts
-**** A. Breakdown
-This chart should show the % reach by whatever split is chosen
-- Metric Choices:
-  - % of ESN in a day
-  - % of requests in a day
-  - N of ESNs in a day
-  - N of requests in a day
-- Break by any of the dimensions in the table as well as "total"
-***** Action items for breakdown
-****** DONE - create server query
-****** DONE - create component
-CLOSED: [2023-01-08 Sun 10:45]
-:PROPERTIES:
-:ID:       a05ad01e-daef-4b36-ad09-969c003ce3e5
-:END:
-**** B. Breakdown by reason
-- Same as above, but the bar is color coded by failure reason with reason being a filter
-  - making reason a filter lets us exclude success easily
-***** Action items for breakdown by reason
-****** DONE - create server query
-****** DONE - create component
-CLOSED: [2023-01-08 Sun 10:45]
-:PROPERTIES:
-:ID:       2e457ffe-45b8-4cf8-bd94-41a7c61f6355
-:END:
-**** C. Time series
-Same as Chart A above but with day by day breakdown
-***** Action items for time series:
-****** DONE - create server query
-****** DONE - create component
-CLOSED: [2023-01-08 Sun 10:46]
-:PROPERTIES:
-:ID:       2c22cb71-d9ca-4aa9-84fa-c0e9f2db762d
-:END:
-**** D. Time series by reason
-Same as Chart b but with day by day breakdown
-***** Action items for time series by reaon:
-****** DONE - create server query
-****** DONE - create component
-CLOSED: [2023-01-08 Sun 10:46]
-:PROPERTIES:
-:ID:       3dd62ee9-7b1a-4ccc-ad5f-f65752bda30e
-:END:
-**** E. Top Level summary
-- High level summary metrics of interest
-****** # of ESNs succefully interacted
-****** % of ESNs which failure
-****** # of Requests
-****** Largest Failure mode
-****** of ESNs who couldn't watch on disabled device
-***** Action item  for top level summary
-****** DONE - create sql agg to power this view
-****** DONE - create server queries for each metric
-****** DONE - create component for each item
-:PROPERTIES:
-:ID:       30a01e2f-d3e6-46c6-a486-8d0e40ab3bf8
-:END:
-* DONE DRUID ingestion: need to try in a non vault tabl
-:PROPERTIES:
-:CREATED: [2022-12-12 Mon]
-:ID:       86036774-4d3f-4baf-9fc1-a8906cbf6557
-:END:
-*** OPted to use presto for now
-* Filter control:
-** TODO: Mkae query builder
+** TODO [#B] create secondary API calls to get =ads_eligible_devices_28= and =active_devices_28d= :deviceReachDash:
+DEADLINE: <2023-01-16 Mon> SCHEDULED: <2023-01-15 Sun>
+* deviceReachDash
+** Filter control:
+*** TODO: Mkae query builder
  -- The hawkins query builder is clunky and ugly and bloated. Trying spin my own
-*** DONE Make container
-**** DONE Paper that scales as needed
-***** DONE Paper
-***** DONE Ensure it scales
-*** DONE Make and pipe buttonGroup on bottom
-**** DONE Apply Button
-***** DONE component
-***** DONE Popover or tooltip explainin
-- Apply all selected changes and fetch refreshed data
-**** DONE Abandon Change
-***** DONE Popover or Tooltip
-- Drop all changes since the last time you applied.  Currently applied filters remain active.
-***** DONE Component
-**** DONE Remove all filters
-***** DONE Popover or Tooltip
-- Remove all filters and refetch data
-***** DONE Component
-
-
-*** DONE Make required splitby field
-*** DONE Make generic fieldKey selector
-    - onChange should track the the rder that fieldKeys are selected to ensure
-      the filter ordering remains consistent between renders
-**** DONE Make sure we have a way to cancel and drop this filter
-*** DONE Make generic filterValue selector
-*** DONE Add logic that adds additional selectors as others are filled
-**** DONE check for existing active fieldKeys and only allow unselected fieldKeys to be in the new select
-***** DONE ensure that this list is repsonsive if a filter is removed
-
-* Active Todo:
-** BarChart breakdown
-** failure reason breakdown
-*** TODO [#C] fix subtitle
-** timeseries
-*** TODO [#B] metric selectpr
-** failure reason time series
+** Active Todo:
+*** BarChart breakdown
+*** failure reason breakdown
+*** timeseries
+**** TODO [#B] metric selectpr :deviceReach:
+*** failure reason time series
 
 - cab file
 - save to image
 - chart styling to comply with dark mode
 - dark mode toggle
-** App Overall
-*** DONE APp title and flavicon
-CLOSED: [2023-01-08 Sun 10:47]
-*** TODO expose and customize topN
+*** App Overall
+**** TODO expose and customize topN :deviceReach:
 
-* After first delivery
-** separate into server and client projects
-** tag excessive any use
-** move charts which share data to a context
-** add zoom time time series
-** shared xExtnt to time series
-** cross chart highlightng through context
-** implement features tp bring parity
-*** csv file
-*** image expor
-* PQS
-
-** Status:
-
-
-
-**  Activity:
-*** IDEA [#B] PQS Data Quality Issue :PQS:URGENT:DataQuality:
-SCHEDULED: <2022-12-07 Wed>
-:PROPERTIES:
-:ID:       2af8f38b-ca16-46d1-8d11-474710c106d2
-:END:
- Robert discovered that there is a discrepancy in total session counts between =dse.product_quality_score_sum= and =rpt.product_quality_score_report_sum=. It looks like, after a cursory look, that there are some sessions that are being dropped from the report table.  This may be due to an INNER join between pqs and the topASN table. This means a fairly high chunk of the sessions may be being dropped. This needs a fix.
-
-***** DONE Verify that the ASN join is the cause of the discrepancy.
-***** DONE After changing, push the new workflow to prod to catch new data as quickly as possible.
-***** DONE Create a backfill job that runs until the beginning of ASN addition to the data to correct the report table in Hive and Druid.
-***** DONE Run the backfill and ensure it finishes.<2022-12-08 Tue 10:10>
-CLOSED: [2023-01-12 Thu 04:27]
-:PROPERTIES:
-:ID:       7a17e2ed-608e-4c6d-bfcd-0e908da7bb6aj
-:END:
-
- QoEDash
-**   V2
-*** Deploy and Build
-- seems like a lot of the issues that I'm having are due to the typescript conversion.   Ensure that all scripts are calling the correct files (ts not js)
-- To try: drop the bionic image and see if the libgc version of node 18+ will compile there
-**** [ ] The datepicker doesn't close on external mouse click
-:PROPERTIES:
-:ID:       06b04ed0-d3f8-4036-a859-021abc9f9388
-:END:
-**** [ ] Need xlabel on bar chart
-:PROPERTIES:
-:ID:       d328e966-6543-41ce-900c-e8b15322c2d4
-:END:
-**** [ ] Add the FitlerSentence back
-:PROPERTIES:
-:ID:       70515488-6c5c-4ba9-a978-4bf6e261ad2c
-:END:
-
-**** TODO Fonts in presentation mode are often too small
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:ID:       e2aa4365-947f-40b8-b2ef-5f40d60f98fe
-:END:
-
-**** Line charts look great in presentation mode = Olid
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:END:
-
-**** TODO Make the legend scale with presentation mode
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:ID:       9b1221ac-a85a-414f-8ff7-c46986993e03
-:END:
-
-**** TODO QoEDash validation on the PQS Smoothing does funky thigns when tyring to enter 1 
-:PROPERTIES:
-:CREATED: [2022-12-11 Sun]
-:ID:       c75edc58-742e-49e1-9ff0-d102868969b8
-:END:
-
-**** Qoedash startup issues
-*****  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
-***** Running npm run build seems to generate the files we need.
-***** For now, I'm going to add =npm run build= to the start.sh script
-**** TODO Make the legend scale with presentation mode
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:ID:       c7cd930b-b651-4637-9635-165a7d431e8f
-:END:
-
-**** TODO QoEDash validation on the PQS Smoothing does funky thigns when tyring to enter 1 
-:PROPERTIES:
-:CREATED: [2022-12-11 Sun]
-:ID:       95c26172-edb0-4134-ba5e-b50acfaa9375
-:END:
-
-**** Qoedash startup issues
-*****  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
-***** Running npm run build seems to generate the files we need.
-***** For now, I'm going to add =npm run build= to the start.sh script
-**** TODO Fonts in presentation mode are often too small
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:ID:       6850118b-9017-4272-bef8-8c088910a03a
-:END:
-
-**** Line charts look great in presentation mode = Olid
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:END:
-
-**** TODO Make the legend scale with presentation mode
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:ID:       30fbf47c-8be4-4aaa-88fe-9417c669918a
-:END:
-
-**** TODO QoEDash validation on the PQS Smoothing does funky thigns when tyring to enter 1 
-:PROPERTIES:
-:CREATED: [2022-12-11 Sun]
-:ID:       a87f72a4-bdae-4fe9-8248-a71f2a9a8e12
-:END:
-
-**** Qoedash startup issues
-*****  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
-***** Running npm run build seems to generate the files we need.
-***** For now, I'm going to add =npm run build= to the start.sh script
-***   New Tests:
-+ [ ] Date Checker unit test
-+ [ ] Unit tests for as many atomic units in the UI as possible
-+ [ ] Add both to cypress e2e tests as well
-+ [ ] Unit tests and e2e tests for color selection
-***   [ ]  TODO text on the treemap is very hard to read
-:PROPERTIES:
-:ID:       a18687f7-f60b-41be-8597-48eeac64ffd2
-:END:
-***   [ ] TODO Add item selection to the ranking filter sentence
-:PROPERTIES:
-:ID:       5c78a3a2-99b0-4c34-830c-8a2599b84357
-:END:
-**  Requests
-*** Request: Look at how Dex handles multiple breakdowns
-- TODO: DEX has a new feature that allows a multi breakdown approach on a curated list of dimension. This lets the user look at how say hailstorm compares to a subset of devices.  If this is logic that we can reuse,  we should add it to QoEDash
-*** Request: Custom chart constructor
-- From oli
-- PEMs are largely wanting to be able to see how two cohorts compoare to each other or how two metric co-evolve over time.  One way to let them explore this would be to offer a configuration for two separate charts (with potentially separate
-  filter values, plotparams, etc) then we overlap these two charts on top of each other
-- coming up with a way to deal with the two separate states will be hardest, we almost need to create a local-only version of the state for this.*
-**  Hawkins migration
-+ [ ] Filter Sentences
-+ [ ] summary cards
-+ [ ] filter selectors/drawer
-+ [ ] integrate alerts with a badge system
-+ [ ] convert all tooltips to hawksins
-* Outstanding Items
+** After first delivery
+*** separate into server and client projects
+*** tag excessive any use
+*** move charts which share data to a context
+*** add zoom time time series
+*** shared xExtnt to time series
+*** cross chart highlightng through context
+*** implement features tp bring parity
+**** csv file
+**** image expor
+** TODO got ingestion scripts running and updated the workflow :deviceReach:
+* Sessionwiz
 ** Viz System:
 *** Need to choose between Vega, VizKit, or ChartJS
 *** ChartJS pros:
@@ -480,15 +115,13 @@ CLOSED: [2023-01-12 Thu 04:27]
 *** VizKit:
 **** great opportunity to provide chartTypes
 **** in house, how long until we stop updating it again?
+** Connecting to the new database:
+*** From tcat source:
+**** serviceHost := flag.String("ts-host", "ocgatelemetry.dta.netflix.net:7004", "Telemetry Service Host (& port)")
+**** endpointURL = fmt.Sprintf("https://%s/db/event/stream", *serviceHost)*
+**** endpointURL = fmt.Sprintf("https://%s/db/event/faststream", *serviceHost)
+**** endpointURL = fmt.Sprintf("https://%s/db/event/aggregate", *serviceHost)
 
-
-
-
-* Connecting to the new database:
-** From tcat source:
-*** serviceHost := flag.String("ts-host", "ocgatelemetry.dta.netflix.net:7004", "Telemetry Service Host (& port)")
-*** endpointURL = fmt.Sprintf("https://%s/db/event/stream", *serviceHost)*
-*** endpointURL = fmt.Sprintf("https://%s/db/event/faststream", *serviceHost)
-*** endpointURL = fmt.Sprintf("https://%s/db/event/aggregate", *serviceHost)
-
-
+** TODO Make some sample charts from gameplay status logs :sessionwiz:
+** TODO Add gameplay_session_f parser :sessionwiz:
+* Adhoc

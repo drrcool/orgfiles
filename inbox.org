@@ -1,108 +1,25 @@
 
-* TODO Make the legend scale with presentation mode :home:qoedash:tool:
-:PROPERTIES:
-:CREATED: [2022-12-10 Sat]
-:ID:       30fbf47c-8be4-4aaa-88fe-9417c669918a
-:END:
-
-* TODO QoEDash validation on the PQS Smoothing Input box doesn't properly function :home:qoedash:tool:urgent:
-:PROPERTIES:
-:CREATED: [2022-12-11 Sun]
-:ID:       a87f72a4-bdae-4fe9-8248-a71f2a9a8e12
-:END:
-
-* DONE Qoedash startup issues
-CLOSED: [2023-01-08 Sun 10:28]
-**  While the build starts the server, it doesn't actually use the build for the website.  Looking at the directory, the build directory is not present. I don't know if this is expected (and we should be running a local build) or it should be getting this from the artifactory.
-** Running npm run build seems to generate the files we need.
-** For now, I'm going to add =npm run build= to the start.sh script
-
-* TODO Remember to complete Netflix trainings
+* TODO Remember to complete Netflix trainings :work:
 SCHEDULED: <2023-01-09 Mon>
 :PROPERTIES:
 :CREATED: [2022-12-11 Sun]
 :ID:       0d93b374-dc69-4e09-9079-26a008e308dc
 :END:
-* TODO Send second payment to JR
 * Inbox
-** TODO Get Pedialtye before dale gets here
-
- [[file:~/allprojects/adhoc/update_strategy/plotly_example.js::console.log( Plotly.BUILD );]]
-* TODO :qoedash: seems to have problems with loading initial page load
- [[file:~/Library/CloudStorage/Dropbox/orgmode/should_netflix_coordinate_updates.org::*Queries][Queries]]
-** TODO see if we can mitigate some of this by combining topN and bulk fetch
-* TODO DRUID ingestion: need to try in a non vault table
-:PROPERTIES:
-:CREATED: [2022-12-12 Mon]
-:ID:       c256dc92-74f6-43f7-a07d-592df059b764
-:END:
-
-* TODO look at failing jobs and retired as needed
+* TODO look at failing jobs and retired as needed :chores:work:
 :PROPERTIES:
 :CREATED: [2022-12-12 Mon]
 :ID:       506ea7cc-044c-44de-a90c-cb57c120e17f
 :END:
 
-* TODO Watch Harry Schwart'z talk on org mode
-:PROPERTIES:
-:CREATED: [2022-12-12 Mon]
-:ID:       2548c517-72e3-4268-a3b9-2bd8bdcbafca
-:END:
-
-* TODO watch aaron bieber's talk on evil-mode
-:PROPERTIES:
-:CREATED: [2022-12-12 Mon]
-:ID:       f1dbb97d-ae55-463a-9085-6e6fbe130225
-:END:
-
-* TODO Add a metricType selector to the FilterPanel
-:PROPERTIES:
-:CREATED: [2022-12-21 Wed]
-:END:
-
-* TODO Consider Changing the summary when metricType is toggled
-:PROPERTIES:
-:CREATED: [2022-12-21 Wed]
-:END:
-
-* TODO Persist changes to URL and read URL when page loads
-:PROPERTIES:
-:CREATED: [2022-12-21 Wed]
-:END:
-
-* TODO File issue with react vizkit to make the charts hawkins-theme aware
+* TODO File issue with react vizkit to make the charts hawkins-theme aware :chores:
 :PROPERTIES:
 :CREATED: [2022-12-22 Thu]
 :END:
 
-* TODO why is neovims completion window transparent
+* TODO why is neovims completion window transparent :chores:
 :PROPERTIES:
 :CREATED: [2022-12-23 Fri]
-:END:
-
-* TODO link fialure breakdown via context
-:PROPERTIES:
-:CREATED: [2022-12-24 Sat]
-:END:
-
-* TODO look at avy
-:PROPERTIES:
-:CREATED: [2022-12-24 Sat]
-:END:
-
-* TODO grocery List: kitty litter
-:PROPERTIES:
-:CREATED: [2022-12-24 Sat]
-:END:
-
-* TODO drop tooltipcolumn
-:PROPERTIES:
-:CREATED: [2022-12-24 Sat]
-:END:
-
-* TODO setup windows key as meta key and bind to eitheer delete delete or dlete hold
-:PROPERTIES:
-:CREATED: [2022-12-25 Sun]
 :END:
 
 * Note for evil-exchange leys: gx use it, use a motion to exchange us it again, and use a motion for the second
@@ -110,161 +27,71 @@ SCHEDULED: <2023-01-09 Mon>
 :CREATED: [2022-12-28 Wed]
 :END:
 
-* TODO Add a new about non-greedy searches in VIM.  For standard regexp adding a ? to a +or * makes it non-greedy. for vim, the operator is \{-}. So to find the group before the first colon do %s/^\(.\{-}\):.*$/\1
+* TODO Add a new about non-greedy searches in VIM.  For standard regexp adding a ? to a +or * makes it non-greedy. for vim, the operator is \{-}. So to find the group before the first colon do %s/^\(.\{-}\):.*$/\1 :chores:work:
 :PROPERTIES:
 :CREATED: [2022-12-30 Fri]
 :END:
 
-* 
+* TODO Need to figure out a system for my notes.  I need to capture better :chores:
 :PROPERTIES:
 :CREATED: [2023-01-05 Thu]
-:END:
-
-* 
-:PROPERTIES:
-:CREATED: [2023-01-05 Thu]
-:END:
-
-* 
-:PROPERTIES:
-:CREATED: [2023-01-05 Thu]
-:END:
-
-* 
-:PROPERTIES:
-:CREATED: [2023-01-05 Thu]
-:END:
-
-* TODO 
-:PROPERTIES:
-:CREATED: [2023-01-05 Thu]
-:END:
-
-* 
-:PROPERTIES:
-:CREATED: [2023-01-05 Thu]
-:END:
-
-* 
-:PROPERTIES:
-:CREATED: [2023-01-05 Thu]
-:END:
-
-* TODO Need to figure out a system for my notes.  I need to capture better
-:PROPERTIES:
-:CREATED: [2023-01-05 Thu]
-:END:
-
-* TODO 
-:PROPERTIES:
-:CREATED: [2023-01-06 Fri]
-:END:
-
-* org-bookmark-heading
-:PROPERTIES:
-:CREATED: [2023-01-06 Fri]
-:END:
-
-* org-protocol-capture-html
-:PROPERTIES:
-:CREATED: [2023-01-06 Fri]
-:END:
-
-* org-reveal
-:PROPERTIES:
-:CREATED: [2023-01-06 Fri]
-:END:
-
-* org-web-tools
-:PROPERTIES:
-:CREATED: [2023-01-06 Fri]
-:END:
-
-* org-sticky-headers
-:PROPERTIES:
-:CREATED: [2023-01-06 Fri]
-:END:
-
-* org-recent-heading
-:PROPERTIES:
-:CREATED: [2023-01-06 Fri]
-:END:
-
-* org-super-agenda
-:PROPERTIES:
-:CREATED: [2023-01-06 Fri]
-:END:
-
-* TODO Make permalinks in drd
-:PROPERTIES:
-:CREATED: [2023-01-06 Fri]
-:END:
-
-* 
-:PROPERTIES:
-:CREATED: [2023-01-07 Sat]
 :END:
 
 * TODO install. and configure chezmoi for dotfiles
-:PROPERTIES:
-:CREATED: [2023-01-07 Sat]
-:END:
-
-* for chezmoi in emacs: 
+**** for chezmoi in emacs:
 > Synchronizing "default" profile...
 :PROPERTIES:
 :CREATED: [2023-01-07 Sat]
 :END:
-
-* chezmoi emacs: https://abdelhakbougouffa.pro/posts/config/#mode-line
+**** chezmoi emacs: https://abdelhakbougouffa.pro/posts/config/#mode-line
 :PROPERTIES:
 :CREATED: [2023-01-07 Sat]
 :END:
 
-* TODO Check that the fonts work if smaller display before pushing
-:PROPERTIES:
-:CREATED: [2023-01-08 Sun]
-:END:
-
-* 
-:PROPERTIES:
-:CREATED: [2023-01-09 Mon]
-:END:
-
-* TODO 
-:PROPERTIES:
-:CREATED: [2023-01-09 Mon]
-:END:
-
-* 
-:PROPERTIES:
-:CREATED: [2023-01-09 Mon]
-:END:
-* Interesting
-* A possible solution for tags list stealing focus:
-** [[https://emacs.stackexchange.com/questions/17112/prevent-org-todo-pop-up-window-from-displaying-in-new-frame-dedicated-window][Stackoverflow answer]]
-** The author also posts a function that defines a window setup for work in org mode with an empty "undedicated" window for temporary buffers
-*** [[https://www.reddit.com/r/emacs/comments/2jltrn/i_want_to_save_a_window_configuration_which/][relavent redit post]]
-:PROPERTIES:
-:ID:       9fd9d302-04d6-4543-8b66-e3ed5243ade1
-:END:
-
 * TODO read oliviers ssic doc
+SCHEDULED: <2023-01-16 Mon>
 :PROPERTIES:
 :CREATED: [2023-01-11 Wed]
 :END:
 
-* TODO cap dick pills
-:PROPERTIES:
-:CREATED: [2023-01-12 Thu]
-:END:
-
-* TODO affixed opacity doesn't apply to datepicker :qoedash:
-:PROPERTIES:
-:CREATED: [2023-01-12 Thu]
-:END:
-
 * TODO Read the doc in the gaming meeting for context around dliverables
+SCHEDULED: <2023-01-16 Mon>
 :PROPERTIES:
 :CREATED: [2023-01-12 Thu]
+:END:
+
+* STRT Fill in the team doc. :work: :low: geffort:<2023-01-11 Wed 20:00> :work:low:effort:
+
+CLOSED: [2023-01-15 Sun 21:27]
+** Overall, made progress on many fronts
+** must deliver on qoedash this week
+** contributed to many adhoc requests
+** shit show overall
+
+* TODO [#E] Sync with chris about live to figure out what the data views should look like here?  We probably want to bring in title or event metric :live:work:qoedash:
+SCHEDULED: <2023-01-12 Thu>
+* TODO Add a recurrent reminder to process inbox and include the handwritten notes as part of this. :work:
+SCHEDULED: <2023-01-14 Sat>
+
+* TODO Make some sample charts from gameplay status logs :sessionwiz:
+* TODO Add gameplay_session_f parser :sessionwiz:
+
+* TODO 
+:PROPERTIES:
+:CREATED: [2023-01-17 Tue]
+:END:
+
+* TODO 
+:PROPERTIES:
+:CREATED: [2023-01-17 Tue]
+:END:
+
+* 
+:PROPERTIES:
+:CREATED: [2023-01-17 Tue]
+:END:
+
+* 
+:PROPERTIES:
+:CREATED: [2023-01-19 Thu]
 :END:

@@ -1,0 +1,8 @@
+#+title: QoEDash Reinvented Backend
+
+* The current back end struggles with the barrage of requests on page load
+* I suspect more than needed queries are fired.
+** On startup we fetch 2.5Mb of data.  A huge number of filter files are transfered
+** There has to be a better way of this. One Api call could do it, if we had it.
+*** IDEA explore the possibilities of adding a sync filter data service
+* The problem is sporatic. Right now things run smoothly.  Maybe this isn't urgent.

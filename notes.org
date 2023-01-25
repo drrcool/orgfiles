@@ -75,3 +75,20 @@ You can collapse diff sections and any other section (larger than a single line)
 
 
 
+* A possible solution for tags list stealing focus:
+** [[https://emacs.stackexchange.com/questions/17112/prevent-org-todo-pop-up-window-from-displaying-in-new-frame-dedicated-window][Stackoverflow answer]]
+** The author also posts a function that defines a window setup for work in org mode with an empty "undedicated" window for temporary buffers
+*** [[https://www.reddit.com/r/emacs/comments/2jltrn/i_want_to_save_a_window_configuration_which/][relavent redit post]]
+:PROPERTIES:
+:ID:       9fd9d302-04d6-4543-8b66-e3ed5243ade1
+:END:
+
+* open alternative file in emacs -- whats the point of this?
+:PROPERTIES:
+:CREATED: [2023-01-15 Sun]
+:END:
+
+* insert file into other file could be interesting for capture
+:PROPERTIES:
+:CREATED: [2023-01-15 Sun]
+:END:
