@@ -361,8 +361,6 @@ CLOSED: [2023-01-17 Tue 11:00] DEADLINE: <2023-01-17 Tue 17:00>
 CLOSED: [2023-01-17 Tue 23:13]
 * 2023-01-18:
 ** Little progress, first day sober, dylan struggling.
-
-
 * 2023-01-19:
 ** Random
 *** trying to get keyboard layout setup for work
@@ -388,3 +386,18 @@ CLOSED: [2023-01-17 Tue 23:13]
 ****** TODO sync with Ayesha. I will put in a PR for =streaming_alerts= that mirrors the change to PQS logic.
 ****** Whats the right away to do this in the future? Two pieces of code use the same logic. We have to update two places. Should use a shared library?
 ***
+* 2023-01-25:
+** Long Hiatus due to recovery work
+** Train wreck of a personal life:
+*** Window shot at.
+*** Suspect: Delmy Vanessa Murillo Saldana
+**** Number she called from: 669-609-9819
+** Projects:
+*** Device Reach Dash
+**** Problem with addressable fraction on Android TV, Android Mobile, and some Browsers
+***** Added temporary fix to the sql query
+****** TODO Remove the temporary fixes to the addressable fraction query when the fixes are in place :qoedash:
+****** Browsers with volume:
+(1109, 2649, 1080, 1222, 1193, 781, 1436, 1224, 1223, 1700,  2739, 1278, 2828, 1580, 4113, 1679,
+ 1590, 1681, 3880, 1693, 1695)
+**** TODO Dashboard is hardly usable without URL parameters add these to the DRD views :qoedash:
