@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       2EC55209-4ED6-4FA2-BADA-A479BC2357A7
+:END:
+#+title: Emacs Config Wishlist
+#+filetags: Project 
+
+* Goals
+
+A complete Emacs config that suits all my needs
+
+* Tasks
+** Keybinds
+Here is a list of the items we probably want to flesh out in our keybinds.
+*** TODO Window Control
+*** TODO Buffer Control
+*** TODO Help
+*** TODO org
+**** TODO header navigation
+**** TODO edit src block accept also to CcCc instead of Cc 
+**** TODO org-tree-slide
+*** TODO file
+*** TODO project
+*** TODO terms
+*** TODO insert
+**** TODO lorem-ipsum
+
+*** TODO open
+**** counsel os x
+*** TODO appearance
+**** fonts
+**** theme
+**** modeline
+** Plugins
+Plugins we want to be sure get installed and configured
+*** TODO Copilot
+*** TODO Rainbow Mode 
+*** TODO Evil Org(?)
+*** TODO web-mode

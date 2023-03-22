@@ -31,15 +31,22 @@ CLOSED: [2023-01-16 Mon 20:38] SCHEDULED: <2023-01-16 Mon>
 ** DONE :qoedash: Breakdown chart is not sorted by worst to best
 CLOSED: [2023-01-16 Mon 23:54]
 ** TODO :qoedash: investigate window resizing issues :qoedash:
-** TODO :qoedash: can't type in filters :qoedash:
-** TODO :qoedash: check context help on filters :qoedash:
-** TODO :qoedash: metric breakdown tooltips are broken :qoedash:
+** DONE :qoedash: can't type in filters :qoedash:
+CLOSED: [2023-01-30 Mon 01:09]
+** DONE :qoedash: check context help on filters :qoedash:
+CLOSED: [2023-01-30 Mon 02:10]
+** DONE :qoedash: metric breakdown tooltips are broken :qoedash:
+CLOSED: [2023-01-30 Mon 03:33]
 ** TODO :qoedash: pqs trend chart gets stuck :qoedash:
-** TODO :qoedash: unclear is thershold is applied for pqs :qoedash:
+*** TODO This could be due to the chart not getting results. We need to add an Error Boundary for this
+** DONE :qoedash: unclear is thershold is applied for pqs :qoedash:
+CLOSED: [2023-01-30 Mon 03:33]
 
-** TODO :qoedash: plotthresh needs reset on context change :qoedash:
-** TODO :qoedash: comparison has no tooltip :qoedash:
-
+** DONE :qoedash: plotthresh needs reset on context change :qoedash:
+CLOSED: [2023-01-30 Mon 03:45]
+** DONE :qoedash: comparison has no tooltip :qoedash:
+CLOSED: [2023-01-30 Mon 04:23]
+** TODO it seems that some pqs charts don't reload when the threshold is updated
 
 ** line charts look great in presentation mode = Olid :work:tool:medium:
 :PROPERTIES:

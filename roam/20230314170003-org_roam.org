@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       d81255a3-b4d2-49bd-a31d-4ddabde813a1
+:END:
+#+title: org-roam
+
+Org-roam is a slipbox-style note taking app similar to obsdian that utilizes [[id:c540d934-a4bb-4057-9480-baaa8789334b][org-mode]] to create a fully functional note taking app in [[id:97e58270-3cd3-423d-9c53-765621f66fae][emacs]].  In this system, individual notes are referred to as nodes.
+
+* Creating a new node
+
+There are three main ways to create a node in org-roam. =org-roam-node-insert= inserts a link to a node in the current buffer and creates that node if it does not exist.  =org-roam-node-find= also creates the node if it does not exist, but opens the node if it does exist.  Finally, =org-roam-capture= provides an =org-capture= interface that captures notes directly into org-roam.
+
+Keybinds for these commands in [[id:92f30be5-7548-4b80-a86b-d6cadf13ebc1][DOOM Emacs]] are listed below.
+
+| Function | DOOM Emacs Keybind |
+---------------------------------
+| =org-roam-node-insert= | SPC m m i |
+| =org-roam-node-find= | SPC m m f |
+| =org-roam-capture= | SPC m m n |
+-------
+
+* Org-Roam Buffer
+
+The org-roam buffer is an interface to view relationships with other notes.  There are two main commands here:
+- =org-roam-buffer-toggle=: Launch an org-roam buffer that tracks the node at point.
+- =org-roam-buffer-display-dedicated=: Launch an org-roam buffer for a specific node without visitings its file.
+
+** Configuration
+ The author of org-roam recommends the following config
+ #+begin_src emacs-lisp :tangle yes
+(add-to-list 'display-buffer-alist
+             '("\\*org-roam\\*"
+               (display-buffer-in-direction)
+               (direction . right)
+               (window-width 0.33)
+               (window-height . fit-window-to-buffer)))
+ #+end_src
+
+ This makes the window a regular window and allows for predictable navigation:
+ - =RET= navigates to thing-at-point in the current window
+ - =C-u RET= navigates to thing-at-point in other window

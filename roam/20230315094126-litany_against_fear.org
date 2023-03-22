@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       6dd68c44-6e92-438d-bf5e-ed126f6e7674
+:END:
+#+title: Litany Against Fear
+
+* Original Version
+#+begin_quote
+I must not fear.
+Fear is the mind-killer.
+Fear is the little-death that brings total obliteration.
+I will face my fear.
+I will permit it to pass over me and through me.
+And when it is gone past, I will turn my inner eye to see its path.
+Where the fear has gone there will be nothing.
+Only I will remain.
+#+end_quote
+Frank Herbert
+Dune
+
+* Alternate Version
+This version was used in the Dune and Children of Dune Miniseries
+
+#+begin_quote
+I will not fear.
+Fear is the mind-killer.
+I will face my fear.
+I will let it pass through me.
+When the fear has gone,
+there shall be nothing.
+Only I will remain
+#+end_quote
+
+* Personal significance.
+
+My life has long-been ruled by my [[id:4c5d6947-80b9-4be6-a656-d6a418188c43][fears]].  Now, when I feel that fear start to swell, repeating this prayer can help me practice [[id:05bbef6e-d487-4fa1-aeec-03a762b05348][mindfulness]] and remember that my fear is not me, but an emotion that can pass.  It helps me get a clearer head so I can understand what the driving force behind my fear actually is.

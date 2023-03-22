@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       62789868-8085-4a65-8632-d6ca2be47df2
+:END:
+#+title: index
+
+* Projects
+
+* Areas
+
+* Resources
+
+** Emacs
+
+*** [[id:d81255a3-b4d2-49bd-a31d-4ddabde813a1][org-roam]]
+
+
+* Archive

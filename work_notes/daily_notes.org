@@ -400,3 +400,14 @@ CLOSED: [2023-01-17 Tue 23:13]
 (1109, 2649, 1080, 1222, 1193, 781, 1436, 1224, 1223, 1700, 1278, 2739, 2828, 1580, 4113, 1679, 1690, 3881, 1681 1695, 3880, 1694, 3878, 3061, 3878, 3881)
 Added temporary code to the reach calculations that assumes all devices in these categories (except browswers, which uses a whitelist to include devices with known successfull attempts).
 ****** TODO Revert the logic in the addressable population table when the change goes live :qoedash:
+* 2023-01-30:
+** Jesus this week has been hell.
+** we lost dylan this weekend and I'm struggling a lot with that.  I think this is as close to broken hearted as I have ever been.
+** Projects:
+*** Qoedash:
+**** Previously pushed changes to the DRD views to make addressable fraction the default view
+**** TODO There are some problems with the ETL pipeline. Investigate why addressable population isn't working as expected.
+**** Pushed changes to fix the build issues we've been facing
+**** Pushed changes to the filter drawer for qoedash that converts the filter selector to Hawkins.
+    This both solves some problems that the inputs when searching the filters wasn't rendering.  Now they do render properly. It also fixed a QoL issue where selecting an item cleared search as that made finding, for example, all Comcast devices, hard as you had to re-search after each selection.
+    Also added the tooltips back for the context help on the filters. They had been invisible due to being rendered on the body while the drawer was in a portal.
