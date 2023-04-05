@@ -2,7 +2,7 @@
 :ID:       2EC55209-4ED6-4FA2-BADA-A479BC2357A7
 :END:
 #+title: Emacs Config Wishlist
-#+filetags: Project 
+#+filetags: project Project
 
 * Goals
 
@@ -36,7 +36,21 @@ Here is a list of the items we probably want to flesh out in our keybinds.
 **** modeline
 ** Plugins
 Plugins we want to be sure get installed and configured
-*** TODO Copilot
-*** TODO Rainbow Mode 
+*** DONE Copilot
+CLOSED: [2023-03-27 Mon 16:02]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-03-27 Mon 16:02]
+:END:
+
+*** DONE Rainbow Mode 
+CLOSED: [2023-03-27 Mon 16:02]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-03-27 Mon 16:02]
+:END:
+
 *** TODO Evil Org(?)
-*** TODO web-mode
+*** DONE web-mode
+CLOSED: [2023-03-27 Mon 16:02]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-03-27 Mon 16:02]
+:END:
