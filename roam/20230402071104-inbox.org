@@ -6,19 +6,19 @@
 ** TODO Create Cleaning Routine :@home:
 ** TODO Create Recipe organization System :@home:
 ** TODO Ideas for steam deck hotkeys :@home:
-** TODO Get Labs done :@home:
-SCHEDULED: <2023-04-03 Mon>
-** TODO Get XRays Done :@home:
-SCHEDULED: <2023-04-03 Mon>
-** TODO Get Perrin a Vet Visit :@home:
-SCHEDULED: <2023-04-03 Mon>
-** TODO Find Therapist with openings :@home:
-SCHEDULED: <2023-04-02 Sun>
-** TODO Add Leo to amends :@home:
-SCHEDULED: <2023-04-02 Sun>
+** DONE Get Labs done :@home:
+CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-03 Mon>
+** DONE Get XRays Done :@home:
+CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-03 Mon>
+** DONE Get Perrin a Vet Visit :@home:
+CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-03 Mon>
+** DONE Find Therapist with openings :@home:
+CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-02 Sun>
+** DONE Add Leo to amends :@home:
+CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-02 Sun>
 ** TODO Do Taxes :@home:
 DEADLINE: <2023-04-07 Fri>
 ** TODO Make PT appointment :@home:
 SCHEDULED: <2023-04-03 Mon>
-** TODO Clean fish tank
-DEADLINE: <2023-04-05 Wed>
+** DONE Clean fish tank
+CLOSED: [2023-04-06 Thu 10:29] DEADLINE: <2023-04-05 Wed>

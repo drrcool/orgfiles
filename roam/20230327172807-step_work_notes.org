@@ -209,100 +209,103 @@ Make a list with three columns: the person I harmed, the harm done, amends to be
 Separate into three columns:  Now, Not Yet, Never
 
 **** Now:
-| Person Harmed                      | Harm Done                                                       | Amends to be Made                                                         |
-|------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------|
-| Dad                                | - Grudges                                                       |                                                                           |
-|                                    | - Self-centeredness around suicide attempts                     | Living Amends                                                             |
-|                                    | - Isolation                                                     | Work with addicts to prevent suicide                                      |
-|                                    |                                                                 |                                                                           |
-|------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------|
-| Gama                               | Cheated                                                         | (don't tell him)                                                          |
-|                                    | Manipulation                                                    | He's using so a face to face seems unsafe.                                |
-|                                    | Gaslighting                                                     | Write a letter                                                            |
-|                                    | No consequences for his actions                                 |                                                                           |
-|                                    | Used him                                                        |                                                                           |
-|                                    | Lying                                                           |                                                                           |
-|------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------|
-| JR                                 | Cheated                                                         | Face to face                                                              |
-|                                    | Kept secrets                                                    | Apologize                                                                 |
-|                                    | Gas lighting                                                    | Living Amends to show these patterns aren't my drivers now.               |
-|                                    | Unreachable standards                                           |                                                                           |
-|                                    | Spied on him                                                    |                                                                           |
-|                                    | Non-communicative when needs weren't met                        |                                                                           |
-|                                    | Inappropriate blame                                             |                                                                           |
-|                                    | Lying                                                           |                                                                           |
-|------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------|
-| Dylan                              | Helped him relapse                                              | Living Amends:                                                            |
-|                                    | Manipulation                                                    | Do things he liked                                                        |
-|                                    | Expectations                                                    | Help addicts                                                              |
-|                                    |                                                                 | Don't sell drugs                                                          |
-|                                    |                                                                 | Don't help anyone else relapse & actively work to help people not relapse |
-|                                    |                                                                 |                                                                           |
-|------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------|
-| Many sexual partners               | Used men of to feel better                                      | Living Amends:                                                            |
-|                                    | Weaponized love                                                 | Live a faithful, monogomous life.                                         |
-|                                    | Lack of boundaries                                              | Be impeccible in my word                                                  |
-|                                    | Manipulation                                                    | Help chemsex addicts find recovery                                        |
-|------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------|
-| Partners I had sex with while STI+ | Exposed them to an STD                                          | Living Amends:                                                            |
-|                                    |                                                                 | No sex with STIs, test frequently if I am not monogomous                  |
-|                                    |                                                                 | Find a relavent charity or organization and donate time.                  |
-|------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------|
-| Anyone I sold to                   | Enabled their addictions                                        | Living Amends:                                                            |
-|                                    |                                                                 | Don't sell drugs                                                          |
-|                                    |                                                                 | Work with addicts.  A lot                                                 |
-|                                    |                                                                 | Be in constant service to recovery programs or related organizations      |
-|------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------|
-| Gilbert                            | May have exposed him to an uncomfortable and dangerous scenario | Face to Face.  Apology & Living Amends by not                             |
-|                                    |                                                                 | using or engaging in promiscuious/random sex                              |
-| Leo                                | Used him to feel better                                         | Converstation                                                             |
-|------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------------|
-
+| Person Harmed                      | Harm Done                                   | Amends to be Made                                                    | Letter | Done |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Dad                                | - Grudges                                   |                                                                      | X      |      |
+|                                    | - Self-centeredness around suicide attempts | Living Amends                                                        |        |      |
+|                                    | - Isolation                                 | Work with addicts to prevent suicide                                 |        |      |
+|                                    |                                             |                                                                      |        |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Gama                               | Cheated                                     | (don't tell him)                                                     | X      | X    |
+|                                    | Manipulation                                | He's using so a face to face seems unsafe.                           |        |      |
+|                                    | Gaslighting                                 | Write a letter                                                       |        |      |
+|                                    | No consequences for his actions             |                                                                      |        |      |
+|                                    | Used him                                    |                                                                      |        |      |
+|                                    | Lying                                       |                                                                      |        |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| JR                                 | Cheated                                     | Face to face                                                         | X      |      |
+|                                    | Kept secrets                                | Apologize                                                            |        |      |
+|                                    | Gas lighting                                | Living Amends to show these patterns aren't my drivers now.          |        |      |
+|                                    | Unreachable standards                       |                                                                      |        |      |
+|                                    | Spied on him                                |                                                                      |        |      |
+|                                    | Non-communicative when needs weren't met    |                                                                      |        |      |
+|                                    | Inappropriate blame                         |                                                                      |        |      |
+|                                    | Lying                                       |                                                                      |        |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Dylan                              | Helped him relapse                          | Living Amends:                                                       | X      |      |
+|                                    | Manipulation                                | Do things he liked                                                   |        |      |
+|                                    | Expectations                                | Help addicts                                                         |        |      |
+|                                    |                                             | Don't sell drugs                                                     |        |      |
+|                                    |                                             | Don't help anyone else relapse                                       |        |      |
+|                                    |                                             | actively work to help people not relapse                             |        |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Many sexual partners               | Used men of to feel better                  | Living Amends:                                                       | N/A    | X    |
+|                                    | Weaponized love                             | Live a faithful, monogomous life.                                    |        |      |
+|                                    | Lack of boundaries                          | Be impeccible in my word                                             |        |      |
+|                                    | Manipulation                                | Help chemsex addicts find recovery                                   |        |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Partners I had sex with while STI+ | Exposed them to an STD                      | Living Amends:                                                       | N/A    | X    |
+|                                    |                                             | No sex with STIs, test frequently if I am not monogomous             |        |      |
+|                                    |                                             | Find a relavent charity or organization and donate time.             |        |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Anyone I sold to                   | Enabled their addictions                    | Living Amends:                                                       | N/A    | X    |
+|                                    |                                             | Don't sell drugs                                                     |        |      |
+|                                    |                                             | Work with addicts.  A lot                                            |        |      |
+|                                    |                                             | Be in constant service to recovery programs or related organizations |        |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Gilbert                            | May have exposed him to an uncomfortable    | Face to Face.  Apology & Living Amends by not                        | N/A    |      |
+|                                    | put him in a difficult position or          |                                                                      |        |      |
+|                                    | dangerous                                   |                                                                      |        |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Leo                                | Used him to feel better                     | Converstation                                                        | N/A    |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Jake                               |                                             |                                                                      | X      |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
+| Perrin                             |                                             |                                                                      | N/A    |      |
+|------------------------------------+---------------------------------------------+----------------------------------------------------------------------+--------+------|
 **** Not Yet:
 
-| Person Harmed | Harm Done                        | Amends to be Made                                                            |
-|---------------+----------------------------------+------------------------------------------------------------------------------|
-| Mother        | - Expectations                   | Letter                                                                       |
-|---------------+----------------------------------+------------------------------------------------------------------------------|
-| Step Mother   | - Expectations                   | Letter (for now) with face-to-face or phone amends when I feel safe to do so |
-|               | - Grudges                        |                                                                              |
-|               | - People Pleasing                |                                                                              |
-|               | - Dishonesty about relapse       |                                                                              |
-|               | - Isolation                      |                                                                              |
-|---------------+----------------------------------+------------------------------------------------------------------------------|
-| Ryan          | Used him for sex                 | Uses, unstable, not safe for me.                                             |
-|               | Lack of boundaries               | Write a letter.                                                              |
-|               | Enabled his addictions           | Work with Addicts                                                            |
-|               | Convinced him to get on steroids |                                                                              |
-|---------------+----------------------------------+------------------------------------------------------------------------------|
-| Work          | Indirect about needs             | Talk with manager & director.                                                |
-|               | Poor performance                 | Stay clean and work efficiently during work hours.                           |
-|               | Poor colleague                   | Keep proper work ours to maximize the quality of work done                   |
-|               |                                  | instead of working a ton and producing mediocrity.                           |
-|---------------+----------------------------------+------------------------------------------------------------------------------|
+| Person Harmed | Harm Done                        | Amends to be Made                                                            | Letter | Done |
+|---------------+----------------------------------+------------------------------------------------------------------------------+--------+------|
+| Step Mother   | - Expectations                   | Letter (for now) with face-to-face or phone amends when I feel safe to do so |        |      |
+|               | - Grudges                        |                                                                              |        |      |
+|               | - People Pleasing                |                                                                              |        |      |
+|               | - Dishonesty about relapse       |                                                                              |        |      |
+|               | - Isolation                      |                                                                              |        |      |
+|---------------+----------------------------------+------------------------------------------------------------------------------+--------+------|
+| Ryan          | Used him for sex                 | Uses, unstable, not safe for me.                                             |        |      |
+|               | Lack of boundaries               | Write a letter.                                                              |        |      |
+|               | Enabled his addictions           | Work with Addicts                                                            |        |      |
+|               | Convinced him to get on steroids |                                                                              |        |      |
+|---------------+----------------------------------+------------------------------------------------------------------------------+--------+------|
+| Work          | Indirect about needs             | Talk with manager & director.                                                | N/A    |      |
+|               | Poor performance                 | Stay clean and work efficiently during work hours.                           |        |      |
+|               | Poor colleague                   | Keep proper work ours to maximize the quality of work done                   |        |      |
+|               |                                  | instead of working a ton and producing mediocrity.                           |        |      |
+|---------------+----------------------------------+------------------------------------------------------------------------------+--------+------|
 
 **** Never:
 
-| Person Harmed | Harm Done                                    | Amends to be Made                                     |
-|---------------+----------------------------------------------+-------------------------------------------------------|
-| Jeremy        | Manipulation                                 | Letter not to be sent.                                |
-|               | Kept his belongings                          | Forgive his loan                                      |
-|               | Used him for sex                             | Living Amends - Be Faithful and focused on partner    |
-|---------------+----------------------------------------------+-------------------------------------------------------|
-| J             | Manipulation                                 | Living Amends                                         |
-|               | Enabling his addictions                      | Work with addict                                      |
-|---------------+----------------------------------------------+-------------------------------------------------------|
-| Grayson       | Used him to feel better                      | Unsure of how to reach him.  Uses, so may not be safe |
-|               |                                              | Write a letter and work with addicts                  |
-|---------------+----------------------------------------------+-------------------------------------------------------|
-| James         | Pushed him to escalate drug use & helped him | He's still using. Living amends.                      |
-|               |                                              | Work with addicts                                     |
-|               |                                              | Be available should he decide to get clean.           |
-|---------------+----------------------------------------------+-------------------------------------------------------|
-| Dale          | Used him for status                          | He's still using. living amends                       |
-|               | Dishonest about intentions                   | Work with addicts                                     |
-|               |                                              | Be available should he decide to get clean.           |
-|---------------+----------------------------------------------+-------------------------------------------------------|
+| Person Harmed | Harm Done                                    | Amends to be Made                                     | Letter | Done |
+|---------------+----------------------------------------------+-------------------------------------------------------+--------+------|
+| Jeremy        | Manipulation                                 | Letter not to be sent.                                | X      | X    |
+|               | Kept his belongings                          | Forgive his loan                                      |        |      |
+|               | Used him for sex                             | Living Amends - Be Faithful and focused on partner    |        |      |
+|---------------+----------------------------------------------+-------------------------------------------------------+--------+------|
+| J             | Manipulation                                 | Living Amends                                         | N/A    | X    |
+|               | Enabling his addictions                      | Work with addict                                      |        |      |
+|---------------+----------------------------------------------+-------------------------------------------------------+--------+------|
+| Grayson       | Used him to feel better                      | Unsure of how to reach him.  Uses, so may not be safe | N/A    | X    |
+|               |                                              | Write a letter and work with addicts                  |        |      |
+|---------------+----------------------------------------------+-------------------------------------------------------+--------+------|
+| James         | Pushed him to escalate drug use & helped him | He's still using. Living amends.                      | N/A    | X    |
+|               |                                              | Work with addicts                                     |        |      |
+|               |                                              | Be available should he decide to get clean.           |        |      |
+|---------------+----------------------------------------------+-------------------------------------------------------+--------+------|
+| Dale          | Used him for status                          | He's still using. living amends                       | N/A    | X    |
+|               | Dishonest about intentions                   | Work with addicts                                     |        |      |
+|               |                                              | Be available should he decide to get clean.           |        |      |
+|---------------+----------------------------------------------+-------------------------------------------------------+--------+------   |
 
 ** [[STEP 9]]:
 *** Made direct amends to such people whenever possible, except when to do so would injure them or others.
