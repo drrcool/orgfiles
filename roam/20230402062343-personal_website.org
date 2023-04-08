@@ -8,23 +8,6 @@
 
 Create a personal website for help when job hunting
 
-* Tech Stack:
-**
-
-* Tasks
-** TODO Build Out Page
-*** TODO Build Page Header for Navigation
-*** TODO Build Hero Page
-*** TODO Build Contact Me Page
-*** TODO Build Interests Page
-*** TODO Build Blog Page
-*** TODO Build Experience Page
-
-** TODO Update Resume
-
-** TODO Convert Resume to org-mode?
-
-** TODO Find dataset for use in example Page
 
 * Blog Ideas:
 - Editor wars
@@ -33,3 +16,7 @@ Create a personal website for help when job hunting
       Living in the open reduces stigma, maybe others will seek help.
 - Visualizing Data
 - KISS
+
+* Open Items:
+** TODO Update social links :website:
+** TODO
