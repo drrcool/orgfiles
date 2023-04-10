@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       e87b4a25-b8ee-47ab-9cad-a79afa3bddc0
+:END:
+#+title: QoEDash
+#+filetags: project
+
+* TODO Check the QoEdash druidSQL queries and ensure correctness.
+* DONE use the code for the table query to generate the time series and bar chart queries
+CLOSED: [2023-04-09 Sun 14:07]
+* TODO use the time series queries twice to get the data for comparison charts.  For the comparison, just add DELTA_TIME to the dates to do the cross comparison.
+* TODO ensure special cases are handled:
+    - [ ] supplementals
+
+* DONE unit tests for useGetQueryMetadata
+CLOSED: [2023-04-09 Sun 14:07]
+* Create Breakdown queries for quantiles
+* Create Breakdown queries for PQS components
+* Create drilldown queries
+* Create treemap queries
+* Create ranking queries
