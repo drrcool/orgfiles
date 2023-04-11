@@ -3,6 +3,8 @@
 :END:
 #+title: QoEDash
 #+filetags: project
+* TODO Add top N filtering
+* TODO Add loading animation
 * TODO figure out where and when to do the PQS smoothing
 * TODO Check the QoEdash druidSQL queries and ensure correctness.
 * DONE use the code for the table query to generate the time series and bar chart queries
