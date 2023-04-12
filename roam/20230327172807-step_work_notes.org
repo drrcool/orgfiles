@@ -34,7 +34,8 @@ Mental health problems
 who wants me
 what people want from me
 
-
+*** Step 1 Principle:
+*Honesty* : We /admitted/ we were powerless
 
 ** [[Step 2]]:
 *** Came to believe that a power greater than ourselves could restore us to sanity.
@@ -49,6 +50,8 @@ Ryan: Cut him out. sober life has no place for your former slam partner.
 Manny: Take inventory of your feeling. Back up if needed or if you are seeing validation or affirmation. Go Slow. Have boundaries and respect them.
 Others View of me: Fuck them. Not Literally. You know you are blessed with a great job, financially secure, are attractive and internally you care deeply. You're a good friend and person
 
+*** Step 2 Principle:
+*Hope* : Came to /believe/ a power greater than ourselves could /restore us/ to sanity,
 
 ** [[Step 3]]:
 *** Made a decision to turn our will and our lives over to the care of a God of our understanding
@@ -75,6 +78,8 @@ Give me the power to do what's right, to help myself and to hold my hand out to 
 
 Help free from the bondage of self. Le me be of service. Please take my ego, my pride, my fear, and help me remember my work. Help make me a vessel of hope & healing for myself and my family in recovery and those still lost.
 
+**** Principle:
+- *Surrender*: Made a decision to /turn our will and our lives/ over to the care
 
 ** [[Step 4]]:
 *** Made a searching and a fearless moral inventory of ourselves
@@ -121,11 +126,16 @@ Ideals or a partner:
 - Takes delight in others' joy
 - Financially indepedent
 
+*** Principle:
+*Courage*: We took a /searching/ and /fearless/ moral inventory
 
 ** [[Step 5]]:
 *** Admitted to God, to ourselves, and to another human being the exact nature of our wrongs
 
 In this step we share our step 4 inventory with our sponsor.
+
+**** Principle
+- *Integrity* : /Admitted/
 
 ** [[Step 6]]: 
 *** Were entirely ready to have God remove all of these defects of character
@@ -163,6 +173,9 @@ My character defects:
 - pride
 - self-deception
 - future or past tripping
+
+*** Principle:
+*Willingness*
 
 ** [[Step 7]]:
 *** Humbly asked God to remove our shortcomings
@@ -202,6 +215,8 @@ First, we identify the opposites of our character defects:
 | past and future tripping | present            |
 | ---                      | ---                |
 
+*** Principle:
+*Humility*
 
 ** [[Step 8]]:
 *** Made a list of all person we had harmed and became willing to make amends to them all
@@ -307,19 +322,33 @@ Separate into three columns:  Now, Not Yet, Never
 |               |                                              | Be available should he decide to get clean.           |                          |      |
 |---------------+----------------------------------------------+-------------------------------------------------------+--------------------------+------|
 
+*** Principle:
+- *Love*
+
 ** [[STEP 9]]:
 *** Made direct amends to such people whenever possible, except when to do so would injure them or others.
 
 See comments in Step 8 for the letters written.
+*** Principle:
+- *Responsibility*
+
 ** [[Step 10]]:
 *** Continued to take personal inventory and when we were wrong promptly admitted it
+
+*** Principle:
+- *Discipline*
 
 ** [[Step 11]]:
 *** Sought through prayer and meditation to imporve our conscous contact with a God of our understanding praying only for the knowledge of God's will for us and the power to carry that out
 
+*** Principle:
+- *Awareness*
+
 ** [[Step 12]]:
 *** Having had a spiritual awakening as a result of these steps, we tried to carry this message to crystal meth adicts and to practice these principles in all of our affairs
 
+*** Principle:
+- *Service*
 
 * Related Topics:
 [[Recovery]]
