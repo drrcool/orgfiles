@@ -3,6 +3,7 @@
 :END:
 #+title: QoEDash
 #+filetags: project
+* TODO quantile breakdown chart (maybe others) tooltip disappears at bottom of chart
 * TODO add click handler for bar chart and others
 * TODO Add top N filtering
 * TODO Add loading animation
