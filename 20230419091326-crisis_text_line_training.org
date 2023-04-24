@@ -1,0 +1,196 @@
+:PROPERTIES:
+:ID:       d4554d3f-6113-4285-b430-f27ccd3294c9
+:END:
+#+title: Crisis Text Line Training
+
+* Five stage philosophy
+This is process that each conversation will go through.
+
+
+** Build Rapport
+- We want to establish trust with the texter.  We begin to learn what lead them to reach out.
+- How we introduce ourselves and set the tone for the conversation
+
+** Explore
+- give the texter room to open up about their crisis
+- are they at risk of harming themselves, others, or being harmed by someone else
+- especially focused on feelings
+
+** Identify the Goal
+- ask what they hope comes next
+- we work with the text to help identify what part of the crisis is the most important in the moment
+- transition from reflecting on past to the present
+
+** Discover Next Steps
+- Continue to manage their emotions after the conversation ends
+- Brain storm and identify things they can do to work on their crisis
+- possibilities:
+  - journally
+  - doctor
+  - call support
+
+** End the conversation
+- reflect on the progress and reiterate coping skills
+
+
+* Empathy, Active Listening, and Tone
+
+** Empathy:
+being there with the texter, atempting to step into their shoes without preteneding that we understand exactly what it's like to walk in them
+
+*** Sympathy:
+- We aren't feeling sorry for the texter and expressing regret for their situation. We don't pity them, and we don't try and distance ourselves from how difficult the situation is.
+- We stay away from phrases like "I'm sorry" because that shows sympathy.
+
+** Active Listening
+- While listening just to respond, we miss the opportunity to really hear the texter and show them that we care
+- Active listening on text requires careful reading and making the response about them, not us.
+- When we focus on ourselves, we aren't present and connected to the texters, which is what they need most.
+
+** Warm tone
+*** Good Contact Techniques:
+Show we are empathetic and care about them.
+
+**** Reflections
+- Rephrase what you've heard to be sure you correctly understand what's been said.
+- This is not parroting --- repeating the same thing the texter said.  Instead, we take the time to read and then summarize their thoughts in our own words
+- When to use:
+  - Double check that you understand correctly or to summary large chunks of information
+- *Takeaway*: take a moment to process what a texter shares, then reflect your understanding using *your own words*
+
+**** Strong Feeling Words
+- Describe and express a texter's emotions
+- Devastated versus upset
+- Help label emotions assoicated with the crisis a texter is sharing.
+- When to use
+  + after texters share facts about their situation without sharing much about how it's impacting them.
+  + when texters are minimizing their own emotions as a way to show them that the converstation is a safe space to express how they're truly feeling
+- *Takeaway*: watch the feeling word with the intensity of the texter's strong emotions.  Using a weak word can minimize their experience.
+
+Strong Feeling Word Examples
+| abandoned    | frightened  | lonely        |
+| afraid       | frustrated  | mortified     |
+| agitatedly   | furious     | overwhelmed   |
+| angry        | guarded     | panicked      |
+| anxious      | guilty      | powerless     |
+| ashamed      | helpless    | rejected      |
+| confused     | hesitant    | scared        |
+| defeated     | hopeless    | shocked       |
+| depressed    | horrified   | terrified     |
+| disappointed | humuliated  | tired         |
+| discouraged  | hurt        | worried       |
+| distant      | inferior    | uncomfortable |
+| distressed   | insecure    | upset         |
+| embarrassed  | intimidated | violated      |
+| empty        | irritated   | vulternable   |
+| fragile      | isolated    |               |
+
+**** Tentafiers
+- Come before strong emotions to make them tenative
+- It seems
+- I wonder
+- Gauge how they are feeling
+- help us avoid mnaking assumptions
+- should be used with strong feeling words or thoughts to get clarity on how the texter is feeling
+- we're not telling them how they feel, but instead, leaving the in charge to confirm or deny and expand
+- When to use
+  + more complex and subtle subjects
+  + when you're unsure what the texter is saying or feeling
+  + avoid using this if the meaning is clear
+- *Takeaway*: help us clarify how texters are feeling while leaving them in control.  Without tenatfiers, we can come across as an authority figure that isn't really listening.
+
+Tenatifier example
+| It seems like ...                   | I get the feeling that you ...             |
+| I wonder if ...                     | I hear you saying that ...                 |
+| It sounds like ...                  | If I understand you right, you ...         |
+|I'm hearing that ..                  | Let me see if I'm with you so far; you ... |
+| I'm curious if ...                  | I'm getting the impression ...             |
+| So, you're feeling ...              | Would it be accurate to say that you ...   |
+| I hear you're feeling ...           | I'm sensing that you ...                   |
+| You seem to be feeling ...          | I get the impression that ...              |
+| My hunch is that you're feeling ... | I'm thinking that you ....                 |
+| I wonder if you're feeling ...      |                                            |
+
+**** Validations
+- Validate their feelings and experiences
+- it makes sense to feel frustrated when things don't seem to be working
+- enourages them to open up further
+- accept a texter's emotions and crisis without judgement
+- used to prefact difficult emotions, thoughts, or experiences
+- When to use
+  + when a texter has just described a difficult emotion or challenging experience
+  + it lets them know what they are feeling are normall.
+- *takeaway*: validations need to be specific to be effective.  Connect the validating phrase to the texters throughts, feelings, and experiences so that it feels more meaningful to their situation.
+
+  Validations
+  | It's normal to ...                    | It's normal to feel ..                |
+  | It's understandable to feel ...       | You're going through a lot.           |
+  | It makes sense to ...                 | It can be overwhelming to             |
+  | It's natural to ...                   | That's a lot for one person to handle |
+  | it's reasonable to ...                | Going through __ can be intense       |
+  | that's a difficult situation          | It can be awful to                    |
+  | it makes sense why you're feeling ... | There's no wonder that                |
+  | it's understanding that you're        | it can often be confusing when        |
+
+
+
+
+
+**** Strength IDs
+- identify texter's strengths
+- it was brave to reach out today
+- Identify their strengths through what they shared
+- Connect a positive trait to an action the texter has taken.
+- When to use:
+  + Any stage
+  + Should relate directly to something they said
+- *Takeaway*: when telling a texter something positive about themeselves, avoid being vague or generic. Praise without context can seem empty
+
+  
+Some Strength IDs:
+| Courage                 |
+| Stength                 |
+| Insight                 |
+| Inspiring, hard working |
+| compassion              |
+| resilient               |
+| self-aware              |
+| committed               |
+| bravery                 |
+| smart                   |
+| caring, character       |
+| effort                  |
+
+
+**** Open ended questions
+- How long have you been dealing with this?
+- Explore the situation and helps the texter to share
+- Dig a little
+- start with how, what, when, and who
+- why questions can come across as judgemental so we avoid them
+- When to use them:
+  + throughout
+  + most useful when you need to understand a texter's feeling and thoughts better
+- We avoid asking too many questions in a row.  This leaves the texter feeling interogated
+- *Takeaway* : asking for more information lets the texter expand on their feelings
+
+  Open ended questions:
+  | What have you tried to deal with ...                                |
+  | how did XYZ make you feel                                           |
+  | when do you feel that way                                           |
+  | how have you made decisions like this in the past                   |
+  | if you had a friend going through similar what might you tell them? |
+  | what do you usuallydo when                                          |
+  | how long have you een feeling this way                              |
+
+
+
+
+*** Why important?
+It may be hard to tell what to do in a crisis, so our messages need to be as warm and empathetic as possible.  The techniques give us the information we need to provide the warm and empathetic method.
+
+* Understanding Risk
+
+** Risk: Liklihood of a texter being in immediate danger
+
+* Starting with warmth
