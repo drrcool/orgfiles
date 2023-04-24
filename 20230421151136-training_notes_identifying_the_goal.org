@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       fef12ad2-58de-4733-8952-2d2515956143
-:END:
-#+title: Training Notes: Identifying the Goal
