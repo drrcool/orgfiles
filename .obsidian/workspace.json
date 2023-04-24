@@ -1,0 +1,152 @@
+{
+  "main": {
+    "id": "4c9598d890b7cd14",
+    "type": "split",
+    "children": [
+      {
+        "id": "fc7c43b5c4fafedf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "258e7cdf3d5e1b5c",
+            "type": "leaf",
+            "state": {
+              "type": "orgmode",
+              "state": {
+                "file": "notes/install_notes.org"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0c106b37e3e21875",
+    "type": "split",
+    "children": [
+      {
+        "id": "ced0d80e796130f0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8fbf23ec7b7febc0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a92feeebec5552e1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e3e65e8efa84d67c",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f5a7f89b04c104db",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef386ba7cad50322",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "576bbf10a2c588fb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/install_notes.org",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "cef1d831fe9f1c76",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "notes/install_notes.org",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "670b1e2b51dbea6b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "fff8c1dbb1b7175c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "notes/install_notes.org"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "258e7cdf3d5e1b5c",
+  "lastOpenFiles": [
+    "20230421151136-training_notes_identifying_the_goal.org",
+    "20230421154458-training_notes_discover_next_steps.org"
+  ]
+}

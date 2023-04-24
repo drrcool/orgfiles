@@ -1,0 +1,57 @@
+#+filetags: project
+:PROPERTIES:
+:ID:       07db8e03-6e2a-47bf-990b-dbf1c4e169fc
+:END:
+#+title: 2023-04-18
+
+* Engineering Product Onsite
+
+
+
+
+* Random Thoughts
+** TODO figure out #qoedash question of hardwiring the metrics for metric breakdown versus using metric constructor
+
+
+** TODO explore testing chartjs charts:
+
+#+begin_src javascript
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import MyChart from './MyChart';
+
+describe('MyChart', () => {
+  test('tooltip is visible on hover over line', async () => {
+    // Render the chart component
+    render(<MyChart />);
+
+    // Find the chart canvas element
+    const canvas = screen.getByRole('img');
+
+    // Get the coordinates of a point on one of the lines
+    const line = screen.getByLabelText('My Line');
+    const point = line.querySelector('.point');
+    const { left, top } = point.getBoundingClientRect();
+    const x = Math.round(left + 5);
+    const y = Math.round(top + 5);
+
+    // Simulate hovering over the point
+    userEvent.hover(canvas, { clientX: x, clientY: y });
+
+    // Wait for the tooltip to be visible
+    const tooltip = await screen.findByRole('tooltip');
+
+    // Assert that the tooltip is visible
+    expect(tooltip).toBeVisible();
+  });
+});
+#+end_src
+#+begin_quote
+In this modified example, we first find the canvas element as before, but then we also find the specific line that we want to test (using screen.getByLabelText) and then we find one of the points on that line (using querySelector). We then get the left and top coordinates of that point using getBoundingClientRect and add a small offset (5 pixels) to simulate hovering over the point. Finally, we use userEvent.hover to simulate hovering over the canvas at the calculated coordinates, and wait for the tooltip to be visible using screen.findByRole.
+
+Note that this test assumes that your chart component has labels for each line, which can be accessed using screen.getByLabelText. If your chart component does not have labels, you may need to modify the test to find the line in a different way (e.g. using a class name or data attribute).
+#+end_quote
+
+* Ideas for shortcuts
+** Start next meeting: create a new buffer in emacs that is for the next meeting
