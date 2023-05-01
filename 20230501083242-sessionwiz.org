@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       147873c2-5f69-495b-87c4-39510d687428
+:END:
+#+title: SessionWiz
+#+filetags: project
+
+* Outstanding Tasks
+
+** TODO Look at GameStatusLog and see if CTGL has been logged
+** TODO Add chart to CSV reader

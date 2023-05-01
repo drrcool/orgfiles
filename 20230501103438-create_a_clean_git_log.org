@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       1e494461-c320-4779-be0a-e3510c2de089
+:END:
+#+title: Create a Clean Git Log
+
+1.  Ensure your working branch has all the changes from =main= and has no conflicts.
+   #+begin_src sh
+git rebase main
+#+end_src
+
+2. Create a patch file from your working branch to main.  In this example, our working branch is =feature/refactor_charts=
+   #+begin_src sh
+git diff main feature/refactor_charts > ~/qoedash_refactor_charts.diff.patch
+   #+end_src
+
+3. Checkout main with =git checkout main=
+
+4. Create a new branch to work from
+   #+begin_src shell
+git checkout -b feature/refactor_charts_clean
+   #+end_src
+
+5. Apply the change file
+   #+begin_src shell
+git apply ~/qoedash_refactor_charts.diff.patch
+   #+end_src
+
+Now all changes are in the new branch and uncommitted.

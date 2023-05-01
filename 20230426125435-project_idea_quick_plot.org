@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       cc2f1d21-08f9-4b67-83e4-eba328b1606b
+:END:
+#+title: Project Idea -- Quick Plot
+
+* Idea
+Create a web app that takes a csv file via upload, processes the data, stores it in a tidy format, then allows users to plot.
+
+* Implementation Parts:
+** File upload
+** File parsing
+** CSV to JSON
+** UI to select dimensions and metrics
+** UI to select chart type
+** Chart components to render selected chart
+** Allow the user to specify the date/time format
+
+
+* Questions:
+** What framework to use for charting?
+*** If we want to use it at work, we'll want to use appropriate choices
+**** Will this work with the new server architecture?
+*** For public use we will need to use D3, ChartJS, or some other library
