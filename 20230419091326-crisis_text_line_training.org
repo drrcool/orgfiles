@@ -268,3 +268,6 @@ It can be helpful to ask them what they plan to do after the conversation ends, 
 - Social distraction is not beneficial for *all* texters, and it's not our place to suggest it.  We can offer it as a possibility and ask how that might make them feel.
 
 ** Resources
+
+* How to tell if texter is being inappropriate:
+1. Try to redirect the converstion three times, in three different ways to determine whether or not the texter can be guided towards anappriopriate conversation
