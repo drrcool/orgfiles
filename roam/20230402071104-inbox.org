@@ -16,8 +16,8 @@ CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-03 Mon>
 CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-02 Sun>
 ** DONE Add Leo to amends :@home:
 CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-02 Sun>
-** TODO Do Taxes :@home:
-DEADLINE: <2023-04-07 Fri>
+** DONE Do Taxes :@home:
+CLOSED: [2023-05-02 Tue 15:22] DEADLINE: <2023-04-07 Fri>
 ** TODO Make PT appointment :@home:
 SCHEDULED: <2023-04-03 Mon>
 ** DONE Clean fish tank

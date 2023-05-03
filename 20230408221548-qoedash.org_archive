@@ -1,0 +1,185 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/richardjcool/org/20230408221548-qoedash.org
+
+
+* DONE custom  table queries seem to fail for PQS
+CLOSED: [2023-05-01 Mon 14:34]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:34
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE custom table returns empty queries for playback data
+CLOSED: [2023-05-01 Mon 13:00]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+    -- this is due to it querying the last date of the table.
+    -- SafeBoundary was looking at the MAXIMUM of the maxTime and the MINIMUM of the minTime.
+    -- this lead to the window provided being the largest window possible, so data that wasn't done was being
+
+* DONE Add top N filtering
+CLOSED: [2023-04-26 Wed 14:54]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Add loading animation
+CLOSED: [2023-04-26 Wed 14:54]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Check the QoEdash druidSQL queries and ensure correctness.
+CLOSED: [2023-04-26 Wed 14:54]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE use the code for the table query to generate the time series and bar chart queries
+CLOSED: [2023-04-09 Sun 14:07]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE use the time series queries twice to get the data for comparison charts.  For the comparison, just add DELTA_TIME to the dates to do the cross comparison.
+CLOSED: [2023-04-26 Wed 14:55]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE unit tests for useGetQueryMetadata
+CLOSED: [2023-04-09 Sun 14:07]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Create Breakdown queries for quantiles
+CLOSED: [2023-04-26 Wed 14:55]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Create Breakdown queries for PQS components
+CLOSED: [2023-04-26 Wed 14:55]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Create drilldown queries
+CLOSED: [2023-04-26 Wed 14:55]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* CANCELLED Create treemap queries
+CLOSED: [2023-04-26 Wed 14:55]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: CANCELLED
+:ARCHIVE_ITAGS: project
+:END:
+
+* CANCELLED Create ranking queries
+CLOSED: [2023-04-26 Wed 14:55]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 14:35
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: CANCELLED
+:ARCHIVE_ITAGS: project
+:END:
+- State "CANCELLED"  from              [2023-04-26 Wed 14:55] \\
+  Decided both of these could be better done with existing chart types
+
+* DONE figure out where and when to do the PQS smoothing :@work:#qoedash:
+CLOSED: [2023-05-01 Mon 15:11]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 15:11
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE quantile breakdown chart (maybe others) tooltip disappears at bottom of chart :@work:#qoedash:
+CLOSED: [2023-05-01 Mon 15:11]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 15:11
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE do filters work at all?
+CLOSED: [2023-05-01 Mon 15:10]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 15:11
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+- Initial look says that these filters *are* being applied.
+
+* DONE when we add a filter from the LegendBox, no chart reload is triggered
+CLOSED: [2023-05-01 Mon 15:10]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-01 Mon 15:11
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+- When I use exclude, this works.
+- When I use show all, this works.
+- When I use keep only, it doesn't trigger a reload.  This *may* be due to the keep only is being added on top of the topN.  My guess is that we're not doing the topN query when we
+  are adding this query.

@@ -3,48 +3,13 @@
 :END:
 #+title: QoEDash
 #+filetags: project
-* TODO Move the summary tab to druidSQL queries
-* TODO when we add a filter from the LegendBox, no chart reload is triggered
-- When I use exclude, this works.
-- When I use show all, this works.
-- When I use keep only, it doesn't trigger a reload.  This *may* be due to the keep only is being added on top of the topN.  My guess is that we're not doing the topN query when we
-  are adding this query.
-
-
-* STUDY do filters work at all?
-- Initial look says that these filters *are* being applied.
-
-* TODO When we filter, the metric Breakdown (and likely other subcomponent breakdowns) show all the options, not just the options displayed in the first chart
+* TODO if you set exclude and include filters to the same value, we crash badly
+* SOMEDAY Move the summary tab to druidSQL queries
+* SOMEDAY When we filter, the metric Breakdown (and likely other subcomponent breakdowns) show all the options, not just the options displayed in the first chart
 * Make a topN filtered worst-offender pie chart
-* TODO quantile breakdown chart (maybe others) tooltip disappears at bottom of chart :@work:#qoedash:
 * TODO add click handler for bar chart and others :@work:#qoedash:
-* DONE Add top N filtering
-CLOSED: [2023-04-26 Wed 14:54]
-* DONE Add loading animation
-CLOSED: [2023-04-26 Wed 14:54]
-* TODO figure out where and when to do the PQS smoothing :@work:#qoedash:
-* DONE Check the QoEdash druidSQL queries and ensure correctness.
-CLOSED: [2023-04-26 Wed 14:54]
-* DONE use the code for the table query to generate the time series and bar chart queries
-CLOSED: [2023-04-09 Sun 14:07]
-* DONE use the time series queries twice to get the data for comparison charts.  For the comparison, just add DELTA_TIME to the dates to do the cross comparison.
-CLOSED: [2023-04-26 Wed 14:55]
 * TODO ensure special cases are handled: :@work:#qoedash:
     - [ ] supplementals
 
-* DONE unit tests for useGetQueryMetadata
-CLOSED: [2023-04-09 Sun 14:07]
-* DONE Create Breakdown queries for quantiles
-CLOSED: [2023-04-26 Wed 14:55]
-* DONE Create Breakdown queries for PQS components
-CLOSED: [2023-04-26 Wed 14:55]
-* DONE Create drilldown queries
-CLOSED: [2023-04-26 Wed 14:55]
-* CANCELLED Create treemap queries
-CLOSED: [2023-04-26 Wed 14:55]
-* CANCELLED Create ranking queries
-CLOSED: [2023-04-26 Wed 14:55]
-- State "CANCELLED"  from              [2023-04-26 Wed 14:55] \\
-  Decided both of these could be better done with existing chart types
 * TODO Worst Offenders table view :@work:#qoedash:
 * TODO Ranking Chart Time series view :@work:#qoedash:

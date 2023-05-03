@@ -4,7 +4,51 @@
 #+title: Work Inbox
 #+filetags: project
 
-* TODO Clean out inbox
-SCHEDULED: <2023-05-01 Mon>
+* DONE Clean out inbox
+CLOSED: [2023-05-01 Mon 15:05] SCHEDULED: <2023-05-01 Mon>
 * TODO Organize QOEDash requests
 SCHEDULED: <2023-05-01 Mon>
+
+* Come up with a plan for viz on daily reports:
+** People interested:
+- Alex G
+- Daniel Chia
+- Bernadette
+- vache
+- chris wein
+
+** Daily aggregates of:
+- Success and Failures
+  - split by human and bot
+- Some sort of breakdown by error code
+- high level QoE measures
+
+** Filter information:
+- OCGA
+- Country
+- quant_type (not sure what this means, maybe they mean controller type)
+
+** TODO Setup time for this group
+
+** Resources:
+- Bernadette's [[https://stash.corp.netflix.com/projects/GDE/repos/cloud-games-beta-report/browse][code repo]] for her daily reports
+
+* TODO Setup time with Ayesha about NRDP versioning
+
+* TODO look at jigsaw failures
+SCHEDULED: <2023-05-02 Tue>
+** Cause found:
+    These are failing due to a timeout failure when writing to the table. Looking at the [[https://atlasui.prod.netflix.net/ui/graph?g.q=nf.app,metacat,:eq,name,metacat.server.counter.request,:eq,:and,catalogName,prodhive,:eq,:and,tableName,dre_jigsaw_proportion_eval_f,:eq,:and,:sum,:per-step&g.e=now-5m&g.s=2023-04-26T07:14:04-07:00&g.tz=US%2FPacific&mode=highcharts&backend=https:%2F%2Fatlas-main.us-east-1.prod.netflix.net][Atlas Chart]] for the table, we are hitting over 10k accesses per 180s when writing to the table.  To try and minimize this, I have reduced the concurrency of the jigsaw jobs from 10 to 2. This will clearly have a remakable impact on the time it takes to run the code, but this could provide the stop gap we need.
+
+    One thing i need to check on is if the concurrency of the jigsaw *jobs* themselves now comes into play.
+
+    *Fixed: Attempt 1*: It looks like when I redeployed the code, it still ran 10 jobs.  /Check: Let's be sure the pylon code is in the same branch as main/
+
+*** Outstanding Tasks:
+**** TODO Check on Jigsaw jobs.
+DEADLINE: <2023-05-03 Wed>
+All have been updated to a lower concurrency method.  We should check on them tomorrow and see if they ran successfully.
+**** TODO Migrate meson to meastro
+The docs all say I can just move meson create to meastro create, but create is also deprecated.  I need to figure out the right method for deploying it.
+* TODO Finish training videos
+DEADLINE: <2023-05-03 Wed>
