@@ -8,3 +8,9 @@
 
 ** TODO Look at GameStatusLog and see if CTGL has been logged
 ** TODO Add chart to CSV reader
+-- Using http://aperture.dta.netflix.net/ we can get CSV files for a given gsid.   These can then be passed to data parser
+-- should be easier to cut out the middle man -- integrate aperture directly into sessionwiz
+
+-- Some observations from quick looks.
+    -- data often have singular spikes that make scaling need.
+    -- Need a way to easily capture where spikes happen but without completely removing dynamic range of the chart.  We did this with the original sessionwiz by finding the rms variance around the mean and cutting on some N sigmas from the mean.

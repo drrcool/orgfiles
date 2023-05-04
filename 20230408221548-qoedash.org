@@ -3,6 +3,7 @@
 :END:
 #+title: QoEDash
 #+filetags: project
+* TODO if a date range is set in the URL, it seems to be ignored on intial page load
 * TODO if you set exclude and include filters to the same value, we crash badly
 * SOMEDAY Move the summary tab to druidSQL queries
 * SOMEDAY When we filter, the metric Breakdown (and likely other subcomponent breakdowns) show all the options, not just the options displayed in the first chart

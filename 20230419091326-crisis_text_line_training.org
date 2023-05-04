@@ -253,7 +253,7 @@ It can be helpful to ask them what they plan to do after the conversation ends, 
 - We work to identify who they usually talk to about their issues:
   - family
   - partners
-  - friends
+  - friendf
   - therapist
   - teachers
   - colleagues
