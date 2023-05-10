@@ -3,6 +3,18 @@
 :END:
 #+title: QoEDash
 #+filetags: project
+
+* DONE it seems that TTR metric gives odd results when in the qoe tab.
+CLOSED: [2023-05-04 Thu 15:24]
+    - [[http://localhost:3000/qoe?splitBy=brand&itemSelection=Comcast&metric=ttr&topNMetric=event_cnt][link]]
+    - I get a =data.map= is not a function error.
+    - Need to check what the data looks like, it's probably returning a null or {} dataframe
+    - *Solution*: the problem was in how we handled metric filters.  In cases where there were multiple values needed to be provided to the metric filter (such as =navigation_level in ('value1', value1)=) we were passing =navigation_level = value1,value2= to the query.  This, naturally lead to 500 errors.
+* TODO the quantile selector dropdown doesn't seem to pick up URL parameters.
+ -- Checking the plotParams on a link such as [[http://localhost:3000/qoe?metric=ttr&topNMetric=event_cnt&ttr_flavor=nmLanding&ttr_suffix=warm&splitBy=hw_category&quantile=95][this link]], we find the plotParams are being set correctly.
+ -- When reading from the URL, it's being set as a string, but when it's being read from the dropdown, it's read as an int
+ -- *Solution*:  Coerce all values when we are initializing the options for the dropdown selector
+    
 * TODO if a date range is set in the URL, it seems to be ignored on intial page load
 * TODO if you set exclude and include filters to the same value, we crash badly
 * SOMEDAY Move the summary tab to druidSQL queries

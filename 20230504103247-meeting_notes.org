@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d3d1f2f2-4f49-408c-ac66-1429d74409b2
+:END:
+#+title: Meeting Notes
+* Intern Scoping for PQS role
+-- Cluster devices by static device properties
+-- Are similar devices having the same playback errors?

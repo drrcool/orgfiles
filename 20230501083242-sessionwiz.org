@@ -4,6 +4,166 @@
 #+title: SessionWiz
 #+filetags: project
 
+* Parsing Aperture data:
+** Goals for the Parser:
+*** Always returns the minimum and maximum frame for the session
+*** If no minFrame and maxFrame is specified, returns the first N (need to determine the safe size) frames
+*** If minFrame is set, only return frames larger than that value
+*** If maxFrame is set, only return frames smaller than that value
+*** What data format should we use?
+**** Definitely want it in JSON, but if each row contains the column names, this will explode the data set.
+**** Options:
+#+begin_src javascipt
+{
+   gameSessionId: string,
+   sessionMinFrame: number,
+   sessionMaxFrame: number,
+   minFrame: number,
+   maxFrame: number,
+   videoFrame: number[],
+   metric1: number[],
+   metric2: number[]
+}
+#+end_src
+
+** Endpoints (GET):
+
+*** Video: http://aperture.dta.netflix.net/api/csv/video/<GSID>
+
+Output Columns:
+- VideoFrameID
+- GameProcessFrameCPUTime
+- RenderThreadFrameCPUTime
+- VideoFrameCaptureDuration
+- VideoFrameCompressedSize
+- VideoFrameControllerToGameDuration
+- VideoFrameEncodeDuration
+- VideoFrameEncodeInterval
+- VideoFrameEncodePrepareDuration
+- VideoFrameEncodeReadDuration
+- VideoFrameEncodeRequestDuration
+- VideoFrameGameInterval
+- VideoFrameGameRenderDuration
+- VideoFrameGameRenderLoopDuration
+- VideoFrameGameToTransportDuration
+- VideoFrameGameUpdateDuration
+- VideoFrameIDR
+- VideoFrameLastInputEventTime
+- VideoFramePresentMonoTime
+- VideoFramePresentTime
+- VideoFrameRTPTimestamp
+- VideoFrameSSIMScore
+- VideoFrameSendInterval
+- VideoFrameStartMonoTime
+- VideoFrameStartTime
+- VideoFrameTargetFrameSize
+- VideoFrameTotalEncodeDuration
+- VideoFrameTransportWaitDuration
+- VideoFrameGPURenderDuration
+- VideoFrameGPUConvertDuration
+- VideoFrameTransportSendDuration
+- VideoFrameClientDisplayDuration
+- VideoFrameClientState
+- VideoFrameClientStatusDecoderFinishTime
+- VideoFrameClientStatusDecoderReceiveTime
+- VideoFrameClientStatusFirstPacketArrival
+- VideoFrameClientStatusFrameArrivalTime
+- VideoFrameClientStatusFrameDeadline
+- VideoFrameClientStatusRenderingDelay
+- VideoFrameClientStatusTimestamp
+- VideoFrameControllerToClientDecodedDuration
+- VideoFrameControllerToClientDisplayDuration
+- VideoFrameGameToClientDecodedDuration
+- VideoFrameGameToClientDisplayDuration
+- VideoFrameClientAckTime
+- VideoFrameClientArrivalTime
+- VideoFrameClientFirstPacketArrivalTime
+- VideoFrameClientReceiveDuration
+- VideoFrameClientServerAvgTimeDelta
+- VideoFrameClientServerTimeDelta
+- VideoFrameNetworkOneWayLatency
+- VideoFrameTravelDuration
+- VideoFrameAckFEC
+- VideoFrameAckRTX
+- VideoFrameAckState
+- VideoFrameAckVersion
+- VideoFrameGPUToEncoderTransferDuration
+- ProcessCPUTime
+- ProcessResidentMemoryUsed
+- ProcessVirtualMemoryUsed
+- ProcessGPUCPUMemoryUsed
+- ProcessGPUComputeUsagePercent
+- ProcessGPUDMAUsagePercent
+- ProcessGPUDecoderUsagePercent
+- ProcessGPUEncoderUsagePercent
+- ProcessGPUGTTMemoryUsed
+- ProcessGPUGraphicsUsagePercent
+- ProcessGPUMemoryUsed
+- GoFreeCount
+- GoGCCycleCount
+- GoGCTotalPauseDuration
+- GoMallocCount
+- GoMemoryAllocated
+- GoTotalMemoryAllocated
+- VideoPacketReceived
+- VideoPacketNotReceived
+- FECPacketReceived
+- FECPacketNotReceived
+- RTXPacketReceived
+- RTXPacketNotReceived
+
+*** Audio: http://aperture.dta.netflix.net/api/csv/audio/<GSID>
+Output:
+- AudioFrameID
+- AudioFrameCaptureDuration
+- AudioFrameCompressedSize
+- AudioFrameEncodeInterval
+- AudioFrameGameInterval
+- AudioFrameGameToTransportDuration
+- AudioFramePresentMonoTime
+- AudioFramePresentTime
+- AudioFrameRTPTimestamp
+- AudioFrameSendInterval
+- AudioFrameTotalEncodeDuration
+- AudioFrameTransportWaitDuration
+- AudioFrameTransportSendDuration
+- AudioFrameAckJitterBuffer
+- AudioFrameAckRTX
+- AudioFrameAckState
+- AudioFrameClientAckTime
+- AudioFrameClientArrivalTime
+- AudioFrameClientFirstPacketArrivalTime
+- AudioFrameClientReceiveDuration
+- AudioFrameClientServerAvgTimeDelta
+- AudioFrameClientServerTimeDelta
+- AudioFrameNetworkOneWayLatency
+- AudioFrameTravelDuration
+
+*** Session: http://aperture.dta.netflix.net/api/csv/session/<GSID>
+Outputs:
+- Timestamp
+- GameSessionCount
+- SessionVideoFrameID
+- SessionAudioFrameID
+- VideoFrame
+- AudioFrame
+- ProcessGPUCPUMemoryUsed
+- ProcessGPUComputeUsagePercent
+- ProcessGPUDMAUsagePercent
+- ProcessGPUDecoderUsagePercent
+- ProcessGPUEncoderUsagePercent
+- ProcessGPUGTTMemoryUsed
+- ProcessGPUGraphicsUsagePercent
+- ProcessGPUMemoryUsed
+- GoFreeCount
+- GoGCCycleCount
+- GoGCTotalPauseDuration
+- GoMallocCount
+- GoMemoryAllocated
+- GoTotalMemoryAllocated
+
+*** Machine: http://aperture.dta.netflix.net/api/csv/machine/<machineId>
+
 * Outstanding Tasks
 
 ** TODO Look at GameStatusLog and see if CTGL has been logged

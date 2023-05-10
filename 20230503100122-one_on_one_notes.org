@@ -4,7 +4,12 @@
 #+title: One on One Notes
 #+filetags: project
 
-* Data
+* Venkatesh
+** May 8, 2023: Topic PQS
+Look at adding legacy app versions for mobile to all qoedash data sources
+
+
+* Dana
 ** May 3, 2023: Topic QoEDash and RTQoE
 
 *** TODO find old documentation for Dana
