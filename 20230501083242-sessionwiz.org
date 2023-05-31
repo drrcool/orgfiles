@@ -168,10 +168,12 @@ Outputs:
 ** TODO Create session finder
 ** TODO Loader: the modal has a very small entry for the gsid
 ** TODO Loader: the modal errors when you try to use it to fetch a session
+When I tried this today on my laptop, it didn't error out.  That said, we need to figure out a  better way to try and get user feedback into the UI as you seem to sit there for a decade once the data fetch starts.
 
 ** TODO Loader: add back name
 ** TODO View: Two Views: Custom where we use the existing tooling
 ** TODO View: Other View: Curated: list of curated charts
+** TODO Selector:  We shouldn't be able to select more than one session at a time.
 
 ** DONE Look at GameStatusLog and see if CTGL has been logged
 CLOSED: [2023-05-25 Thu 18:20]
