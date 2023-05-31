@@ -183,3 +183,77 @@ CLOSED: [2023-05-01 Mon 15:10]
 - When I use show all, this works.
 - When I use keep only, it doesn't trigger a reload.  This *may* be due to the keep only is being added on top of the topN.  My guess is that we're not doing the topN query when we
   are adding this query.
+
+* DONE ensure special cases are handled: :@work:#qoedash:
+CLOSED: [2023-05-16 Tue 10:56]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-16 Tue 10:56
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+    - [ ] supplementals
+
+
+* DONE if a date range is set in the URL, it seems to be ignored on intial page load
+CLOSED: [2023-05-16 Tue 10:55]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-16 Tue 10:56
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE it seems that TTR metric gives odd results when in the qoe tab.
+CLOSED: [2023-05-04 Thu 15:24]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-16 Tue 10:56
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+    - [[http://localhost:3000/qoe?splitBy=brand&itemSelection=Comcast&metric=ttr&topNMetric=event_cnt][link]]
+    - I get a =data.map= is not a function error.
+    - Need to check what the data looks like, it's probably returning a null or {} dataframe
+    - *Solution*: the problem was in how we handled metric filters.  In cases where there were multiple values needed to be provided to the metric filter (such as =navigation_level in ('value1', value1)=) we were passing =navigation_level = value1,value2= to the query.  This, naturally lead to 500 errors.
+
+* DONE the quantile selector dropdown doesn't seem to pick up URL parameters.
+CLOSED: [2023-05-17 Wed 15:51]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-17 Wed 15:51
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+ -- Checking the plotParams on a link such as [[http://localhost:3000/qoe?metric=ttr&topNMetric=event_cnt&ttr_flavor=nmLanding&ttr_suffix=warm&splitBy=hw_category&quantile=95][this link]], we find the plotParams are being set correctly.
+ -- When reading from the URL, it's being set as a string, but when it's being read from the dropdown, it's read as an int
+ -- *Solution*:  Coerce all values when we are initializing the options for the dropdown selector
+    
+
+* DONE the quantile selector dropdown doesn't seem to pick up URL parameters.
+CLOSED: [2023-05-17 Wed 15:51]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-18 Thu 09:04
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+ -- Checking the plotParams on a link such as [[http://localhost:3000/qoe?metric=ttr&topNMetric=event_cnt&ttr_flavor=nmLanding&ttr_suffix=warm&splitBy=hw_category&quantile=95][this link]], we find the plotParams are being set correctly.
+ -- When reading from the URL, it's being set as a string, but when it's being read from the dropdown, it's read as an int
+ -- *Solution*:  Coerce all values when we are initializing the options for the dropdown selector
+    
+
+* DONE check SCL tables that are used by PQS to see how long of a history they have
+CLOSED: [2023-05-18 Thu 09:04] SCHEDULED: <2023-05-18 Thu>
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-05-18 Thu 09:04
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:

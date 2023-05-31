@@ -4,55 +4,73 @@
 #+title: Work Inbox
 #+filetags: project
 
-* DONE Clean out inbox
-CLOSED: [2023-05-01 Mon 15:05] SCHEDULED: <2023-05-01 Mon>
-* TODO Organize QOEDash requests
-SCHEDULED: <2023-05-01 Mon>
+* TODO Setup time with Ayesha about NRDP versioning
+Notes from sync with Daniel:
+- DPI version will be replacing validation version.  This will report 4.1, 4.2, etc.
+- will flow into the remodeled =dse.device_client_rollup_d=
+** TODO: Ask add =nrdapp_version= to qoedash views
 
-* Come up with a plan for viz on daily reports:
-** People interested:
+
+* TODO look at jigsaw failures
+SCHEDULED: <2023-05-02 Tue>
+** Outstanding Tasks:
+*** TODO Check on Jigsaw jobs.
+DEADLINE: <2023-05-03 Wed>
+All have been updated to a lower concurrency method.  We should check on them tomorrow and see if they ran successfully.
+Most of them are running, but some are still failing
+*** TODO Migrate meson to meastro
+The docs all say I can just move meson create to meastro create, but create is also deprecated.  I need to figure out the right method for deploying it.
+*** TODO write a doc for Swapna's team on how to use jigsaw
+Include how to create workflows
+how to add metrics / remove metrics
+Potential wins for the pipeline
+
+* TODO Finish training videos
+DEADLINE: <2023-05-03 Wed>
+
+* TODO Take back ownership of tables that Chris published while I was out
+DEADLINE: <2023-05-18 Thu>
+** https://data.netflix.net/workflows/prod:PRODUCT_QUALITY_SCORE
+** https://data.netflix.net/workflows/prod:TABLEAU.STR.EMAIL_DREDASH_MON_THUR_REPORTS.WF
+* Cloud Games Dashboard
+*** Come up with a plan for viz on daily reports:
+**** People interested:
 - Alex G
 - Daniel Chia
 - Bernadette
 - vache
 - chris wein
 
-** Daily aggregates of:
+**** Daily aggregates of:
 - Success and Failures
   - split by human and bot
 - Some sort of breakdown by error code
 - high level QoE measures
 
-** Filter information:
+**** Filter information:
 - OCGA
 - Country
 - quant_type (not sure what this means, maybe they mean controller type)
 
-** TODO Setup time for this group
+**** TODO Setup time for this group
 
-** Resources:
+**** Resources:
 - Bernadette's [[https://stash.corp.netflix.com/projects/GDE/repos/cloud-games-beta-report/browse][code repo]] for her daily reports
+*** Meeting Notes:  Cloud Games Dashboard
+**** Employee beta: expected 450 people
+**** Would love to have more information about the funnel about failures
+What part of the flow are people failing out.
+**** Add more QoE Metrics to the view to add some parity with CDQoE
+**** Steering metrics
+Are we delivering content from in-region servers instead of from the US
+Do we have metrics about this?
+** Outstanding Asks:
+*** TODO Add permalinking to the dashboard
+*** TODO investigate -- device_names
+SCHEDULED: <2023-05-19 Fri>
+**** Digging into this, it looks like all the -- device_names are all cases where display.vesn and display.device_type_id are coming through as null
+*** STUDY Add memory of last filters used
+*** TODO Add All/None to the filters
 
-* TODO Setup time with Ayesha about NRDP versioning
-
-* TODO look at jigsaw failures
-SCHEDULED: <2023-05-02 Tue>
-** Cause found:
-    These are failing due to a timeout failure when writing to the table. Looking at the [[https://atlasui.prod.netflix.net/ui/graph?g.q=nf.app,metacat,:eq,name,metacat.server.counter.request,:eq,:and,catalogName,prodhive,:eq,:and,tableName,dre_jigsaw_proportion_eval_f,:eq,:and,:sum,:per-step&g.e=now-5m&g.s=2023-04-26T07:14:04-07:00&g.tz=US%2FPacific&mode=highcharts&backend=https:%2F%2Fatlas-main.us-east-1.prod.netflix.net][Atlas Chart]] for the table, we are hitting over 10k accesses per 180s when writing to the table.  To try and minimize this, I have reduced the concurrency of the jigsaw jobs from 10 to 2. This will clearly have a remakable impact on the time it takes to run the code, but this could provide the stop gap we need.
-
-    One thing i need to check on is if the concurrency of the jigsaw *jobs* themselves now comes into play.
-
-    *Fixed: Attempt 1*: It looks like when I redeployed the code, it still ran 10 jobs.  /Check: Let's be sure the pylon code is in the same branch as main/
-
-*** Outstanding Tasks:
-**** TODO Check on Jigsaw jobs.
-DEADLINE: <2023-05-03 Wed>
-All have been updated to a lower concurrency method.  We should check on them tomorrow and see if they ran successfully.
-**** TODO Migrate meson to meastro
-The docs all say I can just move meson create to meastro create, but create is also deprecated.  I need to figure out the right method for deploying it.
-* TODO Finish training videos
-DEADLINE: <2023-05-03 Wed>
-
-* Take back ownership of tables that Chris published while I was out
-** https://data.netflix.net/workflows/prod:PRODUCT_QUALITY_SCORE
-** https://data.netflix.net/workflows/prod:TABLEAU.STR.EMAIL_DREDASH_MON_THUR_REPORTS.WF
+* PQS Data explorer
+** Data explorer seems to fail when we choose a PQS metric

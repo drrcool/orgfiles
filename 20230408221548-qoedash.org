@@ -4,25 +4,19 @@
 #+title: QoEDash
 #+filetags: project
 
-* DONE it seems that TTR metric gives odd results when in the qoe tab.
-CLOSED: [2023-05-04 Thu 15:24]
-    - [[http://localhost:3000/qoe?splitBy=brand&itemSelection=Comcast&metric=ttr&topNMetric=event_cnt][link]]
-    - I get a =data.map= is not a function error.
-    - Need to check what the data looks like, it's probably returning a null or {} dataframe
-    - *Solution*: the problem was in how we handled metric filters.  In cases where there were multiple values needed to be provided to the metric filter (such as =navigation_level in ('value1', value1)=) we were passing =navigation_level = value1,value2= to the query.  This, naturally lead to 500 errors.
-* TODO the quantile selector dropdown doesn't seem to pick up URL parameters.
- -- Checking the plotParams on a link such as [[http://localhost:3000/qoe?metric=ttr&topNMetric=event_cnt&ttr_flavor=nmLanding&ttr_suffix=warm&splitBy=hw_category&quantile=95][this link]], we find the plotParams are being set correctly.
- -- When reading from the URL, it's being set as a string, but when it's being read from the dropdown, it's read as an int
- -- *Solution*:  Coerce all values when we are initializing the options for the dropdown selector
-    
-* TODO if a date range is set in the URL, it seems to be ignored on intial page load
 * TODO if you set exclude and include filters to the same value, we crash badly
 * SOMEDAY Move the summary tab to druidSQL queries
 * SOMEDAY When we filter, the metric Breakdown (and likely other subcomponent breakdowns) show all the options, not just the options displayed in the first chart
 * Make a topN filtered worst-offender pie chart
 * TODO add click handler for bar chart and others :@work:#qoedash:
-* TODO ensure special cases are handled: :@work:#qoedash:
-    - [ ] supplementals
-
 * TODO Worst Offenders table view :@work:#qoedash:
 * TODO Ranking Chart Time series view :@work:#qoedash:
+* TODO Add =nrdapp_version= to all the qoedash datasets
+* TODO make =chipset= case insensitive.  (In practice, we could do that to most splits)
+* TODO explorer doesn't work for PQS
+* TODO arrows don't work for datepicker
+* DONE seems like the update script is updating the timeBoundary but the topN is finding no data that
+CLOSED: [2023-05-30 Tue 09:19]
+*** This happens because the timeBoundary calculation is done with the full dimensionality data set but the queries primarily hit low_dim but that dataset is created second in the yaml.  The easiest solution would be to swap the order to make lowdim first in the yaml.
+*** Added this reordering on May 30
+* TODO the custom table ordering is not as intuitive as I would like

@@ -1,0 +1,39 @@
+* Tuesday, 05/30/2023
+** 09:19
+*** #qoedash
+**** reordered the lowdim and standard agg ingestion scripts in the QoEDash workflow. This should keep the timeBoundary from updating prior to the lowdim data source from being ready. This was resulting in the dashboard getting no data for the time period between the timeBoundary being refreshed and the lowdim data source from completing everyday
+** 09:24
+*** #sessionwiz
+**** Thinking about layout:
+***** Curated View:
+****** This is the view as needed by the teams with viz
+****** Each Metric needs both a time series and a distribution
+****** Video Metrics:
+******* ControllerToClientDisplayDuration
+******* FrameTravelDuration
+******* GameToClientDisplayDuration
+******* FrameTravelDurationDelta
+******* FrameStartTime - FrameLastInputEventTime
+******* GameToTransportDuration
+******* TransportWaitDuration
+******* ClientReceiveDuration
+******* CompressedSize
+******* TransportSendDuration
+******* CokmpressedSize - TargetSize
+******* GameInterval
+******* EncodeDuration
+******* GPURenderDuration (below 2.0s)
+******* EncodePrepareDuration
+******* GameRenderLoopDuration
+******* GPUConvertDuration
+******* TotalEncodeDuration
+*******
+****** Audio Metrics:
+******* FrameTravelDuration Delta
+******* FrameTravelDuration
+
+***** Custom View:
+****** This view should allow the user to select all the metrics of interest
+****** Should we save the layout somehow?
+
+***** Session Summary Stats:
