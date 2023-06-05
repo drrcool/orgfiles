@@ -20,3 +20,6 @@ CLOSED: [2023-05-30 Tue 09:19]
 *** This happens because the timeBoundary calculation is done with the full dimensionality data set but the queries primarily hit low_dim but that dataset is created second in the yaml.  The easiest solution would be to swap the order to make lowdim first in the yaml.
 *** Added this reordering on May 30
 * TODO the custom table ordering is not as intuitive as I would like
+* TODO Add back in the CSV exports
+* TODO Clicking the left/right arrows on the date popup causes it to close. Same behavior when selecting on the month or the year
+* TODO investigate situation that Giselle shared where fromDate > toDate

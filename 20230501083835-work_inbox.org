@@ -71,6 +71,7 @@ SCHEDULED: <2023-05-19 Fri>
 **** Digging into this, it looks like all the -- device_names are all cases where display.vesn and display.device_type_id are coming through as null
 *** STUDY Add memory of last filters used
 *** TODO Add All/None to the filters
+*** TODO split out successful starts vs successful sessions
 
 * PQS Data explorer
 ** Data explorer seems to fail when we choose a PQS metric
