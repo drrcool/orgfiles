@@ -75,3 +75,40 @@ SCHEDULED: <2023-05-19 Fri>
 
 * PQS Data explorer
 ** Data explorer seems to fail when we choose a PQS metric
+
+* Integrate metrics into RTCloudGaming
+** Adding second screen controller metrics into measures library (Vache)
+*** Now added them into RT QOE
+*** Hardest part: understanding what metrics to make from them
+**** How to normalize
+**** What to split by
+**** Mantis ASL:
+***** stack language
+****** Each Comma separates a command
+*** To edit the code, click the edit code button.
+**** Code is in a JSON blog
+**** Undertoolbar, each entry in the list is a row of controls
+***** can also be unique to a specific tab
+**** Views are the tabs
+**** All the queries are held in one central location, you can then use the title of the cell to find the query you need.
+**** query is the same ASL used in Atlas
+**** winDirection directs the user to which direction is a "win" for the metric
+**** When splitting by a aggregate, we want to specify the legend
+***** Legend query
+****** $(maxControllers), :legend
+*******
+**** Then use the title from the query config to add it to the dashboard
+*** Adding Dimensions:
+**** Copy from another dimension and then edit
+***** tag = dimensionName
+***** adhoc: do we want users to be able add a value?
+***** selectAll: select all matching values from a search value
+***** noListFilter: don't need to refresh the filter whenever someone starts to type
+*** Adding a binned distribution:
+**** For percentile metrics, the :sum gives the count
+
+
+* True crashes:
+** some backgrounds are shown in dex : 2026
+** How are they making it through the true crashes
+** Are they making it into PQS

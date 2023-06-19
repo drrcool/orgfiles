@@ -3,206 +3,23 @@
 :END:
 #+title: SessionWiz
 #+filetags: project
-* Parsing Aperture data:
-** Goals for the Parser:
-*** Always returns the minimum and maximum frame for the session
-*** If no minFrame and maxFrame is specified, returns the first N (need to determine the safe size) frames
-*** If minFrame is set, only return frames larger than that value
-*** If maxFrame is set, only return frames smaller than that value
-*** What data format should we use?
-**** Definitely want it in JSON, but if each row contains the column names, this will explode the data set.
-**** Options:
-#+begin_src javascipt
-{
-   gameSessionId: string,
-   sessionMinFrame: number,
-   sessionMaxFrame: number,
-   minFrame: number,
-   maxFrame: number,
-   videoFrame: number[],
-   metric1: number[],
-   metric2: number[]
-}
-#+end_src
-
-** Endpoints (GET):
-
-*** Video: http://aperture.dta.netflix.net/api/csv/video/<GSID>
-
-Output Columns:
-- VideoFrameID
-- GameProcessFrameCPUTime
-- RenderThreadFrameCPUTime
-- VideoFrameCaptureDuration
-- VideoFrameCompressedSize
-- VideoFrameControllerToGameDuration
-- VideoFrameEncodeDuration
-- VideoFrameEncodeInterval
-- VideoFrameEncodePrepareDuration
-- VideoFrameEncodeReadDuration
-- VideoFrameEncodeRequestDuration
-- VideoFrameGameInterval
-- VideoFrameGameRenderDuration
-- VideoFrameGameRenderLoopDuration
-- VideoFrameGameToTransportDuration
-- VideoFrameGameUpdateDuration
-- VideoFrameIDR
-- VideoFrameLastInputEventTime
-- VideoFramePresentMonoTime
-- VideoFramePresentTime
-- VideoFrameRTPTimestamp
-- VideoFrameSSIMScore
-- VideoFrameSendInterval
-- VideoFrameStartMonoTime
-- VideoFrameStartTime
-- VideoFrameTargetFrameSize
-- VideoFrameTotalEncodeDuration
-- VideoFrameTransportWaitDuration
-- VideoFrameGPURenderDuration
-- VideoFrameGPUConvertDuration
-- VideoFrameTransportSendDuration
-- VideoFrameClientDisplayDuration
-- VideoFrameClientState
-- VideoFrameClientStatusDecoderFinishTime
-- VideoFrameClientStatusDecoderReceiveTime
-- VideoFrameClientStatusFirstPacketArrival
-- VideoFrameClientStatusFrameArrivalTime
-- VideoFrameClientStatusFrameDeadline
-- VideoFrameClientStatusRenderingDelay
-- VideoFrameClientStatusTimestamp
-- VideoFrameControllerToClientDecodedDuration
-- VideoFrameControllerToClientDisplayDuration
-- VideoFrameGameToClientDecodedDuration
-- VideoFrameGameToClientDisplayDuration
-- VideoFrameClientAckTime
-- VideoFrameClientArrivalTime
-- VideoFrameClientFirstPacketArrivalTime
-- VideoFrameClientReceiveDuration
-- VideoFrameClientServerAvgTimeDelta
-- VideoFrameClientServerTimeDelta
-- VideoFrameNetworkOneWayLatency
-- VideoFrameTravelDuration
-- VideoFrameAckFEC
-- VideoFrameAckRTX
-- VideoFrameAckState
-- VideoFrameAckVersion
-- VideoFrameGPUToEncoderTransferDuration
-- ProcessCPUTime
-- ProcessResidentMemoryUsed
-- ProcessVirtualMemoryUsed
-- ProcessGPUCPUMemoryUsed
-- ProcessGPUComputeUsagePercent
-- ProcessGPUDMAUsagePercent
-- ProcessGPUDecoderUsagePercent
-- ProcessGPUEncoderUsagePercent
-- ProcessGPUGTTMemoryUsed
-- ProcessGPUGraphicsUsagePercent
-- ProcessGPUMemoryUsed
-- GoFreeCount
-- GoGCCycleCount
-- GoGCTotalPauseDuration
-- GoMallocCount
-- GoMemoryAllocated
-- GoTotalMemoryAllocated
-- VideoPacketReceived
-- VideoPacketNotReceived
-- FECPacketReceived
-- FECPacketNotReceived
-- RTXPacketReceived
-- RTXPacketNotReceived
-
-*** Audio: http://aperture.dta.netflix.net/api/csv/audio/<GSID>
-Output:
-- AudioFrameID
-- AudioFrameCaptureDuration
-- AudioFrameCompressedSize
-- AudioFrameEncodeInterval
-- AudioFrameGameInterval
-- AudioFrameGameToTransportDuration
-- AudioFramePresentMonoTime
-- AudioFramePresentTime
-- AudioFrameRTPTimestamp
-- AudioFrameSendInterval
-- AudioFrameTotalEncodeDuration
-- AudioFrameTransportWaitDuration
-- AudioFrameTransportSendDuration
-- AudioFrameAckJitterBuffer
-- AudioFrameAckRTX
-- AudioFrameAckState
-- AudioFrameClientAckTime
-- AudioFrameClientArrivalTime
-- AudioFrameClientFirstPacketArrivalTime
-- AudioFrameClientReceiveDuration
-- AudioFrameClientServerAvgTimeDelta
-- AudioFrameClientServerTimeDelta
-- AudioFrameNetworkOneWayLatency
-- AudioFrameTravelDuration
-
-*** Session: http://aperture.dta.netflix.net/api/csv/session/<GSID>
-Outputs:
-- Timestamp
-- GameSessionCount
-- SessionVideoFrameID
-- SessionAudioFrameID
-- VideoFrame
-- AudioFrame
-- ProcessGPUCPUMemoryUsed
-- ProcessGPUComputeUsagePercent
-- ProcessGPUDMAUsagePercent
-- ProcessGPUDecoderUsagePercent
-- ProcessGPUEncoderUsagePercent
-- ProcessGPUGTTMemoryUsed
-- ProcessGPUGraphicsUsagePercent
-- ProcessGPUMemoryUsed
-- GoFreeCount
-- GoGCCycleCount
-- GoGCTotalPauseDuration
-- GoMallocCount
-- GoMemoryAllocated
-- GoTotalMemoryAllocated
-
-*** Machine: http://aperture.dta.netflix.net/api/csv/machine/<machineId>
-
 * Outstanding Tasks
 ** TODO Create query to find sessions of interest
 ** TODO Create session finder
 ** TODO Loader: the modal has a very small entry for the gsid
 ** TODO Loader: the modal errors when you try to use it to fetch a session
 When I tried this today on my laptop, it didn't error out.  That said, we need to figure out a  better way to try and get user feedback into the UI as you seem to sit there for a decade once the data fetch starts.
-
 ** TODO Loader: add back name
+** TODO Audio charts are empty
+
 ** TODO View: Two Views: Custom where we use the existing tooling
 ** TODO View: Other View: Curated: list of curated charts
 ** TODO Selector:  We shouldn't be able to select more than one session at a time.
 ** TODO Add dynamic range logic
 ** TODO mask out data for the histograms
 ** TODO check that a session is the proper formatting
-
 ** TODO When we add a new session, it augments the existing sessionList instead of overwritting
-
-** DONE Look at GameStatusLog and see if CTGL has been logged
-CLOSED: [2023-05-25 Thu 18:20]
-** DONE Add chart to CSV reader
-CLOSED: [2023-05-25 Thu 18:20]
--- Using http://aperture.dta.netflix.net/ we can get CSV files for a given gsid.   These can then be passed to data parser
--- should be easier to cut out the middle man -- integrate aperture directly into sessionwiz
-
--- Some observations from quick looks.
-    -- data often have singular spikes that make scaling need.
-    -- Need a way to easily capture where spikes happen but without completely removing dynamic range of the chart.  We did this with the original sessionwiz by finding the rms variance around the mean and cutting on some N sigmas from the mean.
-
-* JSON conversion before transfer notes
-
-** Testing a 2320s long session:
-*** No compression with JSON conversion:
-**** 2.4 minutes
-**** 198 Mb
-*** No compression with no conversion:
-**** 1.3 minutes
-**** 23 Mb
-*** Compression with no conversion:
-**** 40 seconds
-**** 28 Mb
-*** Compression with JSON
-**** 1.8 minutes
-***** 198Mb 5
+** TODO add units to charts
+** TODO add native aperture to main branch
+** TODO finish data cleaning PR
+** TODO work on URL loader

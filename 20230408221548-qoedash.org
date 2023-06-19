@@ -13,13 +13,28 @@
 * TODO Ranking Chart Time series view :@work:#qoedash:
 * TODO Add =nrdapp_version= to all the qoedash datasets
 * TODO make =chipset= case insensitive.  (In practice, we could do that to most splits)
-* TODO explorer doesn't work for PQS
+** Probably best to do this in the query itself. Check to see if druid allows an UPPER or similar operator
+** We want to avoid doing this in the code since
+*** Some metrics like the histogram ones we can't really aggregate after the fact
+*** We probably want to ensure that we can update the filters to do this as well and the preloads
+*** We would need to update the preload scripts to do an uppercase.  How hard is that fuck
+***
+
+* DONE explorer doesn't work for PQS
+CLOSED: [2023-06-18 Sun 19:56]
 * TODO arrows don't work for datepicker
 * DONE seems like the update script is updating the timeBoundary but the topN is finding no data that
 CLOSED: [2023-05-30 Tue 09:19]
 *** This happens because the timeBoundary calculation is done with the full dimensionality data set but the queries primarily hit low_dim but that dataset is created second in the yaml.  The easiest solution would be to swap the order to make lowdim first in the yaml.
 *** Added this reordering on May 30
 * TODO the custom table ordering is not as intuitive as I would like
-* TODO Add back in the CSV exports
+* DONE Add back in the CSV exports
+CLOSED: [2023-06-18 Sun 19:57]
 * TODO Clicking the left/right arrows on the date popup causes it to close. Same behavior when selecting on the month or the year
-* TODO investigate situation that Giselle shared where fromDate > toDate
+* DONE investigate situation that Giselle shared where fromDate > toDate
+CLOSED: [2023-06-18 Sun 19:57]
+* TODO handle the new session success logic
+* TODO the logic for NRDP 4.2 needs updated
+* TODO Add IOS and Android Mobile filters back
+* TODO add ads plan to PQS:
+    This isn't as simple as I expected.  The largest issue is our aggregate doesn't include plan information, which means that we would have to re-engineer the aggregate even before adding to the report table.  For now, I am going to pass on this.

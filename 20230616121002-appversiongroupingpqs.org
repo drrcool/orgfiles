@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       d090951a-f76c-4d8d-a21c-a1dae7564a00
+:END:
+#+title: AppVersionGroupingPQS
+
+
+In the =clevent_client_performance_f= table, the =app_version= returns the short_client_name instead of the =client_version=.  This makes the join problematic. We need to come up with a way to use the short_client_name when we fail the join.
+
+Option 1:
+#+begin_src sql
+    CASE WHEN dtrd.client_name in ('iOS', 'Android Mobile') THEN COALESCE(dcrd.short_client_name, t1.client_version) else dcrd.short_client_name END
+#+end_src
+
+This seems like it should work.   To do the app version grouping we need to look at the major version
+
+#+begin_src sql
+    split(short_client_name, '.')[1]
+#+end_src
+
+For Presto indices start at 1
