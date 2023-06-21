@@ -11,11 +11,16 @@
 When I tried this today on my laptop, it didn't error out.  That said, we need to figure out a  better way to try and get user feedback into the UI as you seem to sit there for a decade once the data fetch starts.
 ** TODO Loader: add back name
 ** TODO Audio charts are empty
-
 ** TODO View: Two Views: Custom where we use the existing tooling
-** TODO View: Other View: Curated: list of curated charts
+*** TODO create grid view
+*** TODO create metric selector
+*** TODO create option for metric type:
+**** Raw metric
+**** Difference metric
+**** Ratio metric
+**** Running Difference metric
+
 ** TODO Selector:  We shouldn't be able to select more than one session at a time.
-** TODO Add dynamic range logic
 ** TODO mask out data for the histograms
 ** TODO check that a session is the proper formatting
 ** TODO When we add a new session, it augments the existing sessionList instead of overwritting

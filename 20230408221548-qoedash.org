@@ -4,37 +4,30 @@
 #+title: QoEDash
 #+filetags: project
 
-* TODO if you set exclude and include filters to the same value, we crash badly
-* SOMEDAY Move the summary tab to druidSQL queries
-* SOMEDAY When we filter, the metric Breakdown (and likely other subcomponent breakdowns) show all the options, not just the options displayed in the first chart
-* Make a topN filtered worst-offender pie chart
-* TODO add click handler for bar chart and others :@work:#qoedash:
-* TODO Worst Offenders table view :@work:#qoedash:
-* TODO Ranking Chart Time series view :@work:#qoedash:
-* TODO Add =nrdapp_version= to all the qoedash datasets
-* TODO make =chipset= case insensitive.  (In practice, we could do that to most splits)
-** Probably best to do this in the query itself. Check to see if druid allows an UPPER or similar operator
-** We want to avoid doing this in the code since
-*** Some metrics like the histogram ones we can't really aggregate after the fact
-*** We probably want to ensure that we can update the filters to do this as well and the preloads
-*** We would need to update the preload scripts to do an uppercase.  How hard is that fuck
-***
+* TODAY:
+* Holding Pen
+** TODO if you set exclude and include filters to the same value, we crash badly
+** SOMEDAY Move the summary tab to druidSQL queries
+** SOMEDAY When we filter, the metric Breakdown (and likely other subcomponent breakdowns) show all the options, not just the options displayed in the first chart
+** Make a topN filtered worst-offender pie chart
+** TODO Worst Offenders table view :@work:#qoedash:
+** TODO Ranking Chart Time series view :@work:#qoedash:
+** TODO Add =nrdapp_version= to all the qoedash datasets
+*** Notes from meeting: June 20
+**** Any other versions to add in the meantime?
+***** DPI version: in startup logblob
 
-* DONE explorer doesn't work for PQS
-CLOSED: [2023-06-18 Sun 19:56]
-* TODO arrows don't work for datepicker
-* DONE seems like the update script is updating the timeBoundary but the topN is finding no data that
-CLOSED: [2023-05-30 Tue 09:19]
-*** This happens because the timeBoundary calculation is done with the full dimensionality data set but the queries primarily hit low_dim but that dataset is created second in the yaml.  The easiest solution would be to swap the order to make lowdim first in the yaml.
-*** Added this reordering on May 30
-* TODO the custom table ordering is not as intuitive as I would like
-* DONE Add back in the CSV exports
-CLOSED: [2023-06-18 Sun 19:57]
-* TODO Clicking the left/right arrows on the date popup causes it to close. Same behavior when selecting on the month or the year
-* DONE investigate situation that Giselle shared where fromDate > toDate
-CLOSED: [2023-06-18 Sun 19:57]
-* TODO handle the new session success logic
-* TODO the logic for NRDP 4.2 needs updated
-* TODO Add IOS and Android Mobile filters back
-* TODO add ads plan to PQS:
+** TODO make =chipset= case insensitive.  (In practice, we could do that to most splits)
+*** Probably best to do this in the query itself. Check to see if druid allows an UPPER or similar operator
+*** We want to avoid doing this in the code since
+**** Some metrics like the histogram ones we can't really aggregate after the fact
+**** We probably want to ensure that we can update the filters to do this as well and the preloads
+**** We would need to update the preload scripts to do an uppercase.  How hard is that fuck
+** TODO arrows don't work for datepicker
+** TODO the custom table ordering is not as intuitive as I would like
+** TODO Clicking the left/right arrows on the date popup causes it to close. Same behavior when selecting on the month or the year
+** TODO handle the new session success logic
+** SOMEDAY add ads plan to PQS:
     This isn't as simple as I expected.  The largest issue is our aggregate doesn't include plan information, which means that we would have to re-engineer the aggregate even before adding to the report table.  For now, I am going to pass on this.
+** TODO Add game play start component chart to gaming views
+** TODO add =utc_date= to the axis label on qoedash

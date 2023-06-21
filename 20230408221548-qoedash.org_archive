@@ -257,3 +257,90 @@ CLOSED: [2023-05-18 Thu 09:04] SCHEDULED: <2023-05-18 Thu>
 :ARCHIVE_TODO: DONE
 :ARCHIVE_ITAGS: project
 :END:
+
+* DONE investigate situation that Giselle shared where fromDate > toDate
+CLOSED: [2023-06-18 Sun 19:57]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-06-19 Mon 10:55
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: Holding Pen
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Add back in the CSV exports
+CLOSED: [2023-06-18 Sun 19:57]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-06-19 Mon 10:55
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: Holding Pen
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE seems like the update script is updating the timeBoundary but the topN is finding no data that
+CLOSED: [2023-05-30 Tue 09:19]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-06-19 Mon 10:55
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: Holding Pen
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+*** This happens because the timeBoundary calculation is done with the full dimensionality data set but the queries primarily hit low_dim but that dataset is created second in the yaml.  The easiest solution would be to swap the order to make lowdim first in the yaml.
+*** Added this reordering on May 30
+
+* DONE explorer doesn't work for PQS
+CLOSED: [2023-06-18 Sun 19:56]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-06-19 Mon 10:55
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: Holding Pen
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE add click handler for bar chart and others :@work:#qoedash:
+CLOSED: [2023-06-20 Tue 09:30]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-06-20 Tue 09:30
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: TODAY:
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+** Expected behavior:
+*** Click on a line, it adds the item to itemSelection
+*** Click on a bar, it adds the item to itemSelection
+*** Clicking on either should also update the URL
+*** Clicking on the comparison chart should do NOTHING
+*** Clicking on the quantile breakdown chart should do NOTHING
+*** Clicking on the metric breakdown chart should do NOTHING
+
+
+* DONE Add IOS and Android Mobile filters back
+CLOSED: [2023-06-19 Mon 11:03]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-06-20 Tue 09:30
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: TODAY:
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE the logic for NRDP 4.2 needs updated
+CLOSED: [2023-06-19 Mon 11:03]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-06-20 Tue 09:30
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: TODAY:
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
