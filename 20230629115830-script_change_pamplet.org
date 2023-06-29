@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       9d55c605-da8d-4990-82f9-693180a1a8d4
+:END:
+#+title: Script Change - Pamphlet
+
+* Proposed Procedure:
+Keep one copy of each unread pamphlet in a large envelope.   At the start of a 5th Sunday meeting, choose a random pamphlet for the monthly reading.  Do not put the pamphlet back in the envelope when finished (so we know which pamphlets are still in rotation).  Once the envelope is empty, refill it with one copy of each pamphlet to start the cycle again.
+
+* When discussing the structure of the meeting:
+On the fifth Sundays, we read from one of CMA's pamphlets for our reading.
+
+* When introducing the reading
+** Option 1
+Today, we will be reading from the pamphlet __________________.  Who would like to read for us today?
+
+
+** Option 2
+Today, we will be reading from the pamphlet _______________..   Please read as much as you would like.  When you are done reading, please pass the pamphlet to the next person.  If you do not wish to read, simply say "Pass" and pass the pamphlet to the next person.

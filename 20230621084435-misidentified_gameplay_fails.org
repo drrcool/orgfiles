@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       4fe4ce7f-787a-419a-950a-2c3876b854ed
+:END:
+#+title: Misidentified Gameplay Fails
+
+A number of sessions are being mischaracterized by failures in qoedash but not in bernadette's query:
+
+5ea2b732-35a2-4c27-b132-eebe73259983
+70c89380-ef06-4a63-b7dc-b239b67a7db0
+86af5abb-3c55-42df-b25d-04d913fed44a
+ac27a882-efaf-4c7d-85dc-ee67fda1a225
+b83ac3d0-566a-45b1-8b4c-3daf126a1edb
+bf379b67-4c08-4174-845b-9127f44bc25a
+cd109f98-2af7-4441-b678-ca73069c1783
+
+#+begin_src sql
+    SELECT
+        ,*
+    from
+        dse.gameplay_f
+    WHERE
+        gameplay_session_id in (
+'5ea2b732-35a2-4c27-b132-eebe73259983',
+'70c89380-ef06-4a63-b7dc-b239b67a7db0',
+'86af5abb-3c55-42df-b25d-04d913fed44a',
+'ac27a882-efaf-4c7d-85dc-ee67fda1a225',
+'b83ac3d0-566a-45b1-8b4c-3daf126a1edb',
+'bf379b67-4c08-4174-845b-9127f44bc25a',
+'cd109f98-2af7-4441-b678-ca73069c1783'
+        )
+    and utc_date = 20230616
+
+#+end_src
