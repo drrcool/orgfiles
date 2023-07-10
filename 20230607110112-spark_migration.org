@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       6663e295-db06-4855-8bac-ae7ecb253a36
+:END:
+#+title: Spark Migration
+* Notes from Meeting : 6/7/23
+
+** Tagging:
+
+*** restartable-comparable:
+Jobs with this tag will be used to validate future versions of Spark
+
+*** opt-out:
+If your job is too sensitive to be auto-migrated then you should tag it as opt-out.  This is for *future* migrations and not necissarily the current migration? How confusing could we have made this?
+** Use Migration tooling to update the code:
+    3

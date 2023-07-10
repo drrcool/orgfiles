@@ -31,3 +31,4 @@
     This isn't as simple as I expected.  The largest issue is our aggregate doesn't include plan information, which means that we would have to re-engineer the aggregate even before adding to the report table.  For now, I am going to pass on this.
 ** TODO Add game play start component chart to gaming views
 ** TODO add =utc_date= to the axis label on qoedash
+** TODO add ttr_events
