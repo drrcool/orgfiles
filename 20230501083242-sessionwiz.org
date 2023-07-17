@@ -9,8 +9,6 @@
 ** TODO Loader: the modal has a very small entry for the gsid
 ** TODO Loader: the modal errors when you try to use it to fetch a session
 When I tried this today on my laptop, it didn't error out.  That said, we need to figure out a  better way to try and get user feedback into the UI as you seem to sit there for a decade once the data fetch starts.
-** TODO Loader: add back name
-** TODO Audio charts are empty
 ** TODO View: Two Views: Custom where we use the existing tooling
 *** TODO create grid view
 *** TODO create metric selector
@@ -20,11 +18,8 @@ When I tried this today on my laptop, it didn't error out.  That said, we need t
 **** Ratio metric
 **** Running Difference metric
 
-** TODO Selector:  We shouldn't be able to select more than one session at a time.
 ** TODO mask out data for the histograms
 ** TODO check that a session is the proper formatting
 ** TODO When we add a new session, it augments the existing sessionList instead of overwritting
 ** TODO add units to charts
-** TODO add native aperture to main branch
-** TODO finish data cleaning PR
-** TODO work on URL loader
+** TODO add gameplay components to summary overview

@@ -112,3 +112,22 @@ SCHEDULED: <2023-05-19 Fri>
 ** some backgrounds are shown in dex : 2026
 ** How are they making it through the true crashes
 ** Are they making it into PQS
+
+
+
+* Lauren walkthrough for games reach
+** Two types of requests:
+*** Projecting Smart TV reach 2024, 2025, 2026
+Previously: Samsung, LG, Sony, Amazon, Google
+We know Roku is also committed now.
+Add devices as devices are added to whats available
+
+*** We know which devices are cloud games enabled -- what is the reach of those devices in active members and which regions are those located in?
+When should we launch beta in which territories, what languages, what rating?
+Look at NRDP/Android holistically, then look at the devices that get actived for cloud games and look at the distribution
+
+* Q3 Plan:
+** Gaming Dashboard support
+    Core development through PM1
+** QoEDash integration of Crashes and Errors
+** Explore PQS metric definitions

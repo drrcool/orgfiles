@@ -260,3 +260,69 @@ CLOSED: [2023-06-20 Tue 09:34]
 :END:
 - State "CANCELLED"  from "TODO"       [2023-06-20 Tue 09:34] \\
   For now, its not looking like we need to use the range for this.
+
+* DONE Loader: add back name
+CLOSED: [2023-07-05 Wed 09:15]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-07-05 Wed 09:15
+:ARCHIVE_FILE: ~/org/20230501083242-sessionwiz.org
+:ARCHIVE_OLPATH: Outstanding Tasks
+:ARCHIVE_CATEGORY: 20230501083242-sessionwiz
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Audio charts are empty
+CLOSED: [2023-07-05 Wed 09:15]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-07-05 Wed 09:16
+:ARCHIVE_FILE: ~/org/20230501083242-sessionwiz.org
+:ARCHIVE_OLPATH: Outstanding Tasks
+:ARCHIVE_CATEGORY: 20230501083242-sessionwiz
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Selector:  We shouldn't be able to select more than one session at a time.
+CLOSED: [2023-07-05 Wed 09:15]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-07-05 Wed 09:16
+:ARCHIVE_FILE: ~/org/20230501083242-sessionwiz.org
+:ARCHIVE_OLPATH: Outstanding Tasks
+:ARCHIVE_CATEGORY: 20230501083242-sessionwiz
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE add native aperture to main branch
+CLOSED: [2023-07-05 Wed 09:15]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-07-05 Wed 09:16
+:ARCHIVE_FILE: ~/org/20230501083242-sessionwiz.org
+:ARCHIVE_OLPATH: Outstanding Tasks
+:ARCHIVE_CATEGORY: 20230501083242-sessionwiz
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE finish data cleaning PR
+CLOSED: [2023-07-05 Wed 09:15]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-07-05 Wed 09:16
+:ARCHIVE_FILE: ~/org/20230501083242-sessionwiz.org
+:ARCHIVE_OLPATH: Outstanding Tasks
+:ARCHIVE_CATEGORY: 20230501083242-sessionwiz
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE work on URL loader
+CLOSED: [2023-07-05 Wed 09:15]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-07-05 Wed 09:16
+:ARCHIVE_FILE: ~/org/20230501083242-sessionwiz.org
+:ARCHIVE_OLPATH: Outstanding Tasks
+:ARCHIVE_CATEGORY: 20230501083242-sessionwiz
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:

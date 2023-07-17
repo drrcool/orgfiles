@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       8c6c7019-d28b-439a-8c5e-f2fd03f460d2
+:END:
+#+title: svg path
+
+The = =<path>'= is the most powerful SVG element to create lines, curves, arcs, and more.
+
+The shape of =path= is set by one parameter =d=.  Each command in =d= is instantiated by a specific letter.  For example =M= tells it to move to a specific x and y coordinate.  Each command has two variants.  An uppercase letter means to move to /absolute/ coordinates and a lowercase letters means to move to /relative/ coordinates.
+
+Vertical and horizontal lines are drawn using H and V.  They take one parameters since you are only moving in one direction.
+#+begin_src html
+H x
+(or)
+h dx
+#+end_src
+
+#+begin_src html
+V y
+(or)
+v dy
+#+end_src

@@ -1,4 +1,47 @@
+#+filetags: project
 :PROPERTIES:
 :ID:       5253acdf-97b6-4b96-afe3-75e43daecfae
 :END:
 #+title: Cloud Games Metric Sync
+* TODAY
+** TODO Get colors to match between the timeseries and the bar charts
+* QoEDash aggregate views
+** Open Questions:
+*** How to do the aggregation:
+**** Druid
+    - Gets us tdigest automagically and allows for quick percentiles
+    - How hard is hyper log log?
+    - Dana, Chris, and Andy have experience with HyperLogLog
+    - Post in team channel to get some information
+    - Dimensions to track value ranges and then use that to filter before making the tdigest
+
+
+**** Presto
+    Have to either aggregate on query or pre-aggregate and do something like mean or median of percentiles
+
+
+*** Which metrics to track:
+**** CTGL
+**** Bitrates
+**** Delay Components
+**** gameplay_secs
+**** gameplay_secs / successful_session
+**** active_devices
+**** continuous_dropped_frames
+**** dropped_frames / hour
+
+*** Dimensions
+**** Display dimensions
+**** Controller dimensions
+***** TODO decide how to handle the case when we have multiple controllers connected in one session.
+This will probably have different implications when we have multiplayer games.
+**** Geo
+**** Game Title dimension
+**** OCGA Dims
+***** TODO decide which OCGA dimensions are of most use here
+
+
+* Sessionwiz:
+** Custom view
+** Dynamic smoothing
+** Masking
