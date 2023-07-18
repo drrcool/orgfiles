@@ -60,3 +60,4 @@ https://netflix.slack.com/archives/C04FTKVSZGX/p1687901826435599
 * TODO change the =device_category= filter for cloudGaming to reflect that it is actually the =hw_category=
 * Why does this link fail:
 https://qoedash.prod.netflix.net/ecosystem?metric=active_devices_28d&topNMetric=active_devices_28d&client_platform_name=Legacy&splitBy=device_type_extended_name
+** TODO add ttr_events
