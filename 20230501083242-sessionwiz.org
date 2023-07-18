@@ -23,3 +23,4 @@ When I tried this today on my laptop, it didn't error out.  That said, we need t
 ** TODO When we add a new session, it augments the existing sessionList instead of overwritting
 ** TODO add units to charts
 ** TODO add gameplay components to summary overview
+** TODO add telemetry v2 and gameplay lifecycle events

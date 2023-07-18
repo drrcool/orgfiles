@@ -45,3 +45,8 @@ This will probably have different implications when we have multiplayer games.
 ** Custom view
 ** Dynamic smoothing
 ** Masking
+
+
+* Open Questions to talk to people about:
+** TODO Do we need bots at all anymore?
+** TODO How do we track controllers when multiple are used in one session in our dashboards?  Initial controller type?
