@@ -1,0 +1,168 @@
+:PROPERTIES:
+:ID:       13dbbd4c-b39f-4559-889c-bf2bb1cb7448
+:END:
+#+title: Updated_cloud_gaming_populations
+
+
+* Populations of Interest:
+
+** LG
+#+begin_src sql
+        SELECT * from (
+        SELECT
+            snapshot_dateint,
+            case when t1.device_type_id in (1741, 1739, 1740, 1731, 1923, 2061, 1944, 1883, 2012, 1878) then '2017'
+                 when t1.device_type_id in (2097, 2095, 2017, 2099) then '2018'
+                 when t1.device_type_id in (2450, 2451, 2416, 2560, 2561) then '2019'
+                 when t1.device_type_id in (2776, 2775, 2759, 2950, 2948, 2886, 3479, 3021) then '2020'
+                 when t1.device_type_id in (3174, 3171, 3156, 3173, 3483, 3172) then '2021'
+                 when t1.device_type_id in (3720, 3718, 3716, 3719, 3717, 3912, 3721) then '2022'
+                 else '--' end as model_year,
+            SUM(active_devices_28d)/1e6 as active_devices_28d
+        FROM
+            dse.device_activity_sum t1
+        WHERE
+            snapshot_dateint in (20180101, 20190101, 20200101, 20210101, 20220101, 20230101)
+        GROUP BY 1, 2
+        ORDER BY 1, 2
+        ) where model_year <> '--'
+#+end_src
+
+** Overall
+#+begin_src sql
+
+        SELECT
+            snapshot_dateint,
+            SUM(active_devices_28d)/1e6 as active_devices_28d
+        FROM
+            dse.device_activity_sum t1
+        JOIN
+            dse.device_type_rollup_d t2 ON (t1.device_type_id = t2.device_type_id)
+        WHERE
+            snapshot_dateint in (20180101, 20190101, 20200101, 20210101, 20220101, 20230101)
+            and t2.hw_category in ('Smart TV', 'Set Top Box/Streaming Stick', 'MVPD Set Top Box', 'Game Console', 'Blu-ray Player')
+        GROUP BY 1
+        ORDER BY 1
+#+end_src
+
+** NVIDIA Shield
+#+begin_src sql
+        SELECT * from (
+        SELECT
+            snapshot_dateint,
+            case when t1.device_type_id in (1378, 2718, 2597) then 'nvidia shield'
+                 else '--' end as model_year,
+            SUM(active_devices_28d)/1e6 as active_devices_28d
+        FROM
+            dse.device_activity_sum t1
+        JOIN
+            dse.device_type_rollup_d t2 ON (t1.device_type_id = t2.device_type_id)
+        WHERE
+            snapshot_dateint in (20210101, 20210601, 20210801, 20220101,  20230101)
+        GROUP BY 1, 2
+        ORDER BY 1, 2
+        ) where model_year <> '--'
+#+end_src
+
+** Samsung
+#+begin_src sql
+        SELECT * from (
+        SELECT
+            snapshot_dateint,
+            case when t1.device_type_id in (1850, 1851) then '2017'
+                 when t1.device_type_id in (2233, 2198, 2103, 2256) then '2018'
+                 when t1.device_type_id in (2520, 2600, 2626, 2630, 2638, 2674, 2748) then '2019'
+                 when t1.device_type_id in (2919, 2920, 2915, 2913, 2914) then '2020'
+                 when t1.device_type_id in (3244, 3242, 3276, 3472) then '2021'
+                 when t1.device_type_id in (3930, 3928, 3931, 3929) then '2022'
+                 else '--' end as model_year,
+            SUM(active_devices_28d)/1e6 as active_devices_28d
+        FROM
+            dse.device_activity_sum t1
+        WHERE
+            snapshot_dateint in (20180101, 20190101, 20200101, 20210101, 20220101, 20230101)
+        GROUP BY 1, 2
+        ORDER BY 1, 2
+        ) where model_year <> '--'
+#+end_src
+
+** Sony
+
+#+begin_src sql
+        SELECT * from (
+        SELECT
+            snapshot_dateint,
+            case when t1.device_type_id in (1816, 1807, 1744) then '2017'
+                 when t1.device_type_id in (2055, 2195, 2056) then '2018'
+                 when t1.device_type_id in (2479, 2635) then '2019'
+                 when t1.device_type_id in (2750, 2751, 3191, 3190) then '2020'
+                 when t1.device_type_id in (3930, 3928, 3931, 3929) then '2022'
+                 else '--' end as model_year,
+            SUM(active_devices_28d)/1e6 as active_devices_28d
+        FROM
+            dse.device_activity_sum t1
+        WHERE
+            snapshot_dateint in (20180101, 20190101, 20200101, 20210101, 20220101, 20230101)
+        GROUP BY 1, 2
+        ORDER BY 1, 2
+        ) where model_year <> '--'
+#+end_src
+
+** Roku
+
+#+begin_src sql
+        SELECT * from (
+        SELECT
+            snapshot_dateint,
+            case when t1.device_type_id in (1968, 1837, 2011, 2025, 2013, 2026, 1827) then '2017'
+                 when t1.device_type_id in (2418) then '2018'
+                 when t1.device_type_id in (2662, 2677, 2599, 2723) then '2019'
+                 when t1.device_type_id in (3162) then '2020'
+                 when t1.device_type_id in (3246, 3283, 3379, 3247, 3818) then '2021'
+                 when t1.device_type_id in (4180, 3981, 3876, 3997, 3710, 3796, 4212, 4191) then '2022'
+                 else '--' end as model_year,
+            SUM(active_devices_28d)/1e6 as active_devices_28d
+        FROM
+            dse.device_activity_sum t1
+        WHERE
+            snapshot_dateint in (20180101, 20190101, 20200101, 20210101, 20220101, 20230101)
+        GROUP BY 1, 2
+        ORDER BY 1, 2
+        ) where model_year <> '--'
+#+end_src
+
+** Google and Amazon
+
+#+begin_src sql
+        SELECT
+            snapshot_dateint,
+            device_type_id,
+            SUM(active_devices_28d)/1e6 as active_devices_28d
+        FROM
+            dse.device_activity_sum t1
+        WHERE
+            snapshot_dateint in (20180101, 20190101, 20200101, 20210101, 20220101, 20230101)
+                             and device_type_id in (3020, 3120, 2426, 3549, 2789)
+        GROUP BY 1, 2
+        ORDER BY 1, 2
+
+#+end_src
+
+** Android TV
+#+begin_src sql
+
+        SELECT
+            snapshot_dateint,
+            t2.model_year,
+            SUM(active_devices_28d)/1e6 as active_devices_28d
+        from
+            dse.device_activity_sum t1
+        JOIN
+            dse.device_type_rollup_d t2 ON (t1.device_type_id = t2.device_type_id)
+        WHERE
+            snapshot_dateint in (20180101, 20190101, 20200101, 20210101, 20220101, 20230101)
+            and client_name = 'Android TV'
+        GROUP BY 1,2
+        ORDER BY 1,2
+
+#+end_src
