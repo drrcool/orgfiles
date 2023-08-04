@@ -9,8 +9,6 @@ Notes from sync with Daniel:
 - DPI version will be replacing validation version.  This will report 4.1, 4.2, etc.
 - will flow into the remodeled =dse.device_client_rollup_d=
 ** TODO: Ask add =nrdapp_version= to qoedash views
-
-
 * TODO look at jigsaw failures
 SCHEDULED: <2023-05-02 Tue>
 ** Outstanding Tasks:
@@ -24,9 +22,6 @@ The docs all say I can just move meson create to meastro create, but create is a
 Include how to create workflows
 how to add metrics / remove metrics
 Potential wins for the pipeline
-
-* TODO Finish training videos
-DEADLINE: <2023-05-03 Wed>
 
 * TODO Take back ownership of tables that Chris published while I was out
 DEADLINE: <2023-05-18 Thu>
@@ -96,7 +91,6 @@ SCHEDULED: <2023-05-19 Fri>
 **** When splitting by a aggregate, we want to specify the legend
 ***** Legend query
 ****** $(maxControllers), :legend
-*******
 **** Then use the title from the query config to add it to the dashboard
 *** Adding Dimensions:
 **** Copy from another dimension and then edit
@@ -107,12 +101,10 @@ SCHEDULED: <2023-05-19 Fri>
 *** Adding a binned distribution:
 **** For percentile metrics, the :sum gives the count
 
-
 * True crashes:
 ** some backgrounds are shown in dex : 2026
 ** How are they making it through the true crashes
 ** Are they making it into PQS
-
 
 
 * Lauren walkthrough for games reach
@@ -132,46 +124,17 @@ Look at NRDP/Android holistically, then look at the devices that get actived for
 ** QoEDash integration of Crashes and Errors
 ** Explore PQS metric definitions
 
-
 * TODO add =plan_id= to QoEdash aggs
 https://netflix.slack.com/archives/G01G7AE9ASW/p1689375768016429
 
-* TODO check for some PIN failures which are not being excluded from qoedash aggs
-
-#+begin_src txt
-6b882786-4a0d-47b2-8df5-f0db891e8780
-460006a2-7225-46f2-a2de-330ceb489fc2
-e77548b6-bcad-4f84-abdc-7c381b698918
-a2607e45-5b82-4779-9719-fb9e4a8d5012
-#+end_src
-
-All of these sessions are web.
-
-https://netflix.slack.com/archives/C02DUEUV8BZ/p1689554867103149
-
-These are a new error code 1007.  We will need to update our logic to grab these and filter them out.  Chris doesn't think a backfill is needed
-
-
-* DONE check for sesions that seem user-abandoned in the pre-start phase
-CLOSED: [2023-07-17 Mon 11:17]
-
-#+begin_src txt
-662f9833-566d-4e4e-84c0-119c5d3a8d9b
-e7bfb20a-e5e3-4310-b7c0-3c4b06cb53d4
-9514a880-9e93-423a-96e6-0325031f540e
-786d86ed-d4a1-4b90-aa84-c4eb70f07dc5
-625ee505-bb97-41cc-863c-40ee4f8c2f7a
-#+end_src
-
-https://netflix.slack.com/archives/C02DUEUV8BZ/p1689555125804239?thread_ts=1689555069.070559&cid=C02DUEUV8BZ
-
-It looks like these are incorrectly labeled as failed.  The logic will be added to nrjds and then should flow through without any work on my  end.
-
 * TODO Some PBEs which are never sessionized don't make it into PQS
-
-For sessions that are never sessionized, we get PBEs that don't land in playback_f.  For PQS, we do a left join between the PBE fact table and playback_f (so that we can be sure we don't count sessions that already were included via playback_f, but this wouldn't apply to non-sessionized sessions).   The question is how much does this matter?  Most of the errors of this type are manifest errors, which happen a significant amount on some platforms like iOS.  This has resulted in cases where the overall playback error rate for these devices has changed over time, but the PQS has remained flat (since the errors that are being reduced are not actually contributing to PQS in the first place).
+For sessions that are never sessionized, we get PBEs that don't land in playback_f.  For PQS, we do a left join between the PBE fact table and playback_f (so that we can be sure we don't count sessions that already were included via playback_f, but this wouldn't apply to non-sessionized sessions).   The question is how much does this matter?  Most of the errors of this type are manifest errors, which happen a significant amount on some  nfplatforms like iOS.  This has resulted in cases where the overall playback error rate for these devices has changed over time, but the PQS has remained flat (since the errors that are being reduced are not actually contributing to PQS in the first place).
 
 * Meeting with Paulson
  - Audio packet loss is a map (and video packet loss).
    - FrameID to count
    - Audio frame arrival offsets are useful
+* TODO get back in viz group invite list
+* TODO check why the jigsaws are failing
+* TODO Check the recording for the 8/3 instance of PQS XFunctional as they talked about strategy for PQS metric changes
+* TODO Create a write up of the policy error changes in the PQS newsletter

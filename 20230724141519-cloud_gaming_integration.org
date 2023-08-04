@@ -1,0 +1,19 @@
+#+filetags: project
+:PROPERTIES:
+:ID:       3b1b61c5-47bb-4cf0-8590-89e8e295fb44
+:END:
+#+title: Cloud Gaming Integration
+
+
+* Files that contain data source names:
+** TODO load_filters
+*** I think this is done
+** TODO getDataSource
+*** I think this is done
+
+* Other Changes that need to be done:
+** dimensionConfig
+*** TODO Need to enumerate dimensions that have no dataSource listed.
+**** I think this is done
+
+* Metric Definitions

@@ -2,7 +2,7 @@
 :ID:       b74ee89c-ea58-4620-83eb-36aac0a2fd5f
 :END:
 #+title: Personal Website
-#+filetags: project Project
+#+filetags: Project
 
 * Goals
 
@@ -18,5 +18,7 @@ Create a personal website for help when job hunting
 - KISS
 
 * Open Items:
-** TODO Update social links :website:
-** TODO
+** DONE Update social links :website:
+CLOSED: [2023-08-03 Thu 19:46]
+** DONE
+CLOSED: [2023-08-03 Thu 19:46]

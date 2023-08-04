@@ -1,0 +1,90 @@
+:PROPERTIES:
+:ID:       2b11c21c-23b3-4c72-b3fd-1e044d663600
+:END:
+#+title: Cloud Gaming Agg Verification
+
+
+* Direct sums:
+** Presto
+#+begin_src sql
+SELECT
+  utc_date,
+  display_device_category,
+  SUM(gameplay_secs) as gameplay_secs
+FROM
+  rcool.test_cloud_gaming_agg
+WHERE
+  utc_date = 20230717
+GROUP BY 1,2
+#+end_src
+** Druid
+#+begin_src sql
+SELECT
+    CAST(__time as DATE) as datetime,
+    display_device_category,
+    SUM(gameplay_secs) as gameplay_secs
+FROM
+    testing_qoedash_cloud_gaming_qoe_agg
+WHERE
+    __time = TIMESTAMP '2023-07-17 00:00:00'
+GROUP BY 1,2
+#+end_src
+
+Perfect agreement is found between these two.
+
+* HLLs
+** Presto
+#+begin_src sql
+SELECT
+  utc_date,
+  display_device_category,
+  COUNT(DISTINCT display_vesn) as total_vesn
+FROM
+  rcool.test_cloud_gaming_agg
+WHERE
+  utc_date = 20230717
+GROUP BY 1,2
+#+end_src
+** Druid
+#+begin_src sql
+SELECT
+    CAST(__time as DATE) as datetime,
+    display_device_category,
+    APPROX_COUNT_DISTINCT_DS_HLL(total_vesns) as total_vesn
+FROM
+    testing_qoedash_cloud_gaming_qoe_agg
+WHERE
+    __time = TIMESTAMP '2023-07-17 00:00:00'
+GROUP BY 1,2
+#+end_src
+
+Broad agreement.  The one difference is the ref app gives 3686 for druid and 3621 for Presto. This is a difference of 65/3621 = 1.8%
+** What if we ask for more than one agg in a query?
+*** Presto:
+#+begin_src sql
+        SELECT
+  utc_date,
+  display_device_category,
+  COUNT(DISTINCT display_vesn) as total_vesn,
+  COUNT(DISTINCT error_session_vesns) as error_session_vesn
+FROM
+  rcool.test_cloud_gaming_agg
+WHERE
+  utc_date = 20230717
+GROUP BY 1,2
+#+end_src
+*** Druid:
+#+begin_src sql
+        SELECT
+    CAST(__time as DATE) as datetime,
+    display_device_category,
+    APPROX_COUNT_DISTINCT_DS_HLL(total_vesns) as total_vesn,
+    APPROX_COUNT_DISTINCT_DS_HLL(error_session_vesns) as error_session_vesn
+FROM
+    testing_qoedash_cloud_gaming_qoe_agg
+WHERE
+    __time = TIMESTAMP '2023-07-17 00:00:00'
+GROUP BY 1,2
+#+end_src
+
+These give broad agreement again, only deviating in the same metric noted above.

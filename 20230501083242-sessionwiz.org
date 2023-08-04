@@ -17,7 +17,6 @@ When I tried this today on my laptop, it didn't error out.  That said, we need t
 **** Difference metric
 **** Ratio metric
 **** Running Difference metric
-
 ** TODO mask out data for the histograms
 ** TODO check that a session is the proper formatting
 ** TODO When we add a new session, it augments the existing sessionList instead of overwritting

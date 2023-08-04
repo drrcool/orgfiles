@@ -1,0 +1,51 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/richardjcool/org/20230627103159-cloud_games_metric_sync.org
+
+
+* DONE Create code to allow us to use numerator and denominator that are both histograms
+CLOSED: [2023-08-04 Fri 08:34]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-04 Fri 08:34
+:ARCHIVE_FILE: ~/org/20230627103159-cloud_games_metric_sync.org
+:ARCHIVE_OLPATH: QoEDash aggregate views
+:ARCHIVE_CATEGORY: 20230627103159-cloud_games_metric_sync
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Get colors to match between the timeseries and the bar charts
+CLOSED: [2023-07-26 Wed 20:37]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-04 Fri 08:34
+:ARCHIVE_FILE: ~/org/20230627103159-cloud_games_metric_sync.org
+:ARCHIVE_OLPATH: TODAY
+:ARCHIVE_CATEGORY: 20230627103159-cloud_games_metric_sync
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE Do we need bots at all anymore?
+CLOSED: [2023-08-01 Tue 12:07]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-04 Fri 08:34
+:ARCHIVE_FILE: ~/org/20230627103159-cloud_games_metric_sync.org
+:ARCHIVE_OLPATH: Open Questions to talk to people about:
+:ARCHIVE_CATEGORY: 20230627103159-cloud_games_metric_sync
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+No.  At this point, users seem more interested in humans.  The new agg is filtered to only include humans.  This removes one required filter for users, so they don't have to remember to add that filter
+
+* DONE How do we track controllers when multiple are used in one session in our dashboards?  Initial controller type?
+CLOSED: [2023-08-01 Tue 12:09]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-04 Fri 08:34
+:ARCHIVE_FILE: ~/org/20230627103159-cloud_games_metric_sync.org
+:ARCHIVE_OLPATH: Open Questions to talk to people about:
+:ARCHIVE_CATEGORY: 20230627103159-cloud_games_metric_sync
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+For now, initial controller type should be sufficient.  Eventually we will want to figure out how to handle the case when we have multiple controllers on one device

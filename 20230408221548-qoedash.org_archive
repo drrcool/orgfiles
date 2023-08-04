@@ -344,3 +344,57 @@ CLOSED: [2023-06-19 Mon 11:03]
 :ARCHIVE_TODO: DONE
 :ARCHIVE_ITAGS: project
 :END:
+
+* DONE change the =device_category= filter for cloudGaming to reflect that it is actually the =hw_category=
+CLOSED: [2023-08-01 Tue 12:22]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-03 Thu 19:51
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE change the =device_category= filter for cloudGaming to reflect that it is actually the =hw_category=
+CLOSED: [2023-08-01 Tue 12:22]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-03 Thu 19:51
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE check about adding filter for display start:
+CLOSED: [2023-08-01 Tue 12:23]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-03 Thu 19:51
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: Holding Pen
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+https://netflix.slack.com/archives/C02DUEUV8BZ/p1687381317728299?thread_ts=1687378291.896779&cid=C02DUEUV8BZ
+
+* DONE Add game play start component chart to gaming views
+CLOSED: [2023-08-01 Tue 12:23]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-03 Thu 19:51
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: Holding Pen
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+
+* DONE handle the new session success logic
+CLOSED: [2023-08-01 Tue 12:23]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-03 Thu 19:51
+:ARCHIVE_FILE: ~/org/20230408221548-qoedash.org
+:ARCHIVE_OLPATH: Holding Pen
+:ARCHIVE_CATEGORY: 20230408221548-qoedash
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:

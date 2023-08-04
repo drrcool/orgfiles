@@ -1,0 +1,98 @@
+#+filetags: project
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/richardjcool/org/roam/20230320180732-emacs_config_wishlist.org
+
+
+* DONE Evil Org(?)
+CLOSED: [2023-08-03 Thu 19:45]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-03 Thu 19:45
+:ARCHIVE_FILE: ~/org/roam/20230320180732-emacs_config_wishlist.org
+:ARCHIVE_OLPATH: Tasks/Plugins
+:ARCHIVE_CATEGORY: 20230320180732-emacs_config_wishlist
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project Project
+:END:
+
+* Goals
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-03 Thu 19:45
+:ARCHIVE_FILE: ~/org/roam/20230320180732-emacs_config_wishlist.org
+:ARCHIVE_CATEGORY: 20230320180732-emacs_config_wishlist
+:ARCHIVE_ITAGS: project Project
+:END:
+
+A complete Emacs config that suits all my needs
+
+
+* Tasks
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-03 Thu 19:45
+:ARCHIVE_FILE: ~/org/roam/20230320180732-emacs_config_wishlist.org
+:ARCHIVE_CATEGORY: 20230320180732-emacs_config_wishlist
+:ARCHIVE_ITAGS: project Project
+:END:
+** Keybinds
+Here is a list of the items we probably want to flesh out in our keybinds.
+*** DONE Window Control
+CLOSED: [2023-08-03 Thu 19:44]
+*** DONE Buffer Control
+CLOSED: [2023-08-03 Thu 19:44]
+*** DONE Help
+CLOSED: [2023-08-03 Thu 19:44]
+*** DONE org
+CLOSED: [2023-08-03 Thu 19:45]
+**** DONE header navigation
+CLOSED: [2023-08-03 Thu 19:44]
+**** DONE edit src block accept also to CcCc instead of Cc
+CLOSED: [2023-08-03 Thu 19:44]
+**** DONE org-tree-slide
+CLOSED: [2023-08-03 Thu 19:44]
+*** DONE file
+CLOSED: [2023-08-03 Thu 19:44]
+*** DONE project
+CLOSED: [2023-08-03 Thu 19:44]
+*** DONE terms
+CLOSED: [2023-08-03 Thu 19:44]
+**** DONE eshell
+CLOSED: [2023-08-03 Thu 19:44]
+***** DONE Configure window behavior. Currently opens in main window. Want it to be a bottom or side window
+CLOSED: [2023-08-03 Thu 19:44]
+**** DONE vterm
+CLOSED: [2023-08-03 Thu 19:44]
+***** DONE We currently have open here and open other window.  Need to configure what this window looks like
+CLOSED: [2023-08-03 Thu 19:44]
+*** TODO insert
+**** DONE lorem-ipsum
+CLOSED: [2023-08-03 Thu 19:44]
+
+*** DONE open
+CLOSED: [2023-08-03 Thu 19:44]
+**** DONE counsel os x
+CLOSED: [2023-08-03 Thu 19:44]
+*** DONE appearance
+CLOSED: [2023-08-03 Thu 19:44]
+**** fonts
+**** theme
+**** modeline
+** Plugins
+Plugins we want to be sure get installed and configured
+*** DONE Copilot
+CLOSED: [2023-03-27 Mon 16:02]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-03-27 Mon 16:02]
+:END:
+
+*** DONE Rainbow Mode 
+CLOSED: [2023-03-27 Mon 16:02]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-03-27 Mon 16:02]
+:END:
+
+*** DONE web-mode
+CLOSED: [2023-03-27 Mon 16:02]
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2023-03-27 Mon 16:02]
+:END:

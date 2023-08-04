@@ -16,7 +16,6 @@
 *** Notes from meeting: June 20
 **** Any other versions to add in the meantime?
 ***** DPI version: in startup logblob
-
 ** TODO make =chipset= case insensitive.  (In practice, we could do that to most splits)
 *** Probably best to do this in the query itself. Check to see if druid allows an UPPER or similar operator
 *** We want to avoid doing this in the code since
@@ -26,38 +25,29 @@
 ** TODO arrows don't work for datepicker
 ** TODO the custom table ordering is not as intuitive as I would like
 ** TODO Clicking the left/right arrows on the date popup causes it to close. Same behavior when selecting on the month or the year
-** TODO handle the new session success logic
 ** SOMEDAY add ads plan to PQS:
-    This isn't as simple as I expected.  The largest issue is our aggregate doesn't include plan information, which means that we would have to re-engineer the aggregate even before adding to the report table.  For now, I am going to pass on this.
-** TODO Add game play start component chart to gaming views
+    - This isn't as simple as I expected.  The largest issue is our aggregate doesn't include plan information, which means that we would have to re-engineer the aggregate even before adding to the report table.  For now, I am going to pass on this.
 ** TODO add =utc_date= to the axis label on qoedash
-** TODO check about adding filter for display start:
-https://netflix.slack.com/archives/C02DUEUV8BZ/p1687381317728299?thread_ts=1687378291.896779&cid=C02DUEUV8BZ
 * Triage:
 ** Error when reading PQS for some queries
-https://netflix.slack.com/archives/C04FTKVSZGX/p1687901826435599
-
-
+  - https://netflix.slack.com/archives/C04FTKVSZGX/p1687901826435599
 * Versioning change
 ** Get nrdapp version in Asap
-
+** Add =os_version= to qoedash
+    - https://netflix.slack.com/archives/C010LEL82A0/p1689201913558689
 * Automotive
-    We will be supporting automative devices. May need to add a new category of devices.  Make sure the new devices are being added to the new category in PDM.
-
+    - We will be supporting automative devices. May need to add a new category of devices.  Make sure the new devices are being added to the new category in PDM.
 * Policy Error
-    Follow up with Venaktesh about the final UDF.  Which is the final UDF that used.
-
+    - Follow up with Venaktesh about the final UDF.  Which is the final UDF that used.
 * Arian's emails for PQS
-    get subscribed to the email about PQS drivers.  Should we see about how to add these results to the dashboard
-
-* Robert's PQS tracker
-
+    - get subscribed to the email about PQS drivers.  Should we see about how to add these results to the dashboard
 * Add DNR to PQS
-    Data is logged in DCMS, flag is called RETIRED.   The flag was only started being set in June (ish), so snapshotting the current value retroactively for a backfill for a bit makes a little sense.
-    https://netflix.slack.com/archives/DU4ESVD97/p1688668801390069
+    - Data is logged in DCMS, flag is called RETIRED.   The flag was only started being set in June (ish), so snapshotting the current value retroactively for a backfill for a bit makes a little sense.
+    - https://netflix.slack.com/archives/DU4ESVD97/p1688668801390069
 * TODO PQS time series and metric breakdown do odd scaling when the window is expanded
-    https://netflix.slack.com/archives/C01DQKX3397/p1689107349712419
-* TODO change the =device_category= filter for cloudGaming to reflect that it is actually the =hw_category=
+    - https://netflix.slack.com/archives/C01DQKX3397/p1689107349712419
 * Why does this link fail:
-https://qoedash.prod.netflix.net/ecosystem?metric=active_devices_28d&topNMetric=active_devices_28d&client_platform_name=Legacy&splitBy=device_type_extended_name
+    - https://qoedash.prod.netflix.net/ecosystem?metric=active_devices_28d&topNMetric=active_devices_28d&client_platform_name=Legacy&splitBy=device_type_extended_name
 ** TODO add ttr_events
+** TODO feature request: add ability to drop list of =device_type_id= in the filter box and have them all selected
+** TODO with the cloudgaming header, the buttons are misplaced

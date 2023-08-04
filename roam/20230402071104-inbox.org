@@ -2,10 +2,13 @@
 :ID:       1ea893d8-d804-41cb-99cd-99616c95b513
 :END:
 #+title: Inbox
-#+filetags: project
-** TODO Create Cleaning Routine :@home:
-** TODO Create Recipe organization System :@home:
-** TODO Ideas for steam deck hotkeys :@home:
+#+filetags:
+** DONE Create Cleaning Routine :@home:
+CLOSED: [2023-08-03 Thu 19:47]
+** DONE Create Recipe organization System :@home:
+CLOSED: [2023-08-03 Thu 19:47]
+** DONE Ideas for steam deck hotkeys :@home:
+CLOSED: [2023-08-03 Thu 19:47]
 ** DONE Get Labs done :@home:
 CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-03 Mon>
 ** DONE Get XRays Done :@home:
@@ -18,7 +21,7 @@ CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-02 Sun>
 CLOSED: [2023-04-06 Thu 10:29] SCHEDULED: <2023-04-02 Sun>
 ** DONE Do Taxes :@home:
 CLOSED: [2023-05-02 Tue 15:22] DEADLINE: <2023-04-07 Fri>
-** TODO Make PT appointment :@home:
-SCHEDULED: <2023-04-03 Mon>
+** DONE Make PT appointment :@home:
+CLOSED: [2023-08-03 Thu 19:47] SCHEDULED: <2023-04-03 Mon>
 ** DONE Clean fish tank
 CLOSED: [2023-04-06 Thu 10:29] DEADLINE: <2023-04-05 Wed>
