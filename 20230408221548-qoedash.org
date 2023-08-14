@@ -50,4 +50,12 @@
     - https://qoedash.prod.netflix.net/ecosystem?metric=active_devices_28d&topNMetric=active_devices_28d&client_platform_name=Legacy&splitBy=device_type_extended_name
 ** TODO add ttr_events
 ** TODO feature request: add ability to drop list of =device_type_id= in the filter box and have them all selected
-** TODO with the cloudgaming header, the buttons are misplaced
+** DONE with the cloudgaming header, the buttons are misplaced
+CLOSED: [2023-08-08 Tue 14:55]
+
+* TODO Add a dimension for is_failed_start and is_failed_session :#cloudGaming:
+
+* TODO Add a table of recent failed sessions with links out :#cloudGaming:
+
+* TODO Add download button for the box & whisker and gameplaydelaycomponent charts
+* TODO once its in gameplay_f add first versus second OCGA for switch aways

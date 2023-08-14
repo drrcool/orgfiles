@@ -1,0 +1,47 @@
+#+title: Client_encoding_forum_aug_9_2023_cloud_gaming_tooling
+#+filetags: project
+
+Summary:
+
+In this week's Client & Encoding Forum, Andy and I will be covering some of our recent and planned work surrounding Cloud Games QoE in anticipation of PM1 next week.  We will discuss current available tooling available in SessionWiz and QoEDash for cloud gaming, highlighting some use cases, overall functionality of the tools, and many planned extensions planned in the time before and following the soft launch of cloud games.  Andy will discuss some analytic work focused on scoring cloud gaming sessions which will be integrated into our tools when completed.  As much of this work is, like cloud gaming itself, ever-changing, we will also be very interested in feedback, use cases you would love to see covered that we may have missed and welcome any questions you have around QoE tooling and analytics needs for cloud games.
+
+
+** Overview of Cloud Gaming tooling
+
+** Public Milestone 1 - Limited release in UK/Can is expected on Aug 13
+*** PM1 Tooling goals focused on providing visibility for overall performance metrics as well as in-depth single-session deep dives to understand the cause and/or impact of problematic sessions.
+**** Cloud Gaming QoE Tools available:
+***** RealtimeQoE
+****** TODO Get link, check the cloud gaming direct link
+******* Near-real time metrics.  Focus on operational needs to understand the overall performance of clients and OCGAs as well as delivered performance.
+******** QoEDash
+********* New cloud gaming metrics are being integrated into QoEDash.
+********* Focuses on the aggregate view with a niche of understanding long-term trends and metrics which may be difficult to incorporate into real-time dashboards (for example if they are calculated offline or utilizing more complicated logic that may not feasible to be calculated on the fly or which may require batch aggregation)
+******** SessionWiz
+********* Focuses on the frame-to-frame or time series behavior *within* a single session.
+********* Integrated with Argus
+
+
+* Sessionwiz
+** Data backend
+** How to access the data
+** Current metrics plotted
+** Planned metrics to be plotted
+** Planned extensions
+*** include gameplayStatus
+*** provide dynamic summarization
+*** find sessions of interest
+
+* QoEDash
+** Data backend
+** Core chart of interest
+** Current Metrics included
+** Current dimensions included
+** Call for new metrics and dimensions
+** Planned extensions
+*** Bad session lookup
+
+
+* Outline
+
+    21

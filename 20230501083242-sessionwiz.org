@@ -23,3 +23,21 @@ When I tried this today on my laptop, it didn't error out.  That said, we need t
 ** TODO add units to charts
 ** TODO add gameplay components to summary overview
 ** TODO add telemetry v2 and gameplay lifecycle events
+Gameplay Status logging:
+#+begin_src js
+import { GameplayF } from "@ocga/gameplay-lifecycles"
+
+async function run() {
+    const status = await new GameplayF(
+        "ab61421f-51a4-4add-a931-f6272bea7946",
+        { utcDate: 20230714, exact: true }
+    ).request();
+
+    console.log(status);
+}
+
+run();
+#+end_src
+
+Note that we need to provide a =utc_date=.  If the user doesn't provide one, we can use ={ utcDate: now() -7days, exact: false}= and that should do what we need. Under the hood, it looks at =utc_date gte utcDate=
+** TODO add errorboundary for cases where the data fetch fails
