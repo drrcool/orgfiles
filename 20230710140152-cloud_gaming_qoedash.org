@@ -3,4 +3,35 @@
 :END:
 #+title: Cloud Gaming QoEDash
 
-**
+
+* Cloud Games Dashboard
+*** Come up with a plan for viz on daily reports:
+**** People interested:
+- Alex G
+- Daniel Chia
+- Bernadette
+- vache
+- chris wein
+
+**** Daily aggregates of:
+- Success and Failures
+  - split by human and bot
+- Some sort of breakdown by error code
+- high level QoE measures
+
+**** Filter information:
+- OCGA
+- Country
+- quant_type (not sure what this means, maybe they mean controller type)
+
+**** Resources:
+- Bernadette's [[https://stash.corp.netflix.com/projects/GDE/repos/cloud-games-beta-report/browse][code repo]] for her daily reports
+*** Meeting Notes:  Cloud Games Dashboard
+**** Employee beta: expected 450 people
+**** Would love to have more information about the funnel about failures
+What part of the flow are people failing out.
+**** Add more QoE Metrics to the view to add some parity with CDQoE
+**** Steering metrics
+Are we delivering content from in-region servers instead of from the US
+Do we have metrics about this?
+** Outstanding Asks:

@@ -22,7 +22,9 @@ When I tried this today on my laptop, it didn't error out.  That said, we need t
 ** TODO When we add a new session, it augments the existing sessionList instead of overwritting
 ** TODO add units to charts
 ** TODO add gameplay components to summary overview
-** TODO add telemetry v2 and gameplay lifecycle events
+* TODO add telemetry v2
+** DONE gameplay lifecycle events
+CLOSED: [2023-08-14 Mon 10:28]
 Gameplay Status logging:
 #+begin_src js
 import { GameplayF } from "@ocga/gameplay-lifecycles"
@@ -41,3 +43,16 @@ run();
 
 Note that we need to provide a =utc_date=.  If the user doesn't provide one, we can use ={ utcDate: now() -7days, exact: false}= and that should do what we need. Under the hood, it looks at =utc_date gte utcDate=
 ** TODO add errorboundary for cases where the data fetch fails
+* DONE check for packet loss -- these are only writing values when one is provided. Should be zero if the index isn't there.
+CLOSED: [2023-08-14 Mon 10:28] DEADLINE: <2023-08-14 Mon>
+* DONE ensure the deploy finished properly :#sessionwiz:
+CLOSED: [2023-08-14 Mon 10:02] DEADLINE: <2023-08-14 Mon>
+* DONE send note about sessionwiz update
+CLOSED: [2023-08-14 Mon 10:02] DEADLINE: <2023-08-14 Mon>
+* TODO add new columns from gameplay_f to the daily aggs
+https://netflix.slack.com/archives/C02DUEUV8BZ/p1691972408560409
+* TODO add metric names back into tooltips
+* TODO change the title of the packet loss charts
+https://netflix.slack.com/archives/C02DUEUV8BZ/p1693006806659609
+* TODO add a distribution for the tdigest values
+https://netflix.slack.com/archives/C02DUEUV8BZ/p1693007414092749

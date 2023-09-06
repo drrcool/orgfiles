@@ -1,0 +1,208 @@
+#+filetags: project
+ :PROPERTIES:
+:ID:       c0ba70ca-42af-4694-9796-b78fdfab738e
+:END:
+#+title: Crashes And Errors Data Model
+
+* Device Dimensions:
+** Based on =device_type_id= and =device_model=
+*** TODO device_type_id
+*** TODO device_model
+*** TODO device_type_extended_name
+*** TODO device_form_factor
+*** TODO hw_category
+*** TODO hw_major_category
+*** TODO platform_name
+*** TODO client_name
+*** TODO client_platform_name
+*** TODO brand
+*** TODO mso_partner
+*** TODO scaling_program
+*** TODO integration_partner
+*** TODO chipset_manufacturer
+*** TODO is_android_lite
+*** TODO browser_os
+*** TODO cpu_benchmark_percentile
+*** TODO device_category
+** Based on =device_type_id= and =client_version=
+*** TODO sdk_minor_version (sanitized)
+** Based on =ui_version=
+*** TODO ui_build (requires a complicated regexp)
+*** TODO is_darwin
+*** TODO ui_memory_range
+** TODO =nrjds_version= (maybe deriveable from =client_version=)
+** Based on =country_iso_code=
+*** TODO country_desc (concat of code and desc)
+*** TODO estaff_subregion_desc
+** Based on =asn_num=
+*** TODO asn_num
+*** TODO isp_name
+** =Global=
+*** TODO global
+** Dims that probably only make sense for PBEs
+*** TODO =is_supplemental_playback=
+*** TODO =max_possible_resolution_desc=
+*** TODO =initial_network_type=
+** Based on =account_id=
+*** TODO plan_category_code
+*** TODO is_mhu_account
+*** TODO is_single_device_account
+*** TODO is_single_ce_device_account
+*** TODO is_single_tv_device_account
+*** TODO is_ads_plan (new)
+** Based on =membership_type=
+*** TODO is_nonmember_playback
+****
+** Based on =device_classification= (=device_type_id=, =device_model=, =ui_version=, =client_version=)
+*** TODO device_major_group (check final name for column)
+*** TODO device_group (check final name for column)
+*** TODO device_client_group (check final name for column)
+*** TODO device_film (check final name for column)
+
+* Required core dimensions:
+** device_type_id
+** device_model
+** ui_version
+** nrdjs_version (maybe)
+** country_iso_code
+** asn_num
+** global
+** account_id
+** membership_type
+
+* Denominators used for =dr_metrics_sum=
+** Crashes:
+*** startup_devices (and activated_startup_devices)
+****
+*** =dre_activity_day_sum=:
+- https://stash.corp.netflix.com/projects/NDSEM/repos/etl/browse/streaming/device/dre/agg_tables/load.dre_activity_day_sum.sql#1
+** PBEs:
+*** Startplay Events
+** Startup Errors:
+*** Startup Devices
+** Reauths:
+*** Active Devices (1d)
+* Strategy:
+Given the large number of columns we need mirrored in both datasets, we probably are best building two data sources and then querying them separately at read in time.  We then will need to "join" them on the client side.
+
+This is annoying in the sense that it propogates the broad column many times and duplicates data, but since there is no issue with aggregating over breakdown now (we can do that at query time), the denominator table, while broad, should be relatively easy to query.
+
+This means, in practice, we only need two tables -- one that provides startup events and one that gives startplay events.
+
+* Status:
+** startup_activity_sum:
+    Started to make this, but the query seems to take 7 hours to run.  This probably has to do with the join to both =esn_d= and =account_d= and then the following joins to =plan_d=.   I wonder if doing the =esn= join first, then doing the other joins as a second pass may work.
+
+    Could the issue be that since the join key to get =plan= information is joining based on =plan_id=, if we do the account join first and then do the =plan_id= in the enrichment phase.
+
+    Looking at the execution plan, we're having an issue with a large map.  These seems to be the map that brings in the =plan_id= from =dse.account_d=.  This makes sense, as it's a massive join.  If we remove the plan dimensions we want to look at, we could probably reduce the time it takes to do this join, but that would remove all plan information from the dashboard.  The main one of interest is likely something that tells us if this is an /ads/ plan.  I am tempted to let this run and see how long it takes to do the join. The join to =dse.plan_d= and =dse.plan_rollup_d= should be much faster, so I am expecting this to be the bottleneck of the pipeline.
+
+    That said, this will probably be an issue for all of the joins when making both the numerator and denominator datasets, so the question is if this is something we want to pay over and over again.
+
+    After removing the account grain join, things were still taking quite a long time. Looking at the execution history for [[https://data.netflix.net/workflows/prod:str.sa.cli.dre_activity_day_sum][dre_activity_day_sum]], it seems that job only takes 30-40m to run -- this is including a count distinct step that our current testing isn't using.  Options are that not dumping it to a table is making things take longer or that the config is making things take longer.   The config used by that job includes
+    #+begin_src yml
+conf:
+    spark.sql.shuffle.partitions: 150
+    spark.shuffle.io.preferDirectBufs: 'false'
+    spark.yarn.executor.memoryOverhead: 2g
+    #+end_src
+
+    I am trying a test execution of the query in BDP using that config.
+
+    After running the full aggregate without account_id based metrics, the aggregate still took over 9 hours to run.  This was identified likely being due to the aggregation phase (the count distinct portion).  We also realized that metrics such as =ui_version= likely rev often meaning the count distinct over that dimension makes it problematic when summing.  To remedy this, we decided to skip the count distinct portion and instead rely on a HLL-based sketch at ingestion time. The next attempt to run the aggregate uses this method (again without the account information) and the same settings used above.
+
+    +If this succeeds in a relatively normal amount of time, we will try to re-implement the account_id join without the aggregation and see if that is a workable solution.+ It took forever still.  Now, resorting to trying to do it without the group by. This will mean the aggregation will need to happen on ingestion, which I suspect will be long, but who knows.
+
+    Queries in general seem to be running very slowly.  This is confusing to me since the base query that is used to generate the =dre_activity_day_sum= only takes 20 minutes and includes a COUNT(DISTINCT).  This leads me to think the problem must either be in my other joins or in the includes of some of the other dimensions (namely =ui_build=).
+
+    #+begin_src sql
+SELECT
+    COUNT(1) as row_cnt
+FROM
+(
+SELECT
+    device_type_id,
+    device_model,
+    client_version,
+    COUNT(1)
+FROM
+    vault.scl_f
+WHERE
+    utc_date = 20230801
+    and scl_type in ('appboot', 'startplay')
+GROUP BY 1, 2, 3
+)
+    #+end_src
+
+Returns 1,668,997 rows.   This is not crazy.
+
+#+begin_src sql
+SELECT
+    COUNT(1) as row_cnt
+FROM
+(
+SELECT
+    device_type_id,
+    device_model,
+    client_version,
+    ui_version,
+    COUNT(1)
+FROM
+    vault.scl_f
+WHERE
+    utc_date = 20230801
+    and scl_type in ('appboot', 'startplay')
+GROUP BY 1, 2, 3,4
+)
+#+end_src
+
+Including the ui_version into the query changes this row count to: 77,843,461.
+
+If the slowest part of the process is really the join to =device_esn_d= then, could we do that join first?  Given that we want to count ESNs that may occur in multiple =ui_builds= (based on =ui_version=) only once, it seems the logical thing to do here would be to simply do the transform without a group by. Why is that taking so long?
+
+Could it be the same reason we have issues with the playback_f jobs? Should we try and reduce the volume into the smaller chunks here?
+
+Can we successfully load an hour of data?
+
+Work around idea:  =scl_curated_f= includes appboot, and =scl_playback_f= includes startplay.  They both also include =esn_first_activation_ts= which eliminates the need to go to =device_esn_d=.  We would need to do a UNION ALL between the two since both types are not in the same table, but this should be relatively easy.
+
+I just realized we still have an account_id join to get the MHU data.  This means we will be hit pretty hard regardless.  This may be a reason to run the 24 jobs like we do for playback and then ingesting them. We have a job of a full day aggregation running now.  Note that it's purely an enrichement job, there is no group by included.
+
+The job with no group by but including the join to the MHU data (on =account_id=) results in a job that takes 7 hours to run even without the =device_esn_d= join.  Because of this, I am going to the 24 job approach.  I have added back the =account_d= join, we will see how long that takes to run.  This job took 19 minutes to finish.
+
+In the end, we went with a strategy that uses the 24 jobs per day and also enriches with the =account_d= dimensions.
+
+* Playback error source of truth:
+
+ Playback errors can be sourced from either =vault.scl_playback_error_session_f= or from playback_f, but playback_f doesn't include some dimensions of interest. But scl_playback_error_session_f doesn't have =is_live_playback=. Given we want reason, we should use =scl_playback_error_session_f=
+
+ Specific dimensions we want here:
+ * =is_ad_eligible=
+ * =is_policy_error=
+ * =primary_error_type=
+ * =is_supplemental=
+
+* Playback denominator:
+
+ We need all the same dimensions (except =is_policy_error= and =primary_error_type=) for this. So =is_supplemental= and =is_ad_eligible=. To future proof things we probably should also add =is_live_playback= and when that is added to =scl_playback_error_session_f= we can incorportate that into the numerator
+
+* Reauth Denominator
+
+We don't want to inflate the denominator for reauths by every background device in a day (devices that had the 8 hour app boot for example).  Looking at all =startplay= devices is probably better (regardless of if the playback was supplemental or not).
+
+* Crash & Error Agg Numerator:
+
+I'm seeing a lot of crashes and errors getting a =vesn= set to --.  This is problematic as it means count distincts will dramatically underestimate the number of issues.  For crashes, we rectified this by using esn instead of vesn since that's not as problematic.   Checking the reauths and startup errors to see if the problem is systemic across all logblobs logging.  If that's the case *we need to ensure that we are using esn everywhere including the the denominator calculation (which initially was using vesn)*.
+
+Looking at the breakdown of vesn/reason, it's mostly the startup errors that are missing vesn.  The question is then how does the denominator fair? Not good. I changed this to use esn as well
+
+
+* Current todo list:
+** TODO run updated denominator for startup and check the vesn max
+** TODO run new denominator for startplay and check the vesn distribution
+** TODO run crash and error
+** TODO add startplay denominator to the druid ingestion
+** TODO add crash & error and startplay denominator to the yaml file
+** TODO create the playback error numerator
+** TODO add playback error numerator to druid ingestion
+** TODO add playback error to the yaml

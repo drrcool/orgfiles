@@ -1,0 +1,56 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/richardjcool/org/20230710140152-cloud_gaming_qoedash.org
+
+
+* DONE Add permalinking to the dashboard
+CLOSED: [2023-08-14 Mon 09:53]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:53
+:ARCHIVE_FILE: ~/org/20230710140152-cloud_gaming_qoedash.org
+:ARCHIVE_OLPATH: Cloud Games Dashboard/Outstanding Asks:
+:ARCHIVE_CATEGORY: 20230710140152-cloud_gaming_qoedash
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE investigate -- device_names
+CLOSED: [2023-08-14 Mon 09:53] SCHEDULED: <2023-05-19 Fri>
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:53
+:ARCHIVE_FILE: ~/org/20230710140152-cloud_gaming_qoedash.org
+:ARCHIVE_OLPATH: Cloud Games Dashboard/Outstanding Asks:
+:ARCHIVE_CATEGORY: 20230710140152-cloud_gaming_qoedash
+:ARCHIVE_TODO: DONE
+:END:
+** Digging into this, it looks like all the -- device_names are all cases where display.vesn and display.device_type_id are coming through as null
+
+* DONE Add memory of last filters used
+CLOSED: [2023-08-14 Mon 09:53]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:53
+:ARCHIVE_FILE: ~/org/20230710140152-cloud_gaming_qoedash.org
+:ARCHIVE_OLPATH: Cloud Games Dashboard/Outstanding Asks:
+:ARCHIVE_CATEGORY: 20230710140152-cloud_gaming_qoedash
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE Add All/None to the filters
+CLOSED: [2023-08-14 Mon 09:53]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:53
+:ARCHIVE_FILE: ~/org/20230710140152-cloud_gaming_qoedash.org
+:ARCHIVE_OLPATH: Cloud Games Dashboard/Outstanding Asks:
+:ARCHIVE_CATEGORY: 20230710140152-cloud_gaming_qoedash
+:ARCHIVE_TODO: DONE
+:END:
+
+* DONE split out successful starts vs successful sessions
+CLOSED: [2023-08-14 Mon 09:53]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:53
+:ARCHIVE_FILE: ~/org/20230710140152-cloud_gaming_qoedash.org
+:ARCHIVE_OLPATH: Cloud Games Dashboard/Outstanding Asks:
+:ARCHIVE_CATEGORY: 20230710140152-cloud_gaming_qoedash
+:ARCHIVE_TODO: DONE
+:END:

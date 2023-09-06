@@ -139,3 +139,69 @@ https://netflix.slack.com/archives/C02DUEUV8BZ/p1689555125804239?thread_ts=16895
 
 It looks like these are incorrectly labeled as failed.  The logic will be added to nrjds and then should flow through without any work on my  end.
 
+
+* DONE Check on Jigsaw jobs.
+CLOSED: [2023-08-14 Mon 09:45] DEADLINE: <2023-05-03 Wed>
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:45
+:ARCHIVE_FILE: ~/org/20230501083835-work_inbox.org
+:ARCHIVE_OLPATH: look at jigsaw failures/Outstanding Tasks:
+:ARCHIVE_CATEGORY: 20230501083835-work_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+All have been updated to a lower concurrency method.  We should check on them tomorrow and see if they ran successfully.
+Most of them are running, but some are still failing
+
+* DONE Migrate meson to meastro
+CLOSED: [2023-08-14 Mon 09:45]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:45
+:ARCHIVE_FILE: ~/org/20230501083835-work_inbox.org
+:ARCHIVE_OLPATH: look at jigsaw failures/Outstanding Tasks:
+:ARCHIVE_CATEGORY: 20230501083835-work_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+The docs all say I can just move meson create to meastro create, but create is also deprecated.  I need to figure out the right method for deploying it.
+
+* DONE Take back ownership of tables that Chris published while I was out
+CLOSED: [2023-08-14 Mon 09:52] DEADLINE: <2023-05-18 Thu>
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:52
+:ARCHIVE_FILE: ~/org/20230501083835-work_inbox.org
+:ARCHIVE_CATEGORY: 20230501083835-work_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+** https://data.netflix.net/workflows/prod:PRODUCT_QUALITY_SCORE
+** https://data.netflix.net/workflows/prod:TABLEAU.STR.EMAIL_DREDASH_MON_THUR_REPORTS.WF
+
+* DONE Setup time with Ayesha about NRDP versioning
+CLOSED: [2023-08-14 Mon 09:45]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:52
+:ARCHIVE_FILE: ~/org/20230501083835-work_inbox.org
+:ARCHIVE_CATEGORY: 20230501083835-work_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:
+Notes from sync with Daniel:
+- DPI version will be replacing validation version.  This will report 4.1, 4.2, etc.
+- will flow into the remodeled =dse.device_client_rollup_d=
+** TODO Ask add =nrdapp_version= to qoedash views
+*** TODO write a doc for Swapna's team on how to use jigsaw
+Include how to create workflows
+how to add metrics / remove metrics
+Potential wins for the pipeline
+
+
+* DONE Create a write up of the policy error changes in the PQS newsletter
+CLOSED: [2023-08-14 Mon 09:55]
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-08-14 Mon 09:55
+:ARCHIVE_FILE: ~/org/20230501083835-work_inbox.org
+:ARCHIVE_CATEGORY: 20230501083835-work_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: project
+:END:

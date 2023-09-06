@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       8ce10320-6711-46cb-96f9-64a8371e6adc
+:END:
+#+title: Adding Errors to QoEDash
+
+* Types of Errors to Add:
+** Crashes
+** Playback Errors
+** Startup Errors
+** Reauths
+
+* Other metrics requested:
+** Memory usage
+*** JS
+*** App
+*** Peak
+*** Average
+*** Median
+** Action Fails
+** Infinite Spinners
+** Inline Lolomo Errors Due to missing data
+** Error Dialog when selecting a title
+** QoE Thresholds that would be considered disruptive

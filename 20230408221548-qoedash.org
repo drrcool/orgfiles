@@ -59,3 +59,27 @@ CLOSED: [2023-08-08 Tue 14:55]
 
 * TODO Add download button for the box & whisker and gameplaydelaycomponent charts
 * TODO once its in gameplay_f add first versus second OCGA for switch aways
+* TODO look at new metrics added to gameplay_f
+DEADLINE: <2023-08-14 Mon>
+** New Metrics:
+*** CTGL Components (cloud_measures.ctgl_components):
+**** controllerInputDuration
+**** controllerOcgaFrame
+**** controllerOcgaTransportDuration
+**** inputInjectionDuration
+**** ocgaTime
+**** ocgaToDisplay
+** cloud_measures.has_ssic_user_interaction
+Dimension that shows if a user interacted with the SSIC. Set to 1 only if we see evidence of the user scanning the QR code
+** cloude_measures.gameplay_stop_info.is_fallback_ocga
+Dimension set that shows if the game is streamed from a fallback OCGA
+** cloud_measures.game play_stop_info.failed_connection_on_ocga_uuids
+List of all OCGAs that clients tried and failed to connect
+** cloud_measures.a2tbr_percentiles
+Percentile struct that is derived from actual to target bitrate
+* TODO the subtitle menu doesn't make sense for cloud gaming. We should suppress it
+* TODO make the preloads look at the past two days of data to load the values
+* Adding =plan_name_detailed= to PQS:
+    One possible way to add the ads plan related dimension to qoedash without having to massive re-engineer the table is to add =plan_id= to the aggregate.   We are trying this to see how badly it affects performanc   e
+* Add code to bring in the =is_live_playback= for playback
+* Add code to bring in =plan_name_detailed= for all datasets
