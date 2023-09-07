@@ -198,11 +198,17 @@ Looking at the breakdown of vesn/reason, it's mostly the startup errors that are
 
 
 * Current todo list:
-** TODO run updated denominator for startup and check the vesn max
-** TODO run new denominator for startplay and check the vesn distribution
-** TODO run crash and error
-** TODO add startplay denominator to the druid ingestion
+** DONE run updated denominator for startup and check the vesn max
+CLOSED: [2023-09-06 Wed 14:54]
+** DONE run new denominator for startplay and check the vesn distribution
+CLOSED: [2023-09-06 Wed 14:54]
+** DONE run crash and error
+CLOSED: [2023-09-06 Wed 14:54]
+** DONE add startplay denominator to the druid ingestion
+CLOSED: [2023-09-06 Wed 15:10]
 ** TODO add crash & error and startplay denominator to the yaml file
-** TODO create the playback error numerator
-** TODO add playback error numerator to druid ingestion
+** DONE create the playback error numerator
+CLOSED: [2023-09-06 Wed 14:54]
+** DONE add playback error numerator to druid ingestion
+CLOSED: [2023-09-06 Wed 15:10]
 ** TODO add playback error to the yaml
